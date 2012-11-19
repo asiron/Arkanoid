@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1011DC4C165ACDDF00D93346 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC4B165ACDDF00D93346 /* main.cpp */; };
+		1011DC4E165ACDDF00D93346 /* Arkanoid.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1011DC4D165ACDDF00D93346 /* Arkanoid.1 */; };
+		1011DC58165ACE1700D93346 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1011DC54165ACE1700D93346 /* SDL_image.framework */; };
+		1011DC59165ACE1700D93346 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1011DC55165ACE1700D93346 /* SDL_mixer.framework */; };
+		1011DC5A165ACE1700D93346 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1011DC56165ACE1700D93346 /* SDL_ttf.framework */; };
+		1011DC5B165ACE1700D93346 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1011DC57165ACE1700D93346 /* SDL.framework */; };
+		1011DC5E165ACE2A00D93346 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC5D165ACE2A00D93346 /* SDLMain.m */; };
+		1011DC60165ACE8F00D93346 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1011DC5F165ACE8F00D93346 /* Foundation.framework */; };
+		1011DC62165ACE9500D93346 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1011DC61165ACE9500D93346 /* Cocoa.framework */; };
+		1011DC65165AD14B00D93346 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC63165AD14B00D93346 /* Game.cpp */; };
+		1011DC6C165AD18D00D93346 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC6A165AD18D00D93346 /* GameObject.cpp */; };
+		1011DC6F165AD1DF00D93346 /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC6D165AD1DE00D93346 /* Platform.cpp */; };
+		1011DC72165AD20D00D93346 /* FpsCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC70165AD20D00D93346 /* FpsCounter.cpp */; };
+		1011DC75165AD23300D93346 /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC73165AD23300D93346 /* Singleton.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1011DC45165ACDDE00D93346 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				1011DC4E165ACDDF00D93346 /* Arkanoid.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1011DC47165ACDDF00D93346 /* Arkanoid */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Arkanoid; sourceTree = BUILT_PRODUCTS_DIR; };
+		1011DC4B165ACDDF00D93346 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = main.cpp; sourceTree = "<group>"; };
+		1011DC4D165ACDDF00D93346 /* Arkanoid.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Arkanoid.1; sourceTree = "<group>"; };
+		1011DC54165ACE1700D93346 /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_image.framework; sourceTree = "<group>"; };
+		1011DC55165ACE1700D93346 /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_mixer.framework; sourceTree = "<group>"; };
+		1011DC56165ACE1700D93346 /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_ttf.framework; sourceTree = "<group>"; };
+		1011DC57165ACE1700D93346 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL.framework; sourceTree = "<group>"; };
+		1011DC5C165ACE2A00D93346 /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLMain.h; sourceTree = "<group>"; };
+		1011DC5D165ACE2A00D93346 /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = "<group>"; };
+		1011DC5F165ACE8F00D93346 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1011DC61165ACE9500D93346 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1011DC63165AD14B00D93346 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		1011DC64165AD14B00D93346 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		1011DC6A165AD18D00D93346 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		1011DC6B165AD18D00D93346 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
+		1011DC6D165AD1DE00D93346 /* Platform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Platform.cpp; sourceTree = "<group>"; };
+		1011DC6E165AD1DF00D93346 /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
+		1011DC70165AD20D00D93346 /* FpsCounter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FpsCounter.cpp; sourceTree = "<group>"; };
+		1011DC71165AD20D00D93346 /* FpsCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FpsCounter.h; sourceTree = "<group>"; };
+		1011DC73165AD23300D93346 /* Singleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Singleton.cpp; sourceTree = "<group>"; };
+		1011DC74165AD23300D93346 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1011DC44165ACDDE00D93346 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1011DC62165ACE9500D93346 /* Cocoa.framework in Frameworks */,
+				1011DC60165ACE8F00D93346 /* Foundation.framework in Frameworks */,
+				1011DC58165ACE1700D93346 /* SDL_image.framework in Frameworks */,
+				1011DC59165ACE1700D93346 /* SDL_mixer.framework in Frameworks */,
+				1011DC5A165ACE1700D93346 /* SDL_ttf.framework in Frameworks */,
+				1011DC5B165ACE1700D93346 /* SDL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1011DC3C165ACDDE00D93346 = {
+			isa = PBXGroup;
+			children = (
+				1011DC5C165ACE2A00D93346 /* SDLMain.h */,
+				1011DC5D165ACE2A00D93346 /* SDLMain.m */,
+				1011DC61165ACE9500D93346 /* Cocoa.framework */,
+				1011DC5F165ACE8F00D93346 /* Foundation.framework */,
+				1011DC54165ACE1700D93346 /* SDL_image.framework */,
+				1011DC55165ACE1700D93346 /* SDL_mixer.framework */,
+				1011DC56165ACE1700D93346 /* SDL_ttf.framework */,
+				1011DC57165ACE1700D93346 /* SDL.framework */,
+				1011DC4A165ACDDF00D93346 /* src */,
+				1011DC48165ACDDF00D93346 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1011DC48165ACDDF00D93346 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1011DC47165ACDDF00D93346 /* Arkanoid */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1011DC4A165ACDDF00D93346 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				1011DC4B165ACDDF00D93346 /* main.cpp */,
+				1011DC4D165ACDDF00D93346 /* Arkanoid.1 */,
+				1011DC63165AD14B00D93346 /* Game.cpp */,
+				1011DC64165AD14B00D93346 /* Game.h */,
+				1011DC6A165AD18D00D93346 /* GameObject.cpp */,
+				1011DC6B165AD18D00D93346 /* GameObject.h */,
+				1011DC6D165AD1DE00D93346 /* Platform.cpp */,
+				1011DC6E165AD1DF00D93346 /* Platform.h */,
+				1011DC70165AD20D00D93346 /* FpsCounter.cpp */,
+				1011DC71165AD20D00D93346 /* FpsCounter.h */,
+				1011DC73165AD23300D93346 /* Singleton.cpp */,
+				1011DC74165AD23300D93346 /* Singleton.h */,
+			);
+			name = src;
+			path = Arkanoid;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1011DC46165ACDDE00D93346 /* Arkanoid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1011DC51165ACDDF00D93346 /* Build configuration list for PBXNativeTarget "Arkanoid" */;
+			buildPhases = (
+				1011DC43165ACDDE00D93346 /* Sources */,
+				1011DC44165ACDDE00D93346 /* Frameworks */,
+				1011DC45165ACDDE00D93346 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arkanoid;
+			productName = Arkanoid;
+			productReference = 1011DC47165ACDDF00D93346 /* Arkanoid */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1011DC3E165ACDDE00D93346 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Maciej Żurad";
+			};
+			buildConfigurationList = 1011DC41165ACDDE00D93346 /* Build configuration list for PBXProject "Arkanoid" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1011DC3C165ACDDE00D93346;
+			productRefGroup = 1011DC48165ACDDF00D93346 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1011DC46165ACDDE00D93346 /* Arkanoid */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1011DC43165ACDDE00D93346 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1011DC4C165ACDDF00D93346 /* main.cpp in Sources */,
+				1011DC5E165ACE2A00D93346 /* SDLMain.m in Sources */,
+				1011DC65165AD14B00D93346 /* Game.cpp in Sources */,
+				1011DC6C165AD18D00D93346 /* GameObject.cpp in Sources */,
+				1011DC6F165AD1DF00D93346 /* Platform.cpp in Sources */,
+				1011DC72165AD20D00D93346 /* FpsCounter.cpp in Sources */,
+				1011DC75165AD23300D93346 /* Singleton.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1011DC4F165ACDDF00D93346 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1011DC50165ACDDF00D93346 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1011DC52165ACDDF00D93346 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1011DC53165ACDDF00D93346 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1011DC41165ACDDE00D93346 /* Build configuration list for PBXProject "Arkanoid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1011DC4F165ACDDF00D93346 /* Debug */,
+				1011DC50165ACDDF00D93346 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1011DC51165ACDDF00D93346 /* Build configuration list for PBXNativeTarget "Arkanoid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1011DC52165ACDDF00D93346 /* Debug */,
+				1011DC53165ACDDF00D93346 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1011DC3E165ACDDE00D93346 /* Project object */;
+}
