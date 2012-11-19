@@ -13,7 +13,7 @@
 
 
 Game::~Game(){
-    closeSystems();
+    closeSystems(); 
 }
 
 Game::Game(int argc, char** argv){
