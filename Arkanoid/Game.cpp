@@ -13,14 +13,27 @@
 
 
 Game::~Game(){
-    closeSystems(); 
+    closeSystems();
+    
+    delete fps_counter;
+    delete platform;
 }
 
 Game::Game(int argc, char** argv){
+    
+    screen_w = atoi(argv[1]);
+    screen_h = atoi(argv[2]);
+    
     if(initSystems() == -1)
         cerr << "Problem occured while initializing SDL systems" << endl;
     running = true ;
     
+    //just for now
+    gameFPS = 60;
+    
+    platform = new Platform();
+    //platform->Init();
+    fps_counter = new FpsCounter(gameFPS);
 }
 
 int Game::initSystems(){
@@ -28,7 +41,7 @@ int Game::initSystems(){
 		cout << "Problem while initializing SDL" << endl;
 		return -1;
 	}
-	screen = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_DEPTH, SDL_SWSURFACE);
+	screen = SDL_SetVideoMode(screen_w, screen_h, 32, SDL_SWSURFACE);
 	if (TTF_Init() < 0) {
 		cout << "Problem initializing SDL_ttf" << endl;
 		return -1;
@@ -50,11 +63,59 @@ void Game::closeSystems(){
     SDL_Quit();
 }
 
-int Game::loop(){
-    
+int Game::Loop(){
     while(running){
-        cout << running << endl;
-        running = false ;
+        if(fps_counter->measureFPS()){
+                HandleEvents();
+            SDL_FillRect(screen, NULL, 0);
+            
+            platform->Render();
+            SDL_Flip(screen);
+        }
+        // cout << fps_counter->getFPS() << endl;
     }
     return 0;
 }
+
+
+void Game::HandleEvents(){
+
+    SDL_Event event;
+    while(SDL_PollEvent(&event)){
+        
+        if(event.type == SDL_QUIT){
+            running = false;
+        }
+        
+        if(event.type == SDL_KEYDOWN){
+            if(event.key.keysym.sym == SDLK_LEFT){
+                platform->MoveLeft();
+                cout << "Left key pressed" << endl;
+            }
+            if(event.key.keysym.sym == SDLK_RIGHT){
+                platform->MoveRight();
+                cout << "Right key pressed" << endl;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

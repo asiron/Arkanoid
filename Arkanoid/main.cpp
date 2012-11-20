@@ -16,7 +16,6 @@
 
 int main(int argc, char** argv)
 {
-    cout << "lol"  << endl ;
     Game game(argc, argv);
-    return game.loop();
+    return game.Loop();
 }

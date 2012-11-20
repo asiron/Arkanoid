@@ -17,10 +17,15 @@
 #include <SDL_image/SDL_image.h>
 #include "GameObject.h"
 #include "Singleton.h"
+#include "FpsCounter.h"
+#include "Platform.h"
+
 
 #define g_Game Game::GetSingleton()
 
 using namespace std;
+
+class Platform;
 
 class Game : public Singleton<Game> {
     
@@ -36,8 +41,12 @@ private:
     
     int screen_w;
     int screen_h;
+    int gameFPS;
     
     list<GameObject*> gobjects;
+    
+    Platform* platform ;
+    FpsCounter* fps_counter;
     
     SDL_Surface *screen;
     Mix_Chunk *sound;
@@ -49,7 +58,10 @@ private:
 public:
     Game(int argc, char** argv);
     ~Game();
-    int loop();
+    int Loop();
+    void HandleEvents();
+    
+    
     
     void SetScreen_W(int screen_w) { Game::screen_w = screen_w; }
     int GetScreen_W() {return screen_w; }
@@ -64,6 +76,7 @@ public:
     void switchMusic() { musicOn = !musicOn; }
     void switchSfx() { sfxOn = !sfxOn; }
     
+    SDL_Surface* GetScreen() {return screen;}
     
 };
 #endif /* defined(__Arkanoid__Game__) */

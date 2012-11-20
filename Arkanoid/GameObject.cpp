@@ -28,13 +28,13 @@ void GameObject::Init(float x, float y, float velX, float velY, int dirX, int di
     
 }
 // Assuming no gravity, every object is updated the same way based on its velocity
-void GameObject::Render(){
+void GameObject::Update(){
     x += velX * dirX;
     y += velY * dirY;
 }
 
 // Every object is rendered in different way
-void GameObject::Update(){}
+void GameObject::Render(){}
 
 bool GameObject::detectCollision(GameObject* otherObject){
     

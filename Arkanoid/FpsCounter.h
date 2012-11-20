@@ -16,13 +16,13 @@ class FpsCounter {
     
 private:
     int fps;
-    int lastMeasure;
-    int currentMeasure;
+    int lastTime;
+    int lastFrame;
     int FPS;
     int FPS_rate;
     
 public:
-    FpsCounter(int FPS_rate) : fps(0), lastMeasure(0), currentMeasure(0), FPS(0), FPS_rate(FPS_rate) {};
+    FpsCounter(int _FPS_rate) : fps(0), lastTime(0), lastFrame(0), FPS(0), FPS_rate(_FPS_rate) {};
     int measureFPS();
     int getFPS();
 };

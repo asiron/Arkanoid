@@ -12,18 +12,18 @@
 int FpsCounter::measureFPS(){
     
     //Get current time
-    currentMeasure = SDL_GetTicks();
+    int currentTime = SDL_GetTicks();
     
     
     //Measring time
-    if(currentMeasure - lastMeasure >= 1000){
+    if(currentTime - lastTime >= 1000){
         FPS = fps;
         fps = 0;
-        lastMeasure = currentMeasure ;
+        lastTime = currentTime ;
     }
     
-    if(currentMeasure - lastMeasure >= (1000/(double)FPS_rate) ){
-        lastMeasure = currentMeasure ;
+    if(currentTime - lastFrame >= (1000/(double)FPS_rate) ){
+        lastFrame = currentTime ;
         fps++;
         
         //next frame thus we return 1 for Renderer

@@ -9,7 +9,6 @@
 #include "Platform.h"
 
 
-
 Platform::Platform(){
 }
 
@@ -20,6 +19,8 @@ void Platform::Destroy(){
 void Platform::Init(SDL_Surface *image) {
     
     GameObject::Init(g_Game.GetScreen_W()/2.0, g_Game.GetScreen_H() - 20 , 5, 0, 0, 0, 25, 10);
+    
+    cout << g_Game.GetScreen_W() << g_Game.GetScreen_H() << endl ;
     
     SetAlive(true);
     SetID(PLAYER);
@@ -40,15 +41,18 @@ void Platform::Update(){
 void Platform::Render(){
     GameObject::Render();
     
+    SDL_Rect rect = {(short)x,(short)y,50,20};
+    SDL_FillRect(g_Game.GetScreen(), &rect, 0xFFFFFF);
     
-    
-    //    SDL_Rect = {x,y,boundX, boundY};
-    //    SDL_MapRGBA(screen, ￼, ￼, ￼, ￼)
     
 }
 
-void Platform::MoveLeft(){}
-void Platform::MoveRight(){}
+void Platform::MoveLeft(){
+    dirX = -1;
+}
+void Platform::MoveRight(){
+    dirX = 1;
+}
 
 
 void Platform::Collided( int objectID){}
