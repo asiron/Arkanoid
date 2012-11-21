@@ -32,7 +32,7 @@ Game::Game(int argc, char** argv){
     gameFPS = 60;
     
     platform = new Platform();
-    //platform->Init();
+    platform->Init();
     fps_counter = new FpsCounter(gameFPS);
 }
 
@@ -69,10 +69,10 @@ int Game::Loop(){
                 HandleEvents();
             SDL_FillRect(screen, NULL, 0);
             
+            platform->Update();
             platform->Render();
             SDL_Flip(screen);
         }
-        // cout << fps_counter->getFPS() << endl;
     }
     return 0;
 }
@@ -88,15 +88,18 @@ void Game::HandleEvents(){
         }
         
         if(event.type == SDL_KEYDOWN){
-            if(event.key.keysym.sym == SDLK_LEFT){
+            if(event.key.keysym.sym == SDLK_LEFT)
                 platform->MoveLeft();
-                cout << "Left key pressed" << endl;
-            }
-            if(event.key.keysym.sym == SDLK_RIGHT){
+            if(event.key.keysym.sym == SDLK_RIGHT)
                 platform->MoveRight();
-                cout << "Right key pressed" << endl;
-            }
         }
+        if(event.type == SDL_KEYUP){
+            if(event.key.keysym.sym == SDLK_LEFT)
+                platform->StopMoving();
+            if(event.key.keysym.sym == SDLK_RIGHT)
+                platform->StopMoving();
+        }
+        
     }
 }
 

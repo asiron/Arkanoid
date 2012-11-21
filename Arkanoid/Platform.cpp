@@ -20,7 +20,7 @@ void Platform::Init(SDL_Surface *image) {
     
     GameObject::Init(g_Game.GetScreen_W()/2.0, g_Game.GetScreen_H() - 20 , 5, 0, 0, 0, 25, 10);
     
-    cout << g_Game.GetScreen_W() << g_Game.GetScreen_H() << endl ;
+    //cout << "Screen width: " <<  g_Game.GetScreen_W() << "Screen height:"<< g_Game.GetScreen_H() << endl ;
     
     SetAlive(true);
     SetID(PLAYER);
@@ -34,7 +34,7 @@ void Platform::Init(SDL_Surface *image) {
 void Platform::Update(){
     GameObject::Update();
     if( x > g_Game.GetScreen_H())
-        x = g_Game.GetScreen_W();
+        x = g_Game.GetScreen_H();
     else if ( x < 0 )
         x = 0 ;
 }
@@ -52,6 +52,10 @@ void Platform::MoveLeft(){
 }
 void Platform::MoveRight(){
     dirX = 1;
+}
+
+void Platform::StopMoving(){
+    dirX = 0;
 }
 
 

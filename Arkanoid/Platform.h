@@ -20,6 +20,7 @@ private:
     int lives;
     int score;
     
+    
 public:
     Platform();
     void Destroy();
@@ -30,6 +31,8 @@ public:
     
     void MoveLeft();
     void MoveRight();
+    void StopMoving();
+    
     
     int GetScore() {return score;}
     int GetLives() {return lives;}
