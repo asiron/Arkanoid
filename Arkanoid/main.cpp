@@ -16,6 +16,7 @@
 
 int main(int argc, char** argv)
 {
+    srand(SDL_GetTicks());
     Game game(argc, argv);
     return game.Loop();
 }

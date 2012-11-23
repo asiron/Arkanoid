@@ -11,11 +11,14 @@
 
 #include <iostream>
 #include <SDL/SDL.h>
+#include "Animation.h"
 
 #define PLAYER 0
-#define BLOCK 1
-#define EFFECT 2
+#define BALL 1
+#define BLOCK 2
+#define EFFECT 3
 
+class Animation;
 
 class GameObject {
     
@@ -33,30 +36,22 @@ protected:
     
     int dirX;
     int dirY;
-    int boundX;
-    int boundY;
+    float boundX;
+    float boundY;
     
-    //animation properties
-    int maxFrame;
-    int curFrame;
-    int frameCount;
-    int frameDelay;
-    int frameWidth;
-    int frameHeight;
-    int animationColumns;
-    int animationDirection;
-    SDL_Surface* image;
+    Animation* animation;
     
 public:
     
     
-    GameObject() : x(0), y(0), velX(0), velY(0), dirX(0), dirY(0), boundX(0), boundY(0), maxFrame(0),
-    curFrame(0), frameCount(0), frameDelay(0), frameWidth(0), frameHeight(0), animationColumns(0),
-    animationDirection(0), image(NULL), alive(true), collidable(true) {};
+    GameObject(SDL_Surface *image = NULL ) : x(0), y(0), velX(0), velY(0),
+                dirX(0), dirY(0), boundX(0), boundY(0), alive(false), collidable(true) {
+        animation = new Animation(image);
+    };
     
     void virtual Destroy();
     
-    void Init(float x, float y, float velX, float velY, int dirX, int dirY, int boundX, int boundY);
+    void Init(float x, float y, float velX, float velY, int dirX, int dirY, float boundX, float boundY);
     void virtual Render();
     void virtual Update();
     

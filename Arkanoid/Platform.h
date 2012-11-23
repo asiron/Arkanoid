@@ -12,14 +12,12 @@
 #include <iostream>
 #include "GameObject.h"
 #include "Game.h"
-#include <SDL_image/SDL_image.h>
 
 class Platform : public GameObject {
     
 private:
     int lives;
     int score;
-    
     
 public:
     Platform();

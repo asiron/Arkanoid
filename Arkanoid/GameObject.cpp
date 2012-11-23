@@ -10,11 +10,10 @@
 
 
 void GameObject::Destroy() {
-    if(image != NULL)
-        SDL_FreeSurface(image);
+    delete animation;
 }
 
-void GameObject::Init(float x, float y, float velX, float velY, int dirX, int dirY, int boundX, int boundY){
+void GameObject::Init(float x, float y, float velX, float velY, int dirX, int dirY, float boundX, float boundY){
     
     GameObject::x = x;
     GameObject::y = y;

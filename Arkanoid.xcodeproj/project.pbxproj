@@ -21,6 +21,8 @@
 		1011DC6F165AD1DF00D93346 /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC6D165AD1DE00D93346 /* Platform.cpp */; };
 		1011DC72165AD20D00D93346 /* FpsCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC70165AD20D00D93346 /* FpsCounter.cpp */; };
 		1011DC75165AD23300D93346 /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC73165AD23300D93346 /* Singleton.cpp */; };
+		10D4503F165EB639001A13FA /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10D4503D165EB639001A13FA /* Animation.cpp */; };
+		10DE61E0165D068200D9A1D4 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DE61DE165D068100D9A1D4 /* Ball.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +60,10 @@
 		1011DC71165AD20D00D93346 /* FpsCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FpsCounter.h; sourceTree = "<group>"; };
 		1011DC73165AD23300D93346 /* Singleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Singleton.cpp; sourceTree = "<group>"; };
 		1011DC74165AD23300D93346 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		10D4503D165EB639001A13FA /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
+		10D4503E165EB639001A13FA /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
+		10DE61DE165D068100D9A1D4 /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
+		10DE61DF165D068200D9A1D4 /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				1011DC4B165ACDDF00D93346 /* main.cpp */,
+				10D4503D165EB639001A13FA /* Animation.cpp */,
+				10D4503E165EB639001A13FA /* Animation.h */,
+				10DE61DE165D068100D9A1D4 /* Ball.cpp */,
+				10DE61DF165D068200D9A1D4 /* Ball.h */,
 				1011DC4D165ACDDF00D93346 /* Arkanoid.1 */,
 				1011DC63165AD14B00D93346 /* Game.cpp */,
 				1011DC64165AD14B00D93346 /* Game.h */,
@@ -179,6 +189,8 @@
 				1011DC6F165AD1DF00D93346 /* Platform.cpp in Sources */,
 				1011DC72165AD20D00D93346 /* FpsCounter.cpp in Sources */,
 				1011DC75165AD23300D93346 /* Singleton.cpp in Sources */,
+				10DE61E0165D068200D9A1D4 /* Ball.cpp in Sources */,
+				10D4503F165EB639001A13FA /* Animation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +289,7 @@
 				1011DC53165ACDDF00D93346 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

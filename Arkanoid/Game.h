@@ -19,13 +19,14 @@
 #include "Singleton.h"
 #include "FpsCounter.h"
 #include "Platform.h"
-
+#include "Ball.h"
 
 #define g_Game Game::GetSingleton()
 
 using namespace std;
 
 class Platform;
+class Ball;
 
 class Game : public Singleton<Game> {
     
@@ -45,6 +46,7 @@ private:
     
     list<GameObject*> gobjects;
     
+    Ball* ball;
     Platform* platform ;
     FpsCounter* fps_counter;
     
@@ -61,6 +63,7 @@ public:
     int Loop();
     void HandleEvents();
     
+    void ShutDown(){running = false;}
     
     
     void SetScreen_W(int screen_w) { Game::screen_w = screen_w; }

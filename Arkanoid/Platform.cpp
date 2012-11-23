@@ -18,10 +18,8 @@ void Platform::Destroy(){
 
 void Platform::Init(SDL_Surface *image) {
     
-    GameObject::Init(g_Game.GetScreen_W()/2.0, g_Game.GetScreen_H() - 20 , 5, 0, 0, 0, 25, 10);
-    
-    //cout << "Screen width: " <<  g_Game.GetScreen_W() << "Screen height:"<< g_Game.GetScreen_H() << endl ;
-    
+    GameObject::Init(g_Game.GetScreen_W()/2.0, g_Game.GetScreen_H() - 20 , 10, 0, 0, 0, 50.0, 15.0);
+        
     SetAlive(true);
     SetID(PLAYER);
     
@@ -33,15 +31,15 @@ void Platform::Init(SDL_Surface *image) {
 
 void Platform::Update(){
     GameObject::Update();
-    if( x > g_Game.GetScreen_H())
-        x = g_Game.GetScreen_H();
-    else if ( x < 0 )
-        x = 0 ;
+    if( x > g_Game.GetScreen_W() - boundX)
+        x = g_Game.GetScreen_W() - boundX;
+    else if ( x < boundX)
+        x = boundX ;
 }
 void Platform::Render(){
     GameObject::Render();
-    
-    SDL_Rect rect = {(short)x,(short)y,50,20};
+
+    SDL_Rect rect = {(Sint16)(x-boundX),(Sint16)(y-boundY),(Uint16)(2*boundX),(Uint16)(2*boundY)};
     SDL_FillRect(g_Game.GetScreen(), &rect, 0xFFFFFF);
     
     

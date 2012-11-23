@@ -17,6 +17,7 @@ Game::~Game(){
     
     delete fps_counter;
     delete platform;
+    delete ball;
 }
 
 Game::Game(int argc, char** argv){
@@ -33,6 +34,14 @@ Game::Game(int argc, char** argv){
     
     platform = new Platform();
     platform->Init();
+    
+    ball = new Ball();
+    ball->Init();
+    
+    gobjects.push_back(ball);
+    gobjects.push_back(platform);
+    
+    
     fps_counter = new FpsCounter(gameFPS);
 }
 
@@ -41,7 +50,7 @@ int Game::initSystems(){
 		cout << "Problem while initializing SDL" << endl;
 		return -1;
 	}
-	screen = SDL_SetVideoMode(screen_w, screen_h, 32, SDL_SWSURFACE);
+	screen = SDL_SetVideoMode(screen_w, screen_h, 32, SDL_HWSURFACE);
 	if (TTF_Init() < 0) {
 		cout << "Problem initializing SDL_ttf" << endl;
 		return -1;
@@ -66,11 +75,19 @@ void Game::closeSystems(){
 int Game::Loop(){
     while(running){
         if(fps_counter->measureFPS()){
-                HandleEvents();
+            
+            HandleEvents();
             SDL_FillRect(screen, NULL, 0);
             
-            platform->Update();
-            platform->Render();
+            if(platform->detectCollision(ball))
+                ball->Collided(platform->GetID());
+            
+            for(list<GameObject*>::iterator iter = gobjects.begin(); iter!=gobjects.end(); iter++){
+                (*iter)->Update();
+                (*iter)->Render();
+            }
+            
+            
             SDL_Flip(screen);
         }
     }
@@ -79,29 +96,63 @@ int Game::Loop(){
 
 
 void Game::HandleEvents(){
-
+    
+    bool mouse_motion_flag = false;
+    
     SDL_Event event;
     while(SDL_PollEvent(&event)){
-        
-        if(event.type == SDL_QUIT){
-            running = false;
-        }
-        
-        if(event.type == SDL_KEYDOWN){
-            if(event.key.keysym.sym == SDLK_LEFT)
-                platform->MoveLeft();
-            if(event.key.keysym.sym == SDLK_RIGHT)
+        if(event.type == SDL_QUIT)
+            ShutDown();
+        if(event.type == SDL_MOUSEMOTION){
+            
+            mouse_motion_flag = true ;
+            if(event.motion.x > platform->GetX())
                 platform->MoveRight();
-        }
-        if(event.type == SDL_KEYUP){
-            if(event.key.keysym.sym == SDLK_LEFT)
-                platform->StopMoving();
-            if(event.key.keysym.sym == SDLK_RIGHT)
+            else if (event.motion.x < platform->GetX())
+                platform->MoveLeft();
+            else
                 platform->StopMoving();
         }
-        
     }
-}
+    
+    Uint8* keystates = SDL_GetKeyState(NULL);
+    
+    if(keystates[SDLK_q])
+        ShutDown();
+    
+    if(!mouse_motion_flag){
+        if(keystates[SDLK_LEFT])
+            platform->MoveLeft();
+        else if(keystates[SDLK_RIGHT])
+            platform->MoveRight();
+        else
+            platform->StopMoving();
+    }
+    
+    if(keystates[SDLK_SPACE])
+        ball->StartFlying();
+    
+    
+
+//
+//        if(event.type == SDL_KEYDOWN){
+//            if(event.key.keysym.sym == SDLK_LEFT)
+//                platform->MoveLeft();
+//            if(event.key.keysym.sym == SDLK_RIGHT)
+//                platform->MoveRight();
+//            if(event.key.keysym.sym == SDLK_SPACE)
+//                ball->StartFlying();
+//            if(event.key.keysym.sym == SDLK_q)
+//                ShutDown();
+//                
+//        }else if (event.type == SDL_KEYUP){
+//            if(event.key.keysym.sym == SDLK_LEFT)
+//                platform->StopMoving();
+//            if(event.key.keysym.sym == SDLK_RIGHT)
+//                platform->StopMoving();                
+//        }
+
+    }
 
 
 
