@@ -22,6 +22,7 @@
 		1011DC72165AD20D00D93346 /* FpsCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC70165AD20D00D93346 /* FpsCounter.cpp */; };
 		1011DC75165AD23300D93346 /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC73165AD23300D93346 /* Singleton.cpp */; };
 		104ED8EB16614BFB008085EC /* scaler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 104ED8EA16614BFB008085EC /* scaler.cpp */; };
+		104ED8F1166167A4008085EC /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 104ED8EF166167A4008085EC /* Block.cpp */; };
 		10D4503F165EB639001A13FA /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10D4503D165EB639001A13FA /* Animation.cpp */; };
 		10DE61E0165D068200D9A1D4 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DE61DE165D068100D9A1D4 /* Ball.cpp */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,9 @@
 		104ED8EC16614C22008085EC /* scaler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scaler.h; sourceTree = "<group>"; };
 		104ED8ED1661648B008085EC /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		104ED8EE1661648B008085EC /* platform.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platform.png; sourceTree = "<group>"; };
+		104ED8EF166167A4008085EC /* Block.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Block.cpp; sourceTree = "<group>"; };
+		104ED8F0166167A4008085EC /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
+		104ED8F216616A24008085EC /* block.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = block.png; sourceTree = "<group>"; };
 		10D4503D165EB639001A13FA /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		10D4503E165EB639001A13FA /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		10DE61DE165D068100D9A1D4 /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				1011DC71165AD20D00D93346 /* FpsCounter.h */,
 				1011DC73165AD23300D93346 /* Singleton.cpp */,
 				1011DC74165AD23300D93346 /* Singleton.h */,
+				104ED8EF166167A4008085EC /* Block.cpp */,
+				104ED8F0166167A4008085EC /* Block.h */,
 			);
 			name = src;
 			path = Arkanoid;
@@ -151,6 +157,7 @@
 		103C502D166007200042BEBD /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				104ED8F216616A24008085EC /* block.png */,
 				104ED8ED1661648B008085EC /* ball.png */,
 				104ED8EE1661648B008085EC /* platform.png */,
 			);
@@ -227,6 +234,7 @@
 				10DE61E0165D068200D9A1D4 /* Ball.cpp in Sources */,
 				10D4503F165EB639001A13FA /* Animation.cpp in Sources */,
 				104ED8EB16614BFB008085EC /* scaler.cpp in Sources */,
+				104ED8F1166167A4008085EC /* Block.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

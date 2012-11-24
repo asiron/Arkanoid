@@ -50,9 +50,11 @@ void Ball::Update(){
             dirY *= -1;
         else if ( y >= g_Game.GetScreen_H())
             SetAlive(false);
+        
+        // we also update its animation if it exists
+        if(animation) animation->Animate();
     }
-    // we also update its animation if it exists
-    if(animation) animation->Animate();
+
 }
 void Ball::StartFlying(){
     // starting the ball, if it's not alive we dont allow for starting it again, until it dies
@@ -62,14 +64,64 @@ void Ball::StartFlying(){
     }
 }
 
-void Ball::Collided(int ObjectID){
+void Ball::Collided(int ObjectID, col_dir dir){
+    if(!dir)
+        return;
     
     //checking for collision with PLAYER
     if(ObjectID == PLAYER){
-        dirY *= -1;
+        switch(dir){
+            case LEFT:
+                dirX = -1;
+                break;
+            case RIGHT:
+                dirX = 1;
+                break;
+            case TOP:
+                dirY = -1;
+                break;
+            case TLCOR:
+                dirX = -1;
+                dirY = -1;
+                break;
+            case TRCOR:
+                dirX = 1;
+                dirY = -1;
+                break;
+ 
+        }
         if(velX <0) --velX; else ++velX;
         if(velY <0) --velY; else ++velY;
+    } else if(ObjectID == BLOCK){
+        switch(dir){
+            case LEFT:
+                dirX = -1;
+                break;
+            case RIGHT:
+                dirX = 1;
+                break;
+            case TOP:
+                dirY = -1;
+                break;
+            case BOTTOM:
+                dirY = 1;
+                break;
+            case TLCOR:
+                dirX = -1;
+                dirY = -1;
+                break;
+            case TRCOR:
+                dirX = 1;
+                dirY = -1;
+                break;
+            case BLCOR:
+                dirX = -1;
+                dirY = 1;
+                break;
+            case BRCOR:
+                dirX = 1;
+                dirY = 1;
+                break;
+        }
     }
-        
-        
 }

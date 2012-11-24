@@ -46,7 +46,11 @@ void GameObject::Update(){
 void GameObject::Render(){}
 
 // Collision detection function for every object
-bool GameObject::detectCollision(GameObject* otherObject){
+col_dir GameObject::detectCollision(GameObject* otherObject){
+    
+    if (!collidable || !otherObject->Collidable()) {
+        return NO_COLLISION;
+    }
     
     float otherObjectX = otherObject->GetX();
     float otherObjectY = otherObject->GetY();
@@ -58,13 +62,36 @@ bool GameObject::detectCollision(GameObject* otherObject){
        ( x - boundX < otherObjectX + otherObjectBoundX) &&
        ( y + boundY > otherObjectY - otherObjectBoundY) &&
        ( y - boundY < otherObjectY + otherObjectBoundY) )
-        return true;
-    else
-        return false;
-    
+    {
+        if(abs(x - otherObjectX) < otherObjectBoundX) //Vertical collision
+        {
+            if(y < otherObjectY)
+                return TOP;
+            else
+                return BOTTOM;
+        }
+        else if(abs(y - otherObjectY) < otherObjectBoundY) //Horizontal collision
+        {
+            if(x < otherObjectX)
+                return LEFT;
+            else
+                return RIGHT;
+        }
+//        else { //Diagonal collision
+//            if(x < otherObjectX && y < otherObjectY)
+//                return TLCOR;
+//            else if (x < otherObjectX && y > otherObjectY)
+//                return BLCOR;
+//            else if (x > otherObjectX && y < otherObjectY)
+//                return TRCOR;
+//            else
+//                return BRCOR;
+//        }
+    }else
+        return NO_COLLISION;
 }
 
 //Handle collisions differently for every object
-void GameObject::Collided(int objectID){}
+void GameObject::Collided(int objectID, col_dir dir){}
 
 bool GameObject::Collidable(){ return alive && collidable ;}

@@ -16,6 +16,7 @@ Game::~Game(){
     delete fps_counter;
     platform->Destroy();
     ball->Destroy();
+    block->Destroy();
 }
 
 Game::Game(int argc, char** argv){
@@ -37,9 +38,12 @@ Game::Game(int argc, char** argv){
     ball = new Ball("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/graphics/ball.png", 0, 1, 16, 16, 1, 1);
     ball->Init();
     
+    block = new Block("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/graphics/block.png", 0, 1, 32, 16, 1, 1);
+    block->Init();
+    
     gobjects.push_back(ball);
     gobjects.push_back(platform);
-    
+    gobjects.push_back(block);
     
     fps_counter = new FpsCounter(gameFPS);
 }
@@ -78,8 +82,9 @@ int Game::Loop(){
             HandleEvents();
             SDL_FillRect(screen, NULL, 0);
             
-            if(platform->detectCollision(ball))
-                ball->Collided(platform->GetID());
+            for(list<GameObject*>::iterator iter = gobjects.begin(); iter!=gobjects.end(); iter++)
+                for(list<GameObject*>::iterator iter2 = gobjects.begin(); iter2!=gobjects.end(); iter2++)
+                    (*iter)->Collided((*iter2)->GetID(), (*iter)->detectCollision(*iter2));
             
             for(list<GameObject*>::iterator iter = gobjects.begin(); iter!=gobjects.end(); iter++){
                 (*iter)->Update();

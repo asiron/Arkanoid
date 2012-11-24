@@ -63,7 +63,6 @@ void Animation::Animate(){
 void Animation::Draw(float x, float y){
     SDL_Rect offset = {(Sint16)x, (Sint16)y, 0, 0};
     SDL_BlitSurface(image, clip, g_Game.GetScreen(), &offset);
-
 }
 
 

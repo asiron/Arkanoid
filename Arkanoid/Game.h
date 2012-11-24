@@ -20,6 +20,7 @@
 #include "FpsCounter.h"
 #include "Platform.h"
 #include "Ball.h"
+#include "Block.h"
 
 #define g_Game Game::GetSingleton()
 #define BASE_SCREEN_X 960
@@ -31,6 +32,7 @@ using namespace std;
 
 class Platform;
 class Ball;
+class Block;
 
 class Game : public Singleton<Game> {
     
@@ -51,6 +53,7 @@ private:
     
     list<GameObject*> gobjects;
     
+    Block* block;
     Ball* ball;
     Platform* platform ;
     FpsCounter* fps_counter;
@@ -69,7 +72,6 @@ public:
     void HandleEvents();
     
     void ShutDown(){running = false;}
-    
     
     void SetScreen_W(int screen_w) { Game::screen_w = screen_w; }
     int GetScreen_W() {return screen_w; }

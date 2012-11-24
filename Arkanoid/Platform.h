@@ -39,7 +39,7 @@ public:
     void LoseLife() { --lives;}
     void AddPoint() { ++score;}
     
-    void Collided( int objectID);
+    void Collided( int objectID, col_dir dir);
 };
 
 

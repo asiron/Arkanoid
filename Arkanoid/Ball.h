@@ -26,7 +26,7 @@ public:
     void StartFlying();
     
     //respond to collision function
-    void Collided(int ObjectID);
+    void Collided(int ObjectID, enum col_dir );
     
     
 };

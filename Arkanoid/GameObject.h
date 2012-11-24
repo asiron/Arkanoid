@@ -18,6 +18,8 @@
 #define BLOCK 2
 #define EFFECT 3
 
+enum col_dir {NO_COLLISION, LEFT, RIGHT, TOP, BOTTOM, TLCOR, TRCOR, BLCOR, BRCOR};  // enum for indicating how objects collided, COR stands for corner
+
 class Animation;
 
 class GameObject {
@@ -70,8 +72,8 @@ public:
     int isCollidable() { return collidable; }
     void setCollidable(bool collidable) {GameObject::collidable = collidable;}
     
-    bool detectCollision(GameObject* otherObject);
-    void virtual Collided(int objectID);
+    enum col_dir detectCollision(GameObject* otherObject);
+    void virtual Collided(int objectID, col_dir dir);
     bool Collidable();
 };
 

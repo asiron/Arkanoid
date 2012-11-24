@@ -25,7 +25,7 @@ void Platform::Destroy(){
 void Platform::Init() {
     
     // Initializing ball
-    GameObject::Init(g_Game.GetScreen_W()/2.0, g_Game.GetScreen_H() - 20 , 10, 0, 0, 0, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
+    GameObject::Init(g_Game.GetScreen_W()/2.0, g_Game.GetScreen_H() - 70 , 10, 0, 0, 0, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
     
     SetAlive(true);
     
@@ -35,21 +35,23 @@ void Platform::Init() {
 }
 
 void Platform::Update(){
-    GameObject::Update();
-    //Performing boundry checking
-    if( x > g_Game.GetScreen_W() - boundX)
-        x = g_Game.GetScreen_W() - boundX;
-    else if ( x < boundX)
-        x = boundX ;
-    //Updating of animation exists
-    if(animation) animation->Animate();
+    if(isAlive()){
+        GameObject::Update();
+        //Performing boundry checking
+        if( x > g_Game.GetScreen_W() - boundX)
+            x = g_Game.GetScreen_W() - boundX;
+        else if ( x < boundX)
+            x = boundX ;
+        //Updating of animation exists
+        if(animation) animation->Animate();
+    }
 }
 void Platform::Render(){
-    
-    GameObject::Render();
-    //Rendering if animation exists
-    if(animation) animation->Draw(x-boundX, y-boundY);
-    
+    if(isAlive()){
+        GameObject::Render();
+        //Rendering if animation exists
+        if(animation) animation->Draw(x-boundX, y-boundY);
+    }
 }
 
 void Platform::MoveLeft(){
@@ -64,4 +66,4 @@ void Platform::StopMoving(){
 }
 
 
-void Platform::Collided( int objectID){}
+void Platform::Collided( int objectID, col_dir dir){}
