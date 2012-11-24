@@ -16,14 +16,14 @@
 class Ball : public GameObject {
     
 public:
-    Ball();
+    Ball(const char* filename = NULL, int maxFrame = 0, int frameDelay = 0, int frameWidth = 0,
+                    int frameHeight = 0, int animationColumns = 0, int animationDirection = 0 ) ;
     void Destroy();
-    void Init(SDL_Surface* image = NULL);
+    void Init();
     void Render();
     void Update();
     
     void StartFlying();
-    //void KillBall();
     void Collided(int ObjectID);
     
     

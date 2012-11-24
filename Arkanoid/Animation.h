@@ -12,7 +12,9 @@
 #include <iostream>
 #include <SDL/SDL.h>
 
+
 class Animation {
+    
 private:
     int maxFrame;
     int curFrame;
@@ -22,16 +24,17 @@ private:
     int frameHeight;
     int animationColumns;
     int animationDirection;
+    SDL_Rect* clip;
     SDL_Surface* image;
     
     
 public:
-    Animation(SDL_Surface *image) : maxFrame(0), curFrame(0), frameCount(0), frameDelay(0), frameWidth(0),
-    frameHeight(0), animationColumns(0), animationDirection(0), image(NULL){};
+    Animation(const char* filename, int maxFrame, int frameDelay, int frameWidth,
+              int frameHeight, int animationColumns, int animationDirection );
     ~Animation();
-    
+
     void Animate();
-    void Draw(int x, int y);
+    void Draw(float x, float y);
 
 
 };

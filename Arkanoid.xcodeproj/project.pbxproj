@@ -60,6 +60,7 @@
 		1011DC71165AD20D00D93346 /* FpsCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FpsCounter.h; sourceTree = "<group>"; };
 		1011DC73165AD23300D93346 /* Singleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Singleton.cpp; sourceTree = "<group>"; };
 		1011DC74165AD23300D93346 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		103C502F166007F90042BEBD /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		10D4503D165EB639001A13FA /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		10D4503E165EB639001A13FA /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		10DE61DE165D068100D9A1D4 /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 				1011DC55165ACE1700D93346 /* SDL_mixer.framework */,
 				1011DC56165ACE1700D93346 /* SDL_ttf.framework */,
 				1011DC57165ACE1700D93346 /* SDL.framework */,
+				103C502B166007170042BEBD /* data */,
 				1011DC4A165ACDDF00D93346 /* src */,
 				1011DC48165ACDDF00D93346 /* Products */,
 			);
@@ -129,6 +131,32 @@
 			);
 			name = src;
 			path = Arkanoid;
+			sourceTree = "<group>";
+		};
+		103C502B166007170042BEBD /* data */ = {
+			isa = PBXGroup;
+			children = (
+				103C502E1660072D0042BEBD /* sounds */,
+				103C502D166007200042BEBD /* graphics */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		103C502D166007200042BEBD /* graphics */ = {
+			isa = PBXGroup;
+			children = (
+				103C502F166007F90042BEBD /* image.png */,
+			);
+			name = graphics;
+			path = Arkanoid/data/graphics;
+			sourceTree = "<group>";
+		};
+		103C502E1660072D0042BEBD /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = sounds;
+			path = Arkanoid/data/sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

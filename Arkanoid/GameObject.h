@@ -43,11 +43,8 @@ protected:
     
 public:
     
-    
-    GameObject(SDL_Surface *image = NULL ) : x(0), y(0), velX(0), velY(0),
-                dirX(0), dirY(0), boundX(0), boundY(0), alive(false), collidable(true) {
-        animation = new Animation(image);
-    };
+    GameObject(const char* filename = NULL, int maxFrame = 0, int frameDelay = 0, int frameWidth = 0,
+               int frameHeight = 0, int animationColumns = 0, int animationDirection = 0 );
     
     void virtual Destroy();
     
@@ -71,7 +68,7 @@ public:
     void SetAlive(bool alive) {GameObject::alive = alive;}
     
     int isCollidable() { return collidable; }
-    void setCollidavle(bool collidable) {GameObject::collidable = collidable;}
+    void setCollidable(bool collidable) {GameObject::collidable = collidable;}
     
     bool detectCollision(GameObject* otherObject);
     void virtual Collided(int objectID);

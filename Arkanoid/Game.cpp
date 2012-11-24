@@ -7,17 +7,15 @@
 //
 
 #include "Game.h"
-#define SCREEN_WIDTH 800
-#define SCREEN_HEIGHT 640
-#define SCREEN_DEPTH 32
+#include <SDL_image/SDL_image.h>
 
 
 Game::~Game(){
     closeSystems();
     
     delete fps_counter;
-    delete platform;
-    delete ball;
+    platform->Destroy();
+    ball->Destroy();
 }
 
 Game::Game(int argc, char** argv){
@@ -31,11 +29,12 @@ Game::Game(int argc, char** argv){
     
     //just for now
     gameFPS = 60;
+
     
-    platform = new Platform();
+    platform = new Platform("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/graphics/image.png", 0, 1, 64, 14, 1, 1);
     platform->Init();
     
-    ball = new Ball();
+    ball = new Ball("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/graphics/image.png", 0, 1, 64, 14, 1, 1);
     ball->Init();
     
     gobjects.push_back(ball);

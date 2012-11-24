@@ -20,10 +20,11 @@ private:
     int score;
     
 public:
-    Platform();
+    Platform(const char* filename = NULL, int maxFrame = 0, int frameDelay = 0, int frameWidth = 0,
+         int frameHeight = 0, int animationColumns = 0, int animationDirection = 0 ) ;
     void Destroy();
     
-    void Init(SDL_Surface *image = NULL);
+    void Init();
     void Update();
     void Render();
     

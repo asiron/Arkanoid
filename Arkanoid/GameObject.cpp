@@ -8,9 +8,16 @@
 
 #include "GameObject.h"
 
+GameObject::GameObject(const char* filename, int maxFrame, int frameDelay, int frameWidth, int frameHeight, int animationColumns,
+    int animationDirection ): x(0), y(0), velX(0), velY(0),dirX(0), dirY(0), boundX(0), boundY(0), alive(false), collidable(true)
+{
+        if(filename)
+            animation = new Animation(filename, maxFrame, frameDelay, frameWidth, frameHeight, animationColumns, animationDirection);
+}
 
 void GameObject::Destroy() {
-    delete animation;
+    if(animation)
+        delete animation;
 }
 
 void GameObject::Init(float x, float y, float velX, float velY, int dirX, int dirY, float boundX, float boundY){
