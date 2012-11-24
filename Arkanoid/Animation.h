@@ -11,7 +11,7 @@
 
 #include <iostream>
 #include <SDL/SDL.h>
-
+#include "scaler.h"
 
 class Animation {
     
@@ -33,10 +33,12 @@ public:
               int frameHeight, int animationColumns, int animationDirection );
     ~Animation();
 
+    int GetFrameWidth(){ return frameWidth; }
+    int GetFrameHeight(){ return frameHeight; }
     void Animate();
     void Draw(float x, float y);
 
-
+    
 };
 
 #endif /* defined(__Arkanoid__Animation__) */

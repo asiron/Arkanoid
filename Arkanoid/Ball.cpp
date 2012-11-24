@@ -12,32 +12,38 @@ Ball::Ball(const char* filename, int maxFrame, int frameDelay, int frameWidth,
            int frameHeight, int animationColumns, int animationDirection )
             : GameObject(filename, maxFrame, frameDelay, frameWidth, frameHeight, animationColumns, animationDirection)
 {
+    //setting ID and calling superclass constructor
     SetID(BALL);
 }
 
 void Ball::Destroy(){
+    // object destructor calling superclass destructor
     GameObject::Destroy();
 }
 
 void Ball::Init(){
-    int t_dirX = (rand() % 2 +1)*2 -3 ;
-    GameObject::Init(g_Game.GetScreen_W()/2, g_Game.GetScreen_H() - 50.0, rand()%7 +3, rand()%7 +3, t_dirX, -1, 15.0, 15.0);
+    int t_dirX = (rand() % 2 +1)*2 -3 ; //  picking random direction either left or right
+    GameObject::Init(g_Game.GetScreen_W()/2, g_Game.GetScreen_H() - 50.0, rand()%7 + 3,  rand()%7 +  3, t_dirX, -1, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
 }
 
 void Ball::Render(){
+    
+    //if object is alive we draw it 
     if(isAlive()){
         GameObject::Render();
-//        SDL_Rect rect = {(Sint16)(x-boundX),(Sint16)(y-boundY),(Uint16)(2*boundX),(Uint16)(2*boundY)};
-//        SDL_FillRect(g_Game.GetScreen(), &rect, 0xFFFFFF);
-    if(animation) animation->Draw(x,y);
-    
+        
+        //If there is an animation, we draw it so that the centre of it is at (x,y)
+        if(animation) animation->Draw(x-boundX,y-boundY);
     }
 }
 
 
 void Ball::Update(){
+    //if object is alive we update it 
     if(isAlive()){
         GameObject::Update();
+        
+        // we do a boundry checking
         if( x >= g_Game.GetScreen_W() -boundX || x<= boundX)
             dirX *= -1;
         else if( y <= boundY)
@@ -45,9 +51,11 @@ void Ball::Update(){
         else if ( y >= g_Game.GetScreen_H())
             SetAlive(false);
     }
+    // we also update its animation if it exists
     if(animation) animation->Animate();
 }
 void Ball::StartFlying(){
+    // starting the ball, if it's not alive we dont allow for starting it again, until it dies
     if(!isAlive()){
         SetAlive(true);
         Init();
@@ -55,6 +63,8 @@ void Ball::StartFlying(){
 }
 
 void Ball::Collided(int ObjectID){
+    
+    //checking for collision with PLAYER
     if(ObjectID == PLAYER){
         dirY *= -1;
         if(velX <0) --velX; else ++velX;

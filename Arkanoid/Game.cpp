@@ -29,12 +29,12 @@ Game::Game(int argc, char** argv){
     
     //just for now
     gameFPS = 60;
-
+    control_type = KEYBOARD;
     
-    platform = new Platform("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/graphics/image.png", 0, 1, 64, 14, 1, 1);
+    platform = new Platform("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/graphics/platform.png", 0, 1, 64, 16, 1, 1);
     platform->Init();
     
-    ball = new Ball("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/graphics/image.png", 0, 1, 64, 14, 1, 1);
+    ball = new Ball("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/graphics/ball.png", 0, 1, 16, 16, 1, 1);
     ball->Init();
     
     gobjects.push_back(ball);
@@ -46,16 +46,16 @@ Game::Game(int argc, char** argv){
 
 int Game::initSystems(){
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
-		cout << "Problem while initializing SDL" << endl;
+		cerr << "Problem while initializing SDL" << endl;
 		return -1;
 	}
 	screen = SDL_SetVideoMode(screen_w, screen_h, 32, SDL_HWSURFACE);
 	if (TTF_Init() < 0) {
-		cout << "Problem initializing SDL_ttf" << endl;
+		cerr << "Problem initializing SDL_ttf" << endl;
 		return -1;
 	}
 	if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) < 0) {
-		cout << "Problem initializing SDL_mixer" << endl;
+		cerr << "Problem initializing SDL_mixer" << endl;
 		return -1;
 	}
 	return 0;
@@ -95,61 +95,41 @@ int Game::Loop(){
 
 
 void Game::HandleEvents(){
-    
-    bool mouse_motion_flag = false;
+
     
     SDL_Event event;
-    while(SDL_PollEvent(&event)){
+    while(SDL_PollEvent(&event))
         if(event.type == SDL_QUIT)
             ShutDown();
-        if(event.type == SDL_MOUSEMOTION){
-            
-            mouse_motion_flag = true ;
-            if(event.motion.x > platform->GetX())
-                platform->MoveRight();
-            else if (event.motion.x < platform->GetX())
-                platform->MoveLeft();
-            else
-                platform->StopMoving();
-        }
-    }
-    
+
     Uint8* keystates = SDL_GetKeyState(NULL);
     
     if(keystates[SDLK_q])
         ShutDown();
     
-    if(!mouse_motion_flag){
+    if(keystates[SDLK_SPACE])
+        ball->StartFlying();
+    
+    // Movement controls with keyboard
+    if(control_type == KEYBOARD){
         if(keystates[SDLK_LEFT])
             platform->MoveLeft();
         else if(keystates[SDLK_RIGHT])
             platform->MoveRight();
         else
             platform->StopMoving();
+        
+    } else if(control_type == MOUSE){
+        int x; // mouse x coordinate position
+        SDL_GetMouseState(&x, NULL);
+        if(x - 10 > platform->GetX())
+            platform->MoveRight();
+        else if (x + 10 < platform->GetX())
+            platform->MoveLeft();
+        else
+            platform->StopMoving();
     }
-    
-    if(keystates[SDLK_SPACE])
-        ball->StartFlying();
-    
-    
 
-//
-//        if(event.type == SDL_KEYDOWN){
-//            if(event.key.keysym.sym == SDLK_LEFT)
-//                platform->MoveLeft();
-//            if(event.key.keysym.sym == SDLK_RIGHT)
-//                platform->MoveRight();
-//            if(event.key.keysym.sym == SDLK_SPACE)
-//                ball->StartFlying();
-//            if(event.key.keysym.sym == SDLK_q)
-//                ShutDown();
-//                
-//        }else if (event.type == SDL_KEYUP){
-//            if(event.key.keysym.sym == SDLK_LEFT)
-//                platform->StopMoving();
-//            if(event.key.keysym.sym == SDLK_RIGHT)
-//                platform->StopMoving();                
-//        }
 
     }
 

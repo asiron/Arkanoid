@@ -15,7 +15,7 @@ int FpsCounter::measureFPS(){
     int currentTime = SDL_GetTicks();
     
     
-    //Measring time
+    //Measuring time
     if(currentTime - lastTime >= 1000){
         FPS = fps;
         fps = 0;

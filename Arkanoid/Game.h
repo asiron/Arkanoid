@@ -22,6 +22,10 @@
 #include "Ball.h"
 
 #define g_Game Game::GetSingleton()
+#define BASE_SCREEN_X 960
+#define BASE_SCREEN_Y 540
+
+enum control_type{KEYBOARD, MOUSE};
 
 using namespace std;
 
@@ -39,6 +43,7 @@ private:
     bool displayFPS;
     bool musicOn;
     bool sfxOn;
+    enum control_type control_type;
     
     int screen_w;
     int screen_h;

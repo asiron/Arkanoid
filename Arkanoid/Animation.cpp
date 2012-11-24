@@ -8,35 +8,31 @@
 
 #include "Animation.h"
 #include "Game.h"
+#include <SDL/SDL.h>
+
 
 Animation::Animation(const char* filename, int maxFrame, int frameDelay, int frameWidth, int frameHeight, int animationColumns, int animationDirection ){
     
-    Animation::maxFrame = maxFrame;
     Animation::curFrame = 0;
     Animation::frameCount = 0;
+    Animation::maxFrame = maxFrame;
     Animation::frameDelay = frameDelay;
-    Animation::frameWidth = frameWidth;
-    Animation::frameHeight = frameHeight;
     Animation::animationColumns = animationColumns;
     Animation::animationDirection = animationDirection;
-    
-    
-    SDL_Surface *temp = IMG_Load(filename);
-    if(!temp){
-        cerr << "IMG_Load: " << IMG_GetError() << endl ;
-        exit(1);
-    }
-    image = SDL_DisplayFormatAlpha(temp);
-    SDL_FreeSurface(temp);
-    
+ 
+    Animation::frameWidth = g_Game.GetScreen_W() / (float)BASE_SCREEN_X * frameWidth;
+    Animation::frameHeight = g_Game.GetScreen_H() / (float)BASE_SCREEN_Y * frameHeight;
+   
+    image = LoadScaledBitmap(filename, Animation::frameWidth, Animation::frameHeight);
+   
     if(image){
         clip = new SDL_Rect();
         clip->x = 0;
         clip->y = 0;
-        clip->w = frameWidth;
-        clip->h = frameHeight;
+        clip->w = Animation::frameWidth;
+        clip->h = Animation::frameHeight;
     }
-};
+}
 
 Animation::~Animation(){
     if(image){
@@ -67,4 +63,9 @@ void Animation::Animate(){
 void Animation::Draw(float x, float y){
     SDL_Rect offset = {(Sint16)x, (Sint16)y, 0, 0};
     SDL_BlitSurface(image, clip, g_Game.GetScreen(), &offset);
+
 }
+
+
+
+

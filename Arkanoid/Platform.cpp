@@ -13,16 +13,20 @@ Platform::Platform(const char* filename, int maxFrame, int frameDelay, int frame
            int frameHeight, int animationColumns, int animationDirection )
             : GameObject(filename, maxFrame, frameDelay, frameWidth, frameHeight, animationColumns, animationDirection)
 {
+    //setting ID to PLAYER and calling superclass constructor
     SetID(PLAYER);
 }
 
 void Platform::Destroy(){
+    //calling superclass constructor
     GameObject::Destroy();
 }
 
 void Platform::Init() {
     
-    GameObject::Init(g_Game.GetScreen_W()/2.0, g_Game.GetScreen_H() - 20 , 10, 0, 0, 0, 50.0, 15.0);
+    // Initializing ball
+    GameObject::Init(g_Game.GetScreen_W()/2.0, g_Game.GetScreen_H() - 20 , 10, 0, 0, 0, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
+    
     SetAlive(true);
     
     lives = 3;
@@ -32,19 +36,19 @@ void Platform::Init() {
 
 void Platform::Update(){
     GameObject::Update();
+    //Performing boundry checking
     if( x > g_Game.GetScreen_W() - boundX)
         x = g_Game.GetScreen_W() - boundX;
     else if ( x < boundX)
         x = boundX ;
-    
+    //Updating of animation exists
     if(animation) animation->Animate();
 }
 void Platform::Render(){
+    
     GameObject::Render();
-
-//    SDL_Rect rect = {(Sint16)(x-boundX),(Sint16)(y-boundY),(Uint16)(2*boundX),(Uint16)(2*boundY)};
-//    SDL_FillRect(g_Game.GetScreen(), &rect, 0xFFFFFF);
-    if(animation) animation->Draw(x, y);
+    //Rendering if animation exists
+    if(animation) animation->Draw(x-boundX, y-boundY);
     
 }
 

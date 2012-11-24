@@ -21,6 +21,7 @@
 		1011DC6F165AD1DF00D93346 /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC6D165AD1DE00D93346 /* Platform.cpp */; };
 		1011DC72165AD20D00D93346 /* FpsCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC70165AD20D00D93346 /* FpsCounter.cpp */; };
 		1011DC75165AD23300D93346 /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1011DC73165AD23300D93346 /* Singleton.cpp */; };
+		104ED8EB16614BFB008085EC /* scaler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 104ED8EA16614BFB008085EC /* scaler.cpp */; };
 		10D4503F165EB639001A13FA /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10D4503D165EB639001A13FA /* Animation.cpp */; };
 		10DE61E0165D068200D9A1D4 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DE61DE165D068100D9A1D4 /* Ball.cpp */; };
 /* End PBXBuildFile section */
@@ -60,7 +61,10 @@
 		1011DC71165AD20D00D93346 /* FpsCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FpsCounter.h; sourceTree = "<group>"; };
 		1011DC73165AD23300D93346 /* Singleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Singleton.cpp; sourceTree = "<group>"; };
 		1011DC74165AD23300D93346 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
-		103C502F166007F90042BEBD /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		104ED8EA16614BFB008085EC /* scaler.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = scaler.cpp; sourceTree = "<group>"; };
+		104ED8EC16614C22008085EC /* scaler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scaler.h; sourceTree = "<group>"; };
+		104ED8ED1661648B008085EC /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		104ED8EE1661648B008085EC /* platform.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platform.png; sourceTree = "<group>"; };
 		10D4503D165EB639001A13FA /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		10D4503E165EB639001A13FA /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		10DE61DE165D068100D9A1D4 /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				1011DC4B165ACDDF00D93346 /* main.cpp */,
+				104ED8EA16614BFB008085EC /* scaler.cpp */,
+				104ED8EC16614C22008085EC /* scaler.h */,
 				10D4503D165EB639001A13FA /* Animation.cpp */,
 				10D4503E165EB639001A13FA /* Animation.h */,
 				10DE61DE165D068100D9A1D4 /* Ball.cpp */,
@@ -145,7 +151,8 @@
 		103C502D166007200042BEBD /* graphics */ = {
 			isa = PBXGroup;
 			children = (
-				103C502F166007F90042BEBD /* image.png */,
+				104ED8ED1661648B008085EC /* ball.png */,
+				104ED8EE1661648B008085EC /* platform.png */,
 			);
 			name = graphics;
 			path = Arkanoid/data/graphics;
@@ -219,6 +226,7 @@
 				1011DC75165AD23300D93346 /* Singleton.cpp in Sources */,
 				10DE61E0165D068200D9A1D4 /* Ball.cpp in Sources */,
 				10D4503F165EB639001A13FA /* Animation.cpp in Sources */,
+				104ED8EB16614BFB008085EC /* scaler.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +291,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -294,6 +303,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
