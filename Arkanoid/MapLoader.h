@@ -11,22 +11,23 @@
 
 #include <iostream>
 #include <list>
-#include "GameObject.h"
+#include <istream>
+#include <sstream>
+#include "Block.h"
 #include "ConfigFile.h"
+#include "Game.h"
 
 using namespace std;
 
 class MapLoader {
 
 private:
-    
-    const char* filename;
     ConfigFile *configfile;
 public:
-    MapLoader();
+    MapLoader(string filename);
     ~MapLoader();
 
-    list<GameObject*> LoadMap(const char* filename);
+    list<GameObject*> LoadMap(string filename);
     
 };
 

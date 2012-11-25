@@ -51,7 +51,8 @@ private:
     
 public:
     ConfigFile(string filename);
-
+    Value GetValue_at_Key(char key);
+    
 };
 
 

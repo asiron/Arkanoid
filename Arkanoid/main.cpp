@@ -16,6 +16,7 @@
 
 int main(int argc, char** argv)
 {
+    cout << argv[0] << endl;
     srand(SDL_GetTicks()); // Initializing random seed
     Game game(argc, argv); // Creating game
     return game.Loop();    // Starting game

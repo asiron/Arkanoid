@@ -14,11 +14,11 @@ Game::~Game(){
     closeSystems();
     
     delete fps_counter;
-    delete configfile;
+    delete map_loader;
     
-    platform->Destroy();
-    ball->Destroy();
-    block->Destroy();
+    for(list<GameObject*>::iterator iter = gobjects.begin(); iter != gobjects.end(); iter++)
+        (*iter)->Destroy();
+
 }
 
 Game::Game(int argc, char** argv){
@@ -34,21 +34,21 @@ Game::Game(int argc, char** argv){
     gameFPS = 60;
     control_type = KEYBOARD;
     
-    platform = new Platform("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/graphics/platform.png", 0, 1, 64, 16, 1, 1);
+    platform = new Platform("../../Arkanoid/data/graphics/platform.png", 0, 1, 64, 16, 1, 1);
     platform->Init();
     
-    ball = new Ball("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/graphics/ball.png", 0, 1, 16, 16, 1, 1);
+    ball = new Ball("../../Arkanoid/data/graphics/ball.png", 0, 1, 16, 16, 1, 1);
     ball->Init();
     
-    block = new Block("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/graphics/block2.png", 7, 4, 48, 24, 4, 1);
-    block->Init();
-    
-    gobjects.push_back(ball);
+
     gobjects.push_back(platform);
-    gobjects.push_back(block);
+    gobjects.push_back(ball);
     
     fps_counter = new FpsCounter(gameFPS);
-    configfile = new ConfigFile("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/config.cfg");
+    map_loader = new MapLoader("../../Arkanoid/data/config");
+    
+    gobjects.splice(gobjects.end(), map_loader->LoadMap("../../Arkanoid/data/map.cfg"));
+    
     
 }
 

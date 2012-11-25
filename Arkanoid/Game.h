@@ -23,6 +23,7 @@
 #include "Ball.h"
 #include "Block.h"
 #include "ConfigFile.h"
+#include "MapLoader.h"
 
 #define g_Game Game::GetSingleton()
 #define BASE_SCREEN_X 960
@@ -35,6 +36,7 @@ using namespace std;
 class Platform;
 class Ball;
 class Block;
+class MapLoader;
 
 class Game : public Singleton<Game> {
     
@@ -59,7 +61,7 @@ private:
     Ball* ball;
     Platform* platform ;
     FpsCounter* fps_counter;
-    ConfigFile* configfile;
+    MapLoader* map_loader;
     
     SDL_Surface *screen;
     Mix_Chunk *sound;

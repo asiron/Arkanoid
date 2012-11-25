@@ -23,12 +23,12 @@ public:
          int frameHeight = 0, int animationColumns = 0, int animationDirection = 0 ) ;
     
     void Destroy();
-    void Init();
+    void Init(float x, float y, int speed, int dirX, int health);
     void Render();
     void Update();
     
     //respond to collision function
-    void Collided(int ObjectID);
+    void Collided(int ObjectID, col_dir dir);
 
 };
 

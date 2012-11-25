@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/main.cpp"
-         timestampString = "375197625.09606"
+         timestampString = "375540986.890133"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "22"
-         endingLineNumber = "22"
+         startingLineNumber = "23"
+         endingLineNumber = "23"
          landmarkName = "main(int argc, char** argv)"
          landmarkType = "7">
       </FileBreakpoint>
@@ -21,7 +21,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375507150.020766"
+         timestampString = "375543113.042687"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "56"
@@ -34,7 +34,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375507150.020766"
+         timestampString = "375543113.042687"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "60"
@@ -47,7 +47,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375507150.020766"
+         timestampString = "375543113.042687"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "65"
@@ -60,7 +60,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375507150.020766"
+         timestampString = "375543113.042687"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "64"
@@ -73,7 +73,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375507150.020766"
+         timestampString = "375543113.042687"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "68"
@@ -86,7 +86,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375507150.020766"
+         timestampString = "375543113.042687"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "69"
@@ -112,7 +112,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375507150.020766"
+         timestampString = "375543113.042687"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "82"
@@ -123,7 +123,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375507150.020766"
+         timestampString = "375543113.042687"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "66"
@@ -136,7 +136,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375507150.020766"
+         timestampString = "375543113.042687"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "105"
@@ -147,7 +147,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375507150.020766"
+         timestampString = "375543113.042687"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "106"
@@ -232,202 +232,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "96"
-         endingLineNumber = "96"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "86"
-         endingLineNumber = "86"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "87"
-         endingLineNumber = "87"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "89"
-         endingLineNumber = "89"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "93"
-         endingLineNumber = "93"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "95"
-         endingLineNumber = "95"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "97"
-         endingLineNumber = "97"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "92"
-         endingLineNumber = "92"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "90"
-         endingLineNumber = "90"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "94"
-         endingLineNumber = "94"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "98"
-         endingLineNumber = "98"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "100"
-         endingLineNumber = "100"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "99"
-         endingLineNumber = "99"
-         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
+         timestampString = "375540742.301408"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "101"
@@ -440,11 +245,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
+         timestampString = "375540742.301408"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "103"
-         endingLineNumber = "103"
+         startingLineNumber = "91"
+         endingLineNumber = "91"
          landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -453,11 +258,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
+         timestampString = "375540742.301408"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "104"
-         endingLineNumber = "104"
+         startingLineNumber = "92"
+         endingLineNumber = "92"
          landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -466,7 +271,72 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "93"
+         endingLineNumber = "93"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "94"
+         endingLineNumber = "94"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "96"
+         endingLineNumber = "96"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "98"
+         endingLineNumber = "98"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "100"
+         endingLineNumber = "100"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "102"
@@ -479,7 +349,59 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510113.056429"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "97"
+         endingLineNumber = "97"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "95"
+         endingLineNumber = "95"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "99"
+         endingLineNumber = "99"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "103"
+         endingLineNumber = "103"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "105"
@@ -491,8 +413,86 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "104"
+         endingLineNumber = "104"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "106"
+         endingLineNumber = "106"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "108"
+         endingLineNumber = "108"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "109"
+         endingLineNumber = "109"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "107"
+         endingLineNumber = "107"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/ConfigFile.cpp"
+         timestampString = "375540742.301408"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "110"
+         endingLineNumber = "110"
+         landmarkName = "ConfigFile::ExtractValue(Value &amp;value, string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375510068.624804"
+         timestampString = "375543113.042687"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "52"
@@ -505,11 +505,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510236.570784"
+         timestampString = "375540742.301408"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "143"
-         endingLineNumber = "143"
+         startingLineNumber = "148"
+         endingLineNumber = "148"
          landmarkName = "ConfigFile::Parse()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -518,11 +518,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510419.645405"
+         timestampString = "375540742.301408"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "115"
-         endingLineNumber = "115"
+         startingLineNumber = "120"
+         endingLineNumber = "120"
          landmarkName = "ConfigFile::ExtractContents(string &amp;line, size_t line_number)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -531,11 +531,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510512.840386"
+         timestampString = "375540742.301408"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "132"
-         endingLineNumber = "132"
+         startingLineNumber = "137"
+         endingLineNumber = "137"
          landmarkName = "ConfigFile::Parse()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -544,11 +544,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510542.234532"
+         timestampString = "375540742.301408"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "135"
-         endingLineNumber = "135"
+         startingLineNumber = "140"
+         endingLineNumber = "140"
          landmarkName = "ConfigFile::Parse()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -557,11 +557,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/ConfigFile.cpp"
-         timestampString = "375510558.461214"
+         timestampString = "375540742.301408"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "138"
-         endingLineNumber = "138"
+         startingLineNumber = "143"
+         endingLineNumber = "143"
          landmarkName = "ConfigFile::Parse()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -589,6 +589,58 @@
          startingLineNumber = "65"
          endingLineNumber = "65"
          landmarkName = "ConfigFile::IsValidLine(string &amp;line)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/MapLoader.cpp"
+         timestampString = "375537893.815776"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "11"
+         endingLineNumber = "11"
+         landmarkName = "MapLoader::MapLoader(string filename)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/MapLoader.cpp"
+         timestampString = "375538267.394937"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "26"
+         endingLineNumber = "26"
+         landmarkName = "MapLoader::LoadMap(string filename)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/MapLoader.cpp"
+         timestampString = "375543507.637272"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
+         landmarkName = "MapLoader::LoadMap(string filename)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/MapLoader.cpp"
+         timestampString = "375543600.580608"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "46"
+         endingLineNumber = "46"
+         landmarkName = "MapLoader::LoadMap(string filename)"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

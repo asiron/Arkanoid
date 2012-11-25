@@ -74,6 +74,11 @@ bool ConfigFile::KeyExists(char key) const{
     return content.find(key) != content.end();
 }
 
+Value ConfigFile::GetValue_at_Key(char key){
+    return content.find(key)->second;
+}
+
+
 void ConfigFile::ExtractKey(char &key, string &line) const{
     key = line[0];
     line.erase(0,2);

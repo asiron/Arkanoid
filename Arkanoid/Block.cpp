@@ -23,13 +23,13 @@ void Block::Destroy(){
     GameObject::Destroy();
 }
 
-void Block::Init() {
+void Block::Init(float x, float y, int speed, int dirX, int health){
     
     // Initializing block
-    GameObject::Init(g_Game.GetScreen_W()/2.0, g_Game.GetScreen_H()/2.0 , 10, 0, 1, 0, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
+    GameObject::Init(x, y , speed, 0, dirX, 0, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
     
     SetAlive(true);
-    health = 2;
+    Block::health = health;
 
 }
 
@@ -52,9 +52,9 @@ void Block::Render(){
 }
 
 
-void Block::Collided( int objectID)
+void Block::Collided( int objectID, col_dir dir)
 {
-    if(objectID == BALL){
+    if(objectID == BALL && dir != NO_COLLISION){
         if(!--health)
             SetAlive(false);
     }
