@@ -12,32 +12,44 @@ using namespace std;
 
 SDL_Surface* LoadScaledBitmap(const char* filename, int width, int height){
     
+    // load image to temp file
     SDL_Surface *temp = IMG_Load(filename);
     if(!temp){
         cerr << "IMG_Load: " << IMG_GetError() << endl ;
         exit(1);
     }
-    
+    // apply alpha channel
     SDL_Surface* temp2 = SDL_DisplayFormatAlpha(temp);
+    
+    //scale bitmap
     SDL_Surface* image = ScaleSurface(temp2, width, height);
     
+    // delete junk
     SDL_FreeSurface(temp);
     SDL_FreeSurface(temp2);
     
+    //returning pointer to scaled bitmap
     return image;
 }
 
-SDL_Surface *ScaleSurface(SDL_Surface *Surface, Uint16 Width, Uint16 Height)
+
+
+SDL_Surface *ScaleSurface(SDL_Surface *Surface, Uint16 Width, Uint16 Height)  // doesnt delete source bitmap, but we deal with it in LoadScaledBitmap
 {
+    // if source is null pointer or height/width is not specified then return NULL
     if(!Surface || !Width || !Height)
         return NULL;
     
+    // create bitmap for a scaled bitmap
     SDL_Surface *_ret = SDL_CreateRGBSurface(Surface->flags, Width, Height, Surface->format->BitsPerPixel,
                                              Surface->format->Rmask, Surface->format->Gmask, Surface->format->Bmask, Surface->format->Amask);
     
+    // calculate stretching factor for x  and y
     double _stretch_factor_x = (static_cast<double>(Width)  / static_cast<double>(Surface->w)),
     _stretch_factor_y = (static_cast<double>(Height) / static_cast<double>(Surface->h));
     
+    
+    // perform scaling for every pixel of source map
     for(Sint32 y = 0; y < Surface->h; y++)
         for(Sint32 x = 0; x < Surface->w; x++)
             for(Sint32 o_y = 0; o_y < _stretch_factor_y; ++o_y)
@@ -45,8 +57,13 @@ SDL_Surface *ScaleSurface(SDL_Surface *Surface, Uint16 Width, Uint16 Height)
                     putpixel(_ret, static_cast<Sint32>(_stretch_factor_x * x) + o_x,
                              static_cast<Sint32>(_stretch_factor_y * y) + o_y, getpixel(Surface, x, y));
     
+    //return scaled bitmap
     return _ret;
 }
+
+
+// Functions taken from SDL site
+///////////////////////////////////////////////
 
 Uint32 getpixel(SDL_Surface *surface, int x, int y)
 {

@@ -23,7 +23,7 @@ void Ball::Destroy(){
 
 void Ball::Init(){
     int t_dirX = (rand() % 2 +1)*2 -3 ; //  picking random direction either left or right
-    GameObject::Init(g_Game.GetScreen_W()/2, g_Game.GetScreen_H() - 50.0, rand()%7 + 3,  rand()%7 +  3, t_dirX, -1, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
+    GameObject::Init(g_Game.GetScreen_W()/2, g_Game.GetScreen_H() - 15, rand()%7 + 3,  rand()%7 +  3, t_dirX, -1, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
 }
 
 void Ball::Render(){

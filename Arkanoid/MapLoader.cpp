@@ -47,6 +47,12 @@ list<GameObject*> MapLoader::LoadMap(string filename){
     // iterating through lines of map file
     while(getline(file, line)){
         
+        // if line is empty then we continue
+        if(!line.length()){
+            posY += g_Game.GetScreen_H()/20;
+            continue;
+        }
+        
         // setting x-coordinate starting position
         float posX = 0;
         
@@ -54,7 +60,7 @@ list<GameObject*> MapLoader::LoadMap(string filename){
         for(int i=0; i<20; i++){
             
             //if we have an empty symbol we continue in a row and move posX
-            if(line[i] == ' ' || !line[i]){
+            if(line[i] == ' '){
                 posX += g_Game.GetScreen_W()/20;
                 continue;
             }

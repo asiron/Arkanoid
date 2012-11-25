@@ -29,17 +29,20 @@ private:
     
     
 public:
-    Animation(const char* filename, int maxFrame, int frameDelay, int frameWidth,
+    Animation(const char* filename, int maxFrame, int frameDelay, int frameWidth,     /* Requires a valid path to an existing image */
               int frameHeight, int animationColumns, int animationDirection );
-    Animation(SDL_Surface *image, int maxFrame, int frameDelay, int frameWidth,
+    Animation(SDL_Surface *image, int maxFrame, int frameDelay, int frameWidth,       /* Requires an already scaled bitmap, used in MapLoader */ 
               int frameHeight, int animationColumns, int animationDirection );
     
     ~Animation();
 
-    int GetFrameWidth(){ return frameWidth; }
-    int GetFrameHeight(){ return frameHeight; }
-    void Animate();
-    void Draw(float x, float y);
+    bool IsAutoAnimation();                                                           // helper for blocks that have animation based on health
+    void SetFrame(int curFrame) { Animation::curFrame = curFrame ;}                   // curFrame setter for special cases
+    
+    int GetFrameWidth() const { return frameWidth; }
+    int GetFrameHeight() const { return frameHeight; }
+    void Animate();                                                                   // Updating sprite
+    void Draw(float x, float y) const ;                                               // Drawing animation at (x,y)
 
     
 };

@@ -12,7 +12,7 @@
 
 Block::Block(const char* filename, int maxFrame, int frameDelay, int frameWidth,
                    int frameHeight, int animationColumns, int animationDirection )
-: GameObject(filename, maxFrame, frameDelay, frameWidth, frameHeight, animationColumns, animationDirection)
+: GameObject(filename, maxFrame, frameDelay, frameWidth, frameHeight, animationColumns, animationDirection), health(0), maxhealth(0)
 {
     //setting ID to PLAYER and calling superclass constructor
     SetID(BLOCK);
@@ -21,7 +21,7 @@ Block::Block(const char* filename, int maxFrame, int frameDelay, int frameWidth,
 
 Block::Block(SDL_Surface* image, int maxFrame, int frameDelay, int frameWidth,
              int frameHeight, int animationColumns, int animationDirection)
-: GameObject(image, maxFrame, frameDelay, frameWidth, frameHeight, animationColumns, animationDirection)
+: GameObject(image, maxFrame, frameDelay, frameWidth, frameHeight, animationColumns, animationDirection), health(0), maxhealth(0)
 {
     //setting ID to PLAYER and calling superclass constructor
     SetID(BLOCK);
@@ -39,6 +39,7 @@ void Block::Init(float x, float y, int speed, int dirX, int health){
     
     SetAlive(true);
     Block::health = health;
+    Block::maxhealth = health;
 
 }
 
@@ -69,6 +70,9 @@ void Block::Collided( int objectID, col_dir dir)
     if(objectID == BALL){
         if(!--health)
             SetAlive(false);
+        else if (animation->IsAutoAnimation())
+            animation->SetFrame(maxhealth - health);
+        
     } else if (objectID == BLOCK ){
         if(dir == LEFT)
             dirX = -1;

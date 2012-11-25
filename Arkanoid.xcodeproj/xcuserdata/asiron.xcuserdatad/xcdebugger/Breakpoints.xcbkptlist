@@ -136,22 +136,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375543113.042687"
+         timestampString = "375556676.03024"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "105"
-         endingLineNumber = "105">
+         startingLineNumber = "104"
+         endingLineNumber = "104">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375543113.042687"
+         timestampString = "375556676.03024"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "106"
-         endingLineNumber = "106">
+         startingLineNumber = "105"
+         endingLineNumber = "105">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -622,11 +622,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MapLoader.cpp"
-         timestampString = "375555815.234926"
+         timestampString = "375564125.251684"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "65"
-         endingLineNumber = "65"
+         startingLineNumber = "71"
+         endingLineNumber = "71"
          landmarkName = "MapLoader::LoadMap(string filename)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -635,11 +635,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MapLoader.cpp"
-         timestampString = "375555815.234926"
+         timestampString = "375564125.251684"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "68"
-         endingLineNumber = "68"
+         startingLineNumber = "74"
+         endingLineNumber = "74"
          landmarkName = "MapLoader::LoadMap(string filename)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -685,11 +685,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MapLoader.cpp"
-         timestampString = "375555815.234926"
+         timestampString = "375564125.251684"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "81"
-         endingLineNumber = "81"
+         startingLineNumber = "87"
+         endingLineNumber = "87"
          landmarkName = "MapLoader::LoadMap(string filename)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -698,11 +698,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MapLoader.cpp"
-         timestampString = "375555815.234926"
+         timestampString = "375564125.251684"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "97"
-         endingLineNumber = "97"
+         startingLineNumber = "103"
+         endingLineNumber = "103"
          landmarkName = "MapLoader::LoadBitmaps()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -711,11 +711,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MapLoader.cpp"
-         timestampString = "375555815.234926"
+         timestampString = "375564125.251684"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "98"
-         endingLineNumber = "98"
+         startingLineNumber = "104"
+         endingLineNumber = "104"
          landmarkName = "MapLoader::LoadBitmaps()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -724,11 +724,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MapLoader.cpp"
-         timestampString = "375555815.234926"
+         timestampString = "375564125.251684"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "100"
-         endingLineNumber = "100"
+         startingLineNumber = "106"
+         endingLineNumber = "106"
          landmarkName = "MapLoader::LoadBitmaps()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -743,6 +743,71 @@
          startingLineNumber = "45"
          endingLineNumber = "45"
          landmarkName = "MapLoader::LoadMap(string filename)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Block.cpp"
+         timestampString = "375562691.282157"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "72"
+         endingLineNumber = "72"
+         landmarkName = "Block::Collided( int objectID, col_dir dir)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Block.cpp"
+         timestampString = "375562691.282157"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "73"
+         endingLineNumber = "73"
+         landmarkName = "Block::Collided( int objectID, col_dir dir)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Block.cpp"
+         timestampString = "375562328.066135"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
+         landmarkName = "Block::Init(float x, float y, int speed, int dirX, int health)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Block.cpp"
+         timestampString = "375562328.908618"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "42"
+         endingLineNumber = "42"
+         landmarkName = "Block::Init(float x, float y, int speed, int dirX, int health)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Block.cpp"
+         timestampString = "375562334.754256"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "40"
+         endingLineNumber = "40"
+         landmarkName = "Block::Init(float x, float y, int speed, int dirX, int health)"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

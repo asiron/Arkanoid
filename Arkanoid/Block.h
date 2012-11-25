@@ -18,6 +18,7 @@ class Block : public GameObject {
 
 private:
     int health;
+    int maxhealth;
     
 public:
     Block(const char* filename = NULL, int maxFrame = 0, int frameDelay = 0, int frameWidth = 0,
