@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <list>
+#include <string>
 #include <SDL/SDL.h>
 #include <SDL_ttf/SDL_ttf.h>
 #include <SDL_mixer/SDL_mixer.h>
@@ -21,6 +22,7 @@
 #include "Platform.h"
 #include "Ball.h"
 #include "Block.h"
+#include "ConfigFile.h"
 
 #define g_Game Game::GetSingleton()
 #define BASE_SCREEN_X 960
@@ -57,6 +59,7 @@ private:
     Ball* ball;
     Platform* platform ;
     FpsCounter* fps_counter;
+    ConfigFile* configfile;
     
     SDL_Surface *screen;
     Mix_Chunk *sound;

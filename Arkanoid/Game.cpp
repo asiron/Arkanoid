@@ -14,6 +14,8 @@ Game::~Game(){
     closeSystems();
     
     delete fps_counter;
+    delete configfile;
+    
     platform->Destroy();
     ball->Destroy();
     block->Destroy();
@@ -38,7 +40,7 @@ Game::Game(int argc, char** argv){
     ball = new Ball("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/graphics/ball.png", 0, 1, 16, 16, 1, 1);
     ball->Init();
     
-    block = new Block("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/graphics/block.png", 0, 1, 32, 16, 1, 1);
+    block = new Block("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/graphics/block2.png", 7, 4, 48, 24, 4, 1);
     block->Init();
     
     gobjects.push_back(ball);
@@ -46,6 +48,8 @@ Game::Game(int argc, char** argv){
     gobjects.push_back(block);
     
     fps_counter = new FpsCounter(gameFPS);
+    configfile = new ConfigFile("/Users/asiron/Dropbox/Studies/Programowanie Obiektowe/Arkanoid/Arkanoid/data/config.cfg");
+    
 }
 
 int Game::initSystems(){

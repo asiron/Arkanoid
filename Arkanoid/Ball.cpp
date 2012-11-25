@@ -65,7 +65,7 @@ void Ball::StartFlying(){
 }
 
 void Ball::Collided(int ObjectID, col_dir dir){
-    if(!dir)
+    if(dir == NO_COLLISION)
         return;
     
     //checking for collision with PLAYER

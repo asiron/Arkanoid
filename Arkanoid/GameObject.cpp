@@ -43,7 +43,7 @@ void GameObject::Update(){
 }
 
 // Every object is rendered in different way, 
-void GameObject::Render(){}
+void GameObject::Render() {}
 
 // Collision detection function for every object
 col_dir GameObject::detectCollision(GameObject* otherObject){

@@ -25,6 +25,8 @@
 		104ED8F1166167A4008085EC /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 104ED8EF166167A4008085EC /* Block.cpp */; };
 		10D4503F165EB639001A13FA /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10D4503D165EB639001A13FA /* Animation.cpp */; };
 		10DE61E0165D068200D9A1D4 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DE61DE165D068100D9A1D4 /* Ball.cpp */; };
+		10F8D47216619BAB005FEE53 /* MapLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10F8D47016619BAB005FEE53 /* MapLoader.cpp */; };
+		10F8D4761661A0DB005FEE53 /* ConfigFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10F8D4741661A0DA005FEE53 /* ConfigFile.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,6 +75,10 @@
 		10D4503E165EB639001A13FA /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		10DE61DE165D068100D9A1D4 /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
 		10DE61DF165D068200D9A1D4 /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
+		10F8D47016619BAB005FEE53 /* MapLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapLoader.cpp; sourceTree = "<group>"; };
+		10F8D47116619BAB005FEE53 /* MapLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLoader.h; sourceTree = "<group>"; };
+		10F8D4741661A0DA005FEE53 /* ConfigFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigFile.cpp; sourceTree = "<group>"; };
+		10F8D4751661A0DA005FEE53 /* ConfigFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigFile.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,10 @@
 				1011DC74165AD23300D93346 /* Singleton.h */,
 				104ED8EF166167A4008085EC /* Block.cpp */,
 				104ED8F0166167A4008085EC /* Block.h */,
+				10F8D47016619BAB005FEE53 /* MapLoader.cpp */,
+				10F8D47116619BAB005FEE53 /* MapLoader.h */,
+				10F8D4741661A0DA005FEE53 /* ConfigFile.cpp */,
+				10F8D4751661A0DA005FEE53 /* ConfigFile.h */,
 			);
 			name = src;
 			path = Arkanoid;
@@ -235,6 +245,8 @@
 				10D4503F165EB639001A13FA /* Animation.cpp in Sources */,
 				104ED8EB16614BFB008085EC /* scaler.cpp in Sources */,
 				104ED8F1166167A4008085EC /* Block.cpp in Sources */,
+				10F8D47216619BAB005FEE53 /* MapLoader.cpp in Sources */,
+				10F8D4761661A0DB005FEE53 /* ConfigFile.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

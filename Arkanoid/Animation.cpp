@@ -23,7 +23,7 @@ Animation::Animation(const char* filename, int maxFrame, int frameDelay, int fra
     Animation::frameWidth = g_Game.GetScreen_W() / (float)BASE_SCREEN_X * frameWidth;
     Animation::frameHeight = g_Game.GetScreen_H() / (float)BASE_SCREEN_Y * frameHeight;
    
-    image = LoadScaledBitmap(filename, Animation::frameWidth, Animation::frameHeight);
+    image = LoadScaledBitmap(filename, Animation::frameWidth*animationColumns, Animation::frameHeight*(maxFrame+1)/animationColumns);
    
     if(image){
         clip = new SDL_Rect();
