@@ -13,6 +13,8 @@
 #include <list>
 #include <istream>
 #include <sstream>
+#include <map>
+#include "scaler.h"
 #include "Block.h"
 #include "ConfigFile.h"
 #include "Game.h"
@@ -23,12 +25,17 @@ class MapLoader {
 
 private:
     ConfigFile *configfile;
+    map<char, SDL_Surface*> bitmaps;
+    
+    void LoadBitmaps();
+    void UnloadBitmaps();
+    
 public:
     MapLoader(string filename);
     ~MapLoader();
 
     list<GameObject*> LoadMap(string filename);
-    
+
 };
 
 #endif /* defined(__Arkanoid__MapLoader__) */

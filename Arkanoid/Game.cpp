@@ -95,7 +95,6 @@ int Game::Loop(){
                 (*iter)->Render();
             }
             
-            
             SDL_Flip(screen);
         }
     }

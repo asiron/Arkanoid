@@ -16,6 +16,14 @@ GameObject::GameObject(const char* filename, int maxFrame, int frameDelay, int f
             animation = new Animation(filename, maxFrame, frameDelay, frameWidth, frameHeight, animationColumns, animationDirection);
 }
 
+GameObject::GameObject(SDL_Surface* image, int maxFrame, int frameDelay, int frameWidth, int frameHeight, int animationColumns,
+                       int animationDirection ): x(0), y(0), velX(0), velY(0),dirX(0), dirY(0), boundX(0), boundY(0), alive(false), collidable(true)
+{
+    //creating Animation object if we have provided a filename
+    if(image)
+        animation = new Animation(image, maxFrame, frameDelay, frameWidth, frameHeight, animationColumns, animationDirection);
+}
+
 void GameObject::Destroy() {
     //Destorying GameObject
     if(animation)

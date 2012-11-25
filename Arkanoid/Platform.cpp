@@ -18,7 +18,7 @@ Platform::Platform(const char* filename, int maxFrame, int frameDelay, int frame
 }
 
 void Platform::Destroy(){
-    //calling superclass constructor
+    //calling superclass destructor
     GameObject::Destroy();
 }
 

@@ -34,9 +34,31 @@ Animation::Animation(const char* filename, int maxFrame, int frameDelay, int fra
     }
 }
 
+Animation::Animation(SDL_Surface* image, int maxFrame, int frameDelay, int frameWidth, int frameHeight, int animationColumns, int animationDirection ){
+
+    Animation::curFrame = 0;
+    Animation::frameCount = 0;
+    Animation::maxFrame = maxFrame;
+    Animation::frameDelay = frameDelay;
+    Animation::animationColumns = animationColumns;
+    Animation::animationDirection = animationDirection;
+    
+    Animation::frameWidth = g_Game.GetScreen_W() / (float)BASE_SCREEN_X * frameWidth;
+    Animation::frameHeight = g_Game.GetScreen_H() / (float)BASE_SCREEN_Y * frameHeight;
+    
+    Animation::image = image;
+    
+    if(image){
+        clip = new SDL_Rect();
+        clip->x = 0;
+        clip->y = 0;
+        clip->w = Animation::frameWidth;
+        clip->h = Animation::frameHeight;
+    }
+}
+
 Animation::~Animation(){
     if(image){
-        SDL_FreeSurface(image);
         delete clip;
     }
 }

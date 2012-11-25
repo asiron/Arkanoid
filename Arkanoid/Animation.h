@@ -31,6 +31,9 @@ private:
 public:
     Animation(const char* filename, int maxFrame, int frameDelay, int frameWidth,
               int frameHeight, int animationColumns, int animationDirection );
+    Animation(SDL_Surface *image, int maxFrame, int frameDelay, int frameWidth,
+              int frameHeight, int animationColumns, int animationDirection );
+    
     ~Animation();
 
     int GetFrameWidth(){ return frameWidth; }

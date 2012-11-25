@@ -52,6 +52,8 @@ private:
 public:
     ConfigFile(string filename);
     Value GetValue_at_Key(char key);
+    map<char, Value>::iterator map_begin(){ return content.begin(); }
+    map<char, Value>::iterator map_end(){ return content.end(); }
     
 };
 

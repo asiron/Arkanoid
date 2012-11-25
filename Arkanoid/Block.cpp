@@ -18,8 +18,17 @@ Block::Block(const char* filename, int maxFrame, int frameDelay, int frameWidth,
     SetID(BLOCK);
 }
 
+
+Block::Block(SDL_Surface* image, int maxFrame, int frameDelay, int frameWidth,
+             int frameHeight, int animationColumns, int animationDirection)
+: GameObject(image, maxFrame, frameDelay, frameWidth, frameHeight, animationColumns, animationDirection)
+{
+    //setting ID to PLAYER and calling superclass constructor
+    SetID(BLOCK);
+}
+
 void Block::Destroy(){
-    //calling superclass constructor
+    //calling superclass destructor
     GameObject::Destroy();
 }
 
@@ -54,8 +63,17 @@ void Block::Render(){
 
 void Block::Collided( int objectID, col_dir dir)
 {
-    if(objectID == BALL && dir != NO_COLLISION){
+    if(dir == NO_COLLISION)
+        return;
+    
+    if(objectID == BALL){
         if(!--health)
             SetAlive(false);
+    } else if (objectID == BLOCK ){
+        if(dir == LEFT)
+            dirX = -1;
+        else if (dir == RIGHT)
+            dirX = 1;
     }
+    
 }
