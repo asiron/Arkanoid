@@ -58,13 +58,7 @@ private:
     int screen_h;
     int gameFPS;
     
-    list<GameObject*> gobjects;
-    
-    Block* block;
-    Ball* ball;
-    Platform* platform;
-    Effect* effect;
-    Effect* effect2;
+
     
     FpsCounter* fps_counter;
     MapLoader* map_loader;
