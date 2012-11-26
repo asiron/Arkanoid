@@ -25,7 +25,7 @@ void Platform::Destroy(){
 void Platform::Init() {
     
     // Initializing ball
-    GameObject::Init(g_Game.GetScreen_W()/2.0, g_Game.GetScreen_H() - 10 , 10, 0, 0, 0, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
+    GameObject::Init(g_Game.GetScreen_W()/2.0, g_Game.GetScreen_H() - 10 , 15, 0, 0, 0, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
     
     SetAlive(true);
     

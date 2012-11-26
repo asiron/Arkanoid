@@ -67,13 +67,11 @@ void Animation::Animate(){
     if(++frameCount > frameDelay){
         curFrame += animationDirection;
         
-        if(curFrame >= maxFrame){
-            animationDirection *= -1;
-            curFrame = maxFrame;    
-        }
-        if(curFrame <= 0 ){
-            animationDirection *= -1;
+        if(curFrame > maxFrame){
             curFrame = 0;
+        }
+        if(curFrame < 0 ){
+            curFrame = maxFrame;
         }
         frameCount = 0;
         
@@ -87,7 +85,7 @@ void Animation::Draw(float x, float y) const {
     SDL_BlitSurface(image, clip, g_Game.GetScreen(), &offset);
 }
 
-bool Animation::IsAutoAnimation(){                                                           
+bool Animation::IsAutoAnimation(){                                                           // helper for blocks that have animation based on health
     if ( !animationDirection)
         return true ;
     else

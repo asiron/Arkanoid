@@ -22,6 +22,8 @@
 #include "Platform.h"
 #include "Ball.h"
 #include "Block.h"
+#include "Effect.h"
+#include "Projectile.h"
 #include "ConfigFile.h"
 #include "MapLoader.h"
 
@@ -36,6 +38,7 @@ using namespace std;
 class Platform;
 class Ball;
 class Block;
+class Effect;
 class MapLoader;
 
 class Game : public Singleton<Game> {
@@ -59,7 +62,10 @@ private:
     
     Block* block;
     Ball* ball;
-    Platform* platform ;
+    Platform* platform;
+    Effect* effect;
+    Effect* effect2;
+    
     FpsCounter* fps_counter;
     MapLoader* map_loader;
     
@@ -92,6 +98,6 @@ public:
     void switchSfx() { sfxOn = !sfxOn; }
     
     SDL_Surface* GetScreen() {return screen;}
-    
+    Platform* GetPlatform() {return platform;}
 };
 #endif /* defined(__Arkanoid__Game__) */

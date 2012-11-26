@@ -23,7 +23,7 @@ void Ball::Destroy(){
 
 void Ball::Init(){
     int t_dirX = (rand() % 2 +1)*2 -3 ; //  picking random direction either left or right
-    GameObject::Init(g_Game.GetScreen_W()/2, g_Game.GetScreen_H() - 15, rand()%7 + 3,  rand()%7 +  3, t_dirX, -1, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
+    GameObject::Init(g_Game.GetPlatform()->GetX(), g_Game.GetPlatform()->GetY() - animation->GetFrameHeight()/2, rand()%7 + 3,  rand()%7 +  3, t_dirX, -1, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
 }
 
 void Ball::Render(){
@@ -90,8 +90,8 @@ void Ball::Collided(int ObjectID, col_dir dir){
                 break;
  
         }
-        if(velX <0) --velX; else ++velX;
-        if(velY <0) --velY; else ++velY;
+        if(velX <0) velX -= .2; else velX += .2;
+        if(velY <0) velY -= .2; else velY += .2;
     } else if(ObjectID == BLOCK){
         switch(dir){
             case LEFT:

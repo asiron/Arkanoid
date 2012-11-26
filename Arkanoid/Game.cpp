@@ -40,7 +40,14 @@ Game::Game(int argc, char** argv){
     ball = new Ball("../../Arkanoid/data/graphics/ball.png", 0, 1, 16, 16, 1, 1);
     ball->Init();
     
-
+    effect = new Effect("../../Arkanoid/data/graphics/effect.png", 23, 4, 16, 14, 24, 1);
+    effect->Init(400, 300, 1);
+    
+    effect2 = new Effect("../../Arkanoid/data/graphics/effect2.png", 10, 7, 34, 29, 11, 1);
+    effect2->Init(300, 300, 1);
+    
+    gobjects.push_back(effect2);
+    gobjects.push_back(effect);
     gobjects.push_back(platform);
     gobjects.push_back(ball);
     
@@ -137,9 +144,7 @@ void Game::HandleEvents(){
         else
             platform->StopMoving();
     }
-
-
-    }
+}
 
 
 
