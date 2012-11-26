@@ -21,9 +21,16 @@ void Ball::Destroy(){
     GameObject::Destroy();
 }
 
+
 void Ball::Init(){
+    
+    int posX = dynamic_cast<PlayingState*>(g_GamePtr->GetState())->GetPlatform()->GetX();
+    int posY = dynamic_cast<PlayingState*>(g_GamePtr->GetState())->GetPlatform()->GetY();
+    
     int t_dirX = (rand() % 2 +1)*2 -3 ; //  picking random direction either left or right
-    GameObject::Init(g_Game.GetPlatform()->GetX(), g_Game.GetPlatform()->GetY() - animation->GetFrameHeight()/2, rand()%7 + 3,  rand()%7 +  3, t_dirX, -1, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
+    GameObject::Init(posX, posY - animation->GetFrameHeight()/2, rand()%7 + 3,  rand()%7 +  3, t_dirX, -1, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
+    
+    cout << x << endl;
 }
 
 void Ball::Render(){
