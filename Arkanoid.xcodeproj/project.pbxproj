@@ -26,6 +26,8 @@
 		1086372F1662AD1A00B02805 /* Effect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1086372D1662AD1A00B02805 /* Effect.cpp */; };
 		108637331662CA3300B02805 /* Projectile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 108637311662CA3300B02805 /* Projectile.cpp */; };
 		108637361663C28000B02805 /* PlayingState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 108637341663C27F00B02805 /* PlayingState.cpp */; };
+		1086373B1663D8A300B02805 /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1086373A1663D8A300B02805 /* State.cpp */; };
+		10C870F21663F5EF00563104 /* MenuState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10C870F01663F5EF00563104 /* MenuState.cpp */; };
 		10D4503F165EB639001A13FA /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10D4503D165EB639001A13FA /* Animation.cpp */; };
 		10DE61E0165D068200D9A1D4 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DE61DE165D068100D9A1D4 /* Ball.cpp */; };
 		10F8D47216619BAB005FEE53 /* MapLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10F8D47016619BAB005FEE53 /* MapLoader.cpp */; };
@@ -80,6 +82,10 @@
 		108637321662CA3300B02805 /* Projectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Projectile.h; sourceTree = "<group>"; };
 		108637341663C27F00B02805 /* PlayingState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayingState.cpp; sourceTree = "<group>"; };
 		108637351663C28000B02805 /* PlayingState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingState.h; sourceTree = "<group>"; };
+		108637381663C47800B02805 /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
+		1086373A1663D8A300B02805 /* State.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = State.cpp; sourceTree = "<group>"; };
+		10C870F01663F5EF00563104 /* MenuState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuState.cpp; sourceTree = "<group>"; };
+		10C870F11663F5EF00563104 /* MenuState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuState.h; sourceTree = "<group>"; };
 		10D4503D165EB639001A13FA /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		10D4503E165EB639001A13FA /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		10DE61DE165D068100D9A1D4 /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
@@ -165,6 +171,10 @@
 				108637321662CA3300B02805 /* Projectile.h */,
 				108637341663C27F00B02805 /* PlayingState.cpp */,
 				108637351663C28000B02805 /* PlayingState.h */,
+				108637381663C47800B02805 /* State.h */,
+				1086373A1663D8A300B02805 /* State.cpp */,
+				10C870F01663F5EF00563104 /* MenuState.cpp */,
+				10C870F11663F5EF00563104 /* MenuState.h */,
 			);
 			name = src;
 			path = Arkanoid;
@@ -265,6 +275,8 @@
 				1086372F1662AD1A00B02805 /* Effect.cpp in Sources */,
 				108637331662CA3300B02805 /* Projectile.cpp in Sources */,
 				108637361663C28000B02805 /* PlayingState.cpp in Sources */,
+				1086373B1663D8A300B02805 /* State.cpp in Sources */,
+				10C870F21663F5EF00563104 /* MenuState.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

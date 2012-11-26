@@ -20,6 +20,11 @@ void Effect::Destroy(){
     GameObject::Destroy();
 }
 
+void Effect::Init(){
+    GameObject::Init(300, 400, 0, 5, 0, 1, animation->GetFrameWidth()/2.0, animation->GetFrameHeight()/2.0);
+    SetAlive(true);
+}
+
 void Effect::Init(int x, int y, int velY){
     GameObject::Init(x, y, 0, velY, 0, 1, animation->GetFrameWidth()/2.0, animation->GetFrameHeight()/2.0);
     SetAlive(true);

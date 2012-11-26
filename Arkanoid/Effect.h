@@ -23,6 +23,7 @@ public:
 
     void Destroy();
     
+    void Init();
     void Init(int x, int y, int velY);
     void Render();
     void Update();

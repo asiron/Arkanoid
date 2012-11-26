@@ -49,6 +49,8 @@ public:
     
     void virtual Destroy();
     
+    void virtual Init();  // reinitialization function
+    
     void Init(float x, float y, float velX, float velY, int dirX, int dirY, float boundX, float boundY);
     void virtual Render();
     void virtual Update();

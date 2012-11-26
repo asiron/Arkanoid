@@ -31,6 +31,8 @@ void GameObject::Destroy() {
         delete animation;
 }
 
+void GameObject::Init() {}     // Leave that blank for overwriting
+
 void GameObject::Init(float x, float y, float velX, float velY, int dirX, int dirY, float boundX, float boundY){
     
     GameObject::x = x;

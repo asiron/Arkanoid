@@ -16,30 +16,28 @@
 #include <SDL_ttf/SDL_ttf.h>
 #include <SDL_mixer/SDL_mixer.h>
 #include <SDL_image/SDL_image.h>
+#include "State.h"
 #include "GameObject.h"
 #include "Singleton.h"
 #include "FpsCounter.h"
-#include "Platform.h"
-#include "Ball.h"
-#include "Block.h"
-#include "Effect.h"
-#include "Projectile.h"
-#include "ConfigFile.h"
-#include "MapLoader.h"
+#include "PlayingState.h"
+#include "MenuState.h"
 
 #define g_Game Game::GetSingleton()
+#define g_GamePtr Game::GetSingletonPtr()
 #define BASE_SCREEN_X 960
 #define BASE_SCREEN_Y 540
 
-enum control_type{KEYBOARD, MOUSE};
+#define KEYBOARD 0
+#define MOUSE 1
+
+enum GAME_STATE {MENU, PLAYING};
 
 using namespace std;
 
-class Platform;
-class Ball;
-class Block;
-class Effect;
-class MapLoader;
+class State;
+class PlayingState;
+class MenuState;
 
 class Game : public Singleton<Game> {
     
@@ -52,16 +50,17 @@ private:
     bool displayFPS;
     bool musicOn;
     bool sfxOn;
-    enum control_type control_type;
+    
+    int control_type;
+    int current_state;
     
     int screen_w;
     int screen_h;
     int gameFPS;
     
-
+    State* game_state;
     
     FpsCounter* fps_counter;
-    MapLoader* map_loader;
     
     SDL_Surface *screen;
     Mix_Chunk *sound;
@@ -92,6 +91,6 @@ public:
     void switchSfx() { sfxOn = !sfxOn; }
     
     SDL_Surface* GetScreen() {return screen;}
-    Platform* GetPlatform() {return platform;}
+    State* GetState() {return game_state;}
 };
 #endif /* defined(__Arkanoid__Game__) */

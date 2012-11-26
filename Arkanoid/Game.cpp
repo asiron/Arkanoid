@@ -11,14 +11,11 @@
 
 
 Game::~Game(){
-    closeSystems();
     
     delete fps_counter;
-    delete map_loader;
+    delete game_state;
     
-    for(list<GameObject*>::iterator iter = gobjects.begin(); iter != gobjects.end(); iter++)
-        (*iter)->Destroy();
-
+    closeSystems();
 }
 
 Game::Game(int argc, char** argv){
@@ -28,34 +25,19 @@ Game::Game(int argc, char** argv){
     
     if(initSystems() == -1)
         cerr << "Problem occured while initializing SDL systems" << endl;
+    
     running = true ;
     
     //just for now
     gameFPS = 60;
     control_type = KEYBOARD;
-    
-    platform = new Platform("../../Arkanoid/data/graphics/platform.png", 0, 1, 64, 16, 1, 1);
-    platform->Init();
-    
-    ball = new Ball("../../Arkanoid/data/graphics/ball.png", 0, 1, 16, 16, 1, 1);
-    ball->Init();
-    
-    effect = new Effect("../../Arkanoid/data/graphics/effect.png", 23, 4, 16, 14, 24, 1);
-    effect->Init(400, 300, 1);
-    
-    effect2 = new Effect("../../Arkanoid/data/graphics/effect2.png", 10, 7, 34, 29, 11, 1);
-    effect2->Init(300, 300, 1);
-    
-    gobjects.push_back(effect2);
-    gobjects.push_back(effect);
-    gobjects.push_back(platform);
-    gobjects.push_back(ball);
+
     
     fps_counter = new FpsCounter(gameFPS);
-    map_loader = new MapLoader("../../Arkanoid/data/config");
     
-    gobjects.splice(gobjects.end(), map_loader->LoadMap("../../Arkanoid/data/map.cfg"));
     
+    game_state = new PlayingState();
+    game_state->InitState();
     
 }
 
@@ -93,14 +75,8 @@ int Game::Loop(){
             HandleEvents();
             SDL_FillRect(screen, NULL, 0);
             
-            for(list<GameObject*>::iterator iter = gobjects.begin(); iter!=gobjects.end(); iter++)
-                for(list<GameObject*>::iterator iter2 = gobjects.begin(); iter2!=gobjects.end(); iter2++)
-                    (*iter)->Collided((*iter2)->GetID(), (*iter)->detectCollision(*iter2));
-            
-            for(list<GameObject*>::iterator iter = gobjects.begin(); iter!=gobjects.end(); iter++){
-                (*iter)->Update();
-                (*iter)->Render();
-            }
+            game_state->UpdateState();
+            game_state->RenderState();
             
             SDL_Flip(screen);
         }
@@ -122,28 +98,8 @@ void Game::HandleEvents(){
     if(keystates[SDLK_q])
         ShutDown();
     
-    if(keystates[SDLK_SPACE])
-        ball->StartFlying();
+    game_state->HandleEvents(keystates, event, control_type);
     
-    // Movement controls with keyboard
-    if(control_type == KEYBOARD){
-        if(keystates[SDLK_LEFT])
-            platform->MoveLeft();
-        else if(keystates[SDLK_RIGHT])
-            platform->MoveRight();
-        else
-            platform->StopMoving();
-        
-    } else if(control_type == MOUSE){
-        int x; // mouse x coordinate position
-        SDL_GetMouseState(&x, NULL);
-        if(x - 10 > platform->GetX())
-            platform->MoveRight();
-        else if (x + 10 < platform->GetX())
-            platform->MoveLeft();
-        else
-            platform->StopMoving();
-    }
 }
 
 
