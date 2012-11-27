@@ -245,11 +245,7 @@ void MenuState::UpdateList(list<T> &menu_list){
     }
 }
 
-inline const char*  IntToStr(int n){
-    stringstream ss;
-    ss << n;
-    return ss.str().c_str();
-}
+
 
 template <class T>
 void MenuState::RunCommand(list<T> menu_list){

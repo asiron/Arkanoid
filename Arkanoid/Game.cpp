@@ -28,6 +28,8 @@ Game::Game(int argc, char** argv){
     if(initSystems() == -1)
         cerr << "Problem occured while initializing SDL systems" << endl;
     
+    font = TTF_OpenFont("../../Arkanoid/data/mainfont.ttf", 35);
+    
     running = true ;
     
     //just for now
@@ -81,6 +83,14 @@ int Game::Loop(){
             game_state->UpdateState();
             game_state->RenderState();
             
+            if(displayFPS){
+                static char buffer[10] = {0};
+                sprintf(buffer, "%d FPS", fps_counter->getFPS());
+                SDL_WM_SetCaption(buffer, NULL);
+            }else
+                SDL_WM_SetCaption("Arkanoid", NULL);
+            
+            
             SDL_Flip(screen);
         }
     }
@@ -98,7 +108,7 @@ void Game::HandleEvents(){
     Uint8* keystates = SDL_GetKeyState(NULL);
     
     if(keystates[SDLK_q])
-        ::ShutDown();
+            ShutDown();
     
     game_state->HandleEvents(keystates, event, control_type);
     
@@ -108,11 +118,13 @@ void Game::HandleEvents(){
 void ChangeState(){
     Game* game = g_GamePtr;
     if(game->current_state == PLAYING){
+        game->current_state = MENU;
         delete game->game_state;
         game->game_state = new MenuState();
         game->game_state->InitState();
         
     } else if (game->current_state == MENU){
+        game->current_state = PLAYING;
         delete game->game_state;
         game->game_state = new PlayingState();
         game->game_state->InitState();
@@ -136,8 +148,17 @@ void SwitchSfx(){
     dynamic_cast<MenuState*>(g_GamePtr->GetState())->UpdateInfo(SOUNDON);
 }
 
+void Game::Draw(SDL_Surface* screen, SDL_Surface* source,int x, int y) {
+    SDL_Rect offset = {(Sint16)x, (Sint16)y, 0, 0};
+    SDL_Rect clip = {0, 0, (Uint16)source->w, (Uint16)source->h};
+    SDL_BlitSurface(source, &clip, screen, &offset);
+}
 
-
+const char*  IntToStr(int n){
+    stringstream ss;
+    ss << n;
+    return ss.str().c_str();
+}
 
 
 

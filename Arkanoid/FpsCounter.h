@@ -11,6 +11,10 @@
 
 #include <iostream>
 #include <SDL/SDL.h>
+#include <SDL_ttf/SDL_ttf.h>
+#include "Game.h"
+
+class Game;
 
 class FpsCounter {
     
@@ -19,10 +23,13 @@ private:
     int lastTime;
     int lastFrame;
     int FPS;
-    int FPS_rate;
+    int frameDelay;
+    
     
 public:
-    FpsCounter(int _FPS_rate) : fps(0), lastTime(0), lastFrame(0), FPS(0), FPS_rate(_FPS_rate) {};
+    FpsCounter(int FPS_rate) : fps(0), lastTime(0), lastFrame(0), FPS(0) {
+        frameDelay = 1000/(double)FPS_rate ;
+    };
     int measureFPS();
     int getFPS();
 };

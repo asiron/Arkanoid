@@ -22,7 +22,7 @@ int FpsCounter::measureFPS(){
         lastTime = currentTime ;
     }
     
-    if(currentTime - lastFrame >= (1000/(double)FPS_rate) ){
+    if(currentTime - lastFrame >= frameDelay ){
         lastFrame = currentTime ;
         fps++;
         
@@ -37,3 +37,13 @@ int FpsCounter::measureFPS(){
 int FpsCounter::getFPS(){
     return FPS;
 }
+
+
+// Too slow 
+//void FpsCounter::RenderFPS(int x, int y){
+//    SDL_Color col = {0xcc,0xcc,0xcc,0};
+//    fps_message  = TTF_RenderText_Solid(g_GamePtr->GetMainFont(), IntToStr(FPS), col);
+//    
+//    Game::Draw(g_GamePtr->GetScreen(), fps_message, x, y);
+//}
+

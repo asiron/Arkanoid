@@ -51,6 +51,11 @@ void PlayingState::UpdateState(){
 
 void PlayingState::HandleEvents(Uint8* keystates, SDL_Event event, int control_type){
     
+    if(keystates[SDLK_ESCAPE]){
+        ChangeState();
+        return;             // we get the hell out of here
+    }
+    
     if(keystates[SDLK_SPACE])
         ball->StartFlying();
     

@@ -22,8 +22,7 @@ using namespace std;
 enum MENU_STATE{MAIN_MENU, OPTIONS, HIGHSCORES};
 enum MENU_OPTION_IDS{SHOWFPS, MUSICON, SOUNDON};
 
-//helper function for conversion
-const char* IntToStr(int n);
+
 
 // Function pointer to function that is run when object is clicked
 typedef void (*Clicked)(void);

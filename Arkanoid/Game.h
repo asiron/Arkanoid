@@ -35,10 +35,15 @@ enum GAME_STATE {MENU, PLAYING};
 
 using namespace std;
 
+class FpsCounter;
 class State;
 class PlayingState;
 class MenuState;
 
+
+//helper function for conversion
+const char* IntToStr(int n);
+//forward declaration for use as callback functions
 void SwitchFPSVisibility();
 void SwitchMusic();
 void SwitchSfx();
@@ -87,7 +92,6 @@ public:
     void SetScreen_H(int screen_h) { Game::screen_h = screen_h; }
     int GetScreen_H() {return screen_h;}
     
-    
     bool isMusicOn() { return musicOn;}
     bool isSfxOn() {return sfxOn;}
     
@@ -96,12 +100,15 @@ public:
     
     SDL_Surface* GetScreen() {return screen;}
     State* GetState() {return game_state;}
+    TTF_Font* GetMainFont() {return font;}
     
     friend void ChangeState();
     friend void ShutDown();
     friend void SwitchFPSVisibility();
     friend void SwitchMusic();
     friend void SwitchSfx();
+    
+    static void Draw(SDL_Surface* screen, SDL_Surface* source, int x, int y)  ;  // helper function for drawing
 
 };
 #endif /* defined(__Arkanoid__Game__) */

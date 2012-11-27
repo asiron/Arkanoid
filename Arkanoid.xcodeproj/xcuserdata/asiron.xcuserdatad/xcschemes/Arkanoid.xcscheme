@@ -60,11 +60,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "1366"
+            argument = "960"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "768"
+            argument = "540"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
