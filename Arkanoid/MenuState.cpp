@@ -23,7 +23,7 @@ MenuState::MenuState(){
     bgs.push_back(new Background("../../Arkanoid/data/graphics/starsforeground.png", 1550, 950));
     bgs.push_back(new Background("../../Arkanoid/data/graphics/starsforeforeground.png", 1800, 1050));
     
-    curMenu = OPTIONS;        // setting first visible menu as MAIN MENU
+    curMenu = MAIN_MENU;        // setting first visible menu as MAIN MENU
     
     font = TTF_OpenFont("../../Arkanoid/data/font.ttf", 28);        // loading menu font
     if(!font) {
@@ -34,10 +34,13 @@ MenuState::MenuState(){
     //Function pointers
     startgame = ChangeState;                    // pointer to function in Game.h to changes between states
     quit = ShutDown;                            // pointer to function in Game.h that performs an application shutdown
+    options = GotoOptions;                      // pointer in to function that changes curMenu to OPTIONS
+    highscores = GotoHighscores;                // pointer in to function that changes curMenu to HIGHSCORES
+    mainmenu  = GotoMainMenu;                  // pointer in to function that changes curMenu to MAINMENU
     showfps = SwitchFPSVisibility;              // pointer to function in Game.h that switches displayFPS flag on or off
     musicon = SwitchMusic;                      // pointer to function in Game.h that switches musicON flag on or off
     soundon = SwitchSfx;                        // pointer to function in Game.h that switches sfxON flag on or off
- 
+    
     
     // message colors
     text = {0xFF, 0, 0, 0};
@@ -62,9 +65,9 @@ MenuState::MenuState(){
         menu_highscores.push_back(Highscore_Text(make_tuple(RenderText(IntToStr(*iter))), false));
     
     //creating menu option objects
-    menu_options.push_back(OptionsText(make_tuple(RenderText("Show FPS")), false, showfps, make_tuple(RenderText("ON")), make_tuple(RenderText("OFF")), g_GamePtr->isFPSVisible()));
-    menu_options.push_back(OptionsText(make_tuple(RenderText("Music")), false, musicon, make_tuple(RenderText("ON")), make_tuple(RenderText("OFF")), g_GamePtr->isMusicOn()));
-    menu_options.push_back(OptionsText(make_tuple(RenderText("Sounds")), false, soundon, make_tuple(RenderText("ON")), make_tuple(RenderText("OFF")), g_GamePtr->isSfxOn()));
+    menu_options.push_back(OptionsText(make_tuple(RenderText("Show FPS")), false, showfps, make_tuple(RenderText("ON")), make_tuple(RenderText("OFF")), g_GamePtr->isFPSVisible(), SHOWFPS));
+    menu_options.push_back(OptionsText(make_tuple(RenderText("Music")), false, musicon, make_tuple(RenderText("ON")), make_tuple(RenderText("OFF")), g_GamePtr->isMusicOn(), MUSICON));
+    menu_options.push_back(OptionsText(make_tuple(RenderText("Sounds")), false, soundon, make_tuple(RenderText("ON")), make_tuple(RenderText("OFF")), g_GamePtr->isSfxOn(), SOUNDON));
 
     
 }
@@ -101,8 +104,11 @@ void MenuState::Destroy(){
     
 }
 
-void MenuState::InitState(){
-    
+void MenuState::UpdateInfo(int ID){
+    for(list<OptionsText>::iterator iter = menu_options.begin(); iter != menu_options.end(); iter++){
+        if(ID == get<6>(*iter))
+            get<5>(*iter) = !get<5>(*iter) ;
+    }
 }
 void MenuState::RenderState(){
     for(list<Background*>::iterator iter = bgs.begin(); iter != bgs.end(); iter++)
@@ -146,7 +152,7 @@ void MenuState::RenderState(){
                 y += distance_between_msg;
             }
             break;
-        case HIGHSCORE:
+        case HIGHSCORES:
             for(list<Highscore_Text>::iterator iter = menu_highscores.begin(); iter != menu_highscores.end(); iter++){
                 this->Draw(get<1>(get<0>(*iter)), x+1, y+1);
                 if(get<1>(*iter))
@@ -157,9 +163,6 @@ void MenuState::RenderState(){
             }
             break;
     }
-    
-
-    
 }
 void MenuState::UpdateState(){
     
@@ -172,7 +175,7 @@ void MenuState::UpdateState(){
         case OPTIONS:
             UpdateList(menu_options);
             break;
-        case HIGHSCORE:
+        case HIGHSCORES:
             UpdateList(menu_highscores);
             break;
         default:
@@ -183,8 +186,24 @@ void MenuState::HandleEvents(Uint8* keystates, SDL_Event event, int control_type
     
     SDL_GetMouseState(&mouse_pos_x, &mouse_pos_y);
     
-    if( curMenu == HIGHSCORE)
-        return;
+    
+    switch (curMenu) {
+        case OPTIONS:
+            if(keystates[SDLK_ESCAPE]){
+                GotoMainMenu();
+                return;
+            }
+            break;
+        case HIGHSCORES:
+            if(keystates[SDLK_ESCAPE]){
+                GotoMainMenu();
+                return;
+            }
+            break;
+        default:
+            break;
+    }
+    
     
     if(event.type == SDL_MOUSEBUTTONUP){
         if(event.button.button == SDL_BUTTON_LEFT){
@@ -241,3 +260,16 @@ void MenuState::RunCommand(list<T> menu_list){
         }
     }
 }
+
+
+void GotoOptions(){
+    dynamic_cast<MenuState*>(g_GamePtr->GetState())->curMenu = OPTIONS;
+}
+
+void GotoHighscores(){
+    dynamic_cast<MenuState*>(g_GamePtr->GetState())->curMenu = HIGHSCORES;
+}
+void GotoMainMenu(){
+    dynamic_cast<MenuState*>(g_GamePtr->GetState())->curMenu = MAIN_MENU;
+}
+

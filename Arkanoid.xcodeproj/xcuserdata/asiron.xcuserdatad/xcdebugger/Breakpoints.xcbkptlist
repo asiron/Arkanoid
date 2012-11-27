@@ -136,22 +136,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375683378.457964"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "140"
-         endingLineNumber = "140">
+         startingLineNumber = "143"
+         endingLineNumber = "143">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375683378.457964"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "141"
-         endingLineNumber = "141">
+         startingLineNumber = "144"
+         endingLineNumber = "144">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -930,11 +930,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684341.241666"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "203"
-         endingLineNumber = "203"
+         startingLineNumber = "222"
+         endingLineNumber = "222"
          landmarkName = "MenuState::HandleEvents(Uint8* keystates, SDL_Event event, int control_type)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -943,11 +943,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684043.417965"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "109"
-         endingLineNumber = "109"
+         startingLineNumber = "115"
+         endingLineNumber = "115"
          landmarkName = "MenuState::RenderState()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -956,11 +956,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684043.417965"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "111"
-         endingLineNumber = "111"
+         startingLineNumber = "117"
+         endingLineNumber = "117"
          landmarkName = "MenuState::RenderState()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -969,11 +969,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684043.417965"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "112"
-         endingLineNumber = "112"
+         startingLineNumber = "118"
+         endingLineNumber = "118"
          landmarkName = "MenuState::RenderState()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -982,11 +982,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684341.241666"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "201"
-         endingLineNumber = "201"
+         startingLineNumber = "220"
+         endingLineNumber = "220"
          landmarkName = "MenuState::HandleEvents(Uint8* keystates, SDL_Event event, int control_type)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1021,11 +1021,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684043.417965"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "77"
-         endingLineNumber = "77"
+         startingLineNumber = "80"
+         endingLineNumber = "80"
          landmarkName = "MenuState::Destroy()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1034,11 +1034,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684043.417965"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "59"
-         endingLineNumber = "59"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
          landmarkName = "MenuState::MenuState()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1047,11 +1047,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684043.417965"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "129"
-         endingLineNumber = "129"
+         startingLineNumber = "135"
+         endingLineNumber = "135"
          landmarkName = "MenuState::RenderState()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1060,11 +1060,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684043.417965"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "173"
-         endingLineNumber = "173"
+         startingLineNumber = "176"
+         endingLineNumber = "176"
          landmarkName = "MenuState::UpdateState()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1073,11 +1073,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684341.241666"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "218"
-         endingLineNumber = "218"
+         startingLineNumber = "236"
+         endingLineNumber = "236"
          landmarkName = "MenuState::UpdateList(list&lt;T&gt; &amp;menu_list)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1086,11 +1086,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684341.241666"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "224"
-         endingLineNumber = "224"
+         startingLineNumber = "242"
+         endingLineNumber = "242"
          landmarkName = "MenuState::UpdateList(list&lt;T&gt; &amp;menu_list)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1099,11 +1099,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684341.241666"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "225"
-         endingLineNumber = "225"
+         startingLineNumber = "243"
+         endingLineNumber = "243"
          landmarkName = "MenuState::UpdateList(list&lt;T&gt; &amp;menu_list)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1112,11 +1112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684043.417965"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "128"
-         endingLineNumber = "128"
+         startingLineNumber = "134"
+         endingLineNumber = "134"
          landmarkName = "MenuState::RenderState()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1125,11 +1125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684043.417965"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "119"
-         endingLineNumber = "119"
+         startingLineNumber = "125"
+         endingLineNumber = "125"
          landmarkName = "MenuState::RenderState()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1138,11 +1138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375681082.151228"
+         timestampString = "375684043.417965"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "121"
-         endingLineNumber = "121"
+         startingLineNumber = "127"
+         endingLineNumber = "127"
          landmarkName = "MenuState::RenderState()"
          landmarkType = "5">
       </FileBreakpoint>

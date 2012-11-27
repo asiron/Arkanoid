@@ -102,5 +102,6 @@ public:
     friend void SwitchFPSVisibility();
     friend void SwitchMusic();
     friend void SwitchSfx();
+
 };
 #endif /* defined(__Arkanoid__Game__) */

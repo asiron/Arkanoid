@@ -18,7 +18,9 @@
 
 using namespace std;
 
-enum MENU_STATE{MAIN_MENU, OPTIONS, HIGHSCORE};
+//ID enums for current menu state and option ID
+enum MENU_STATE{MAIN_MENU, OPTIONS, HIGHSCORES};
+enum MENU_OPTION_IDS{SHOWFPS, MUSICON, SOUNDON};
 
 //helper function for conversion
 const char* IntToStr(int n);
@@ -26,11 +28,17 @@ const char* IntToStr(int n);
 // Function pointer to function that is run when object is clicked
 typedef void (*Clicked)(void);
 
+// typdefs for cleaner implementation of menu objects
 typedef tuple<SDL_Surface*, SDL_Surface*, SDL_Surface*> Text;
 
 typedef tuple<Text, bool> Highscore_Text;
 typedef tuple<Text, bool, Clicked> MainMenuText;
-typedef tuple<Text, bool, Clicked, Text, Text, bool> OptionsText;
+typedef tuple<Text, bool, Clicked, Text, Text, bool, int> OptionsText;
+
+//friend functions
+void GotoOptions();
+void GotoHighscores();
+void GotoMainMenu();
 
 class Background;
 
@@ -42,7 +50,7 @@ private:
     
     list<tuple<Text, bool, Clicked>> menu_main;
     list<tuple<Text, bool>> menu_highscores;
-    list<tuple<Text, bool, Clicked, Text, Text, bool>> menu_options;
+    list<tuple<Text, bool, Clicked, Text, Text, bool, int>> menu_options;
 
     
     list<int> highsco_list;
@@ -63,13 +71,14 @@ private:
     SDL_Color highlight;
     
     TTF_Font* font;
-    void Draw(SDL_Surface* image, int x, int y) const;
+    inline void Draw(SDL_Surface* image, int x, int y) const;
     
     //function pointers to menu event listener
     Clicked startgame;
     Clicked options;
     Clicked highscores;
     Clicked quit;
+    Clicked mainmenu;
     Clicked showfps;
     Clicked musicon;
     Clicked soundon;
@@ -82,10 +91,14 @@ public:
     MenuState();
     void Destroy();
 
-    void InitState();
+    void UpdateInfo(int ID);
     void RenderState();
     void UpdateState();
     void HandleEvents(Uint8* keystates, SDL_Event event, int control_type);
+    
+    friend void GotoOptions();
+    friend void GotoHighscores();
+    friend void GotoMainMenu();
 };
 
 #endif /* defined(__Arkanoid__MenuState__) */

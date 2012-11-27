@@ -125,12 +125,15 @@ void ShutDown(){
 
 void SwitchFPSVisibility(){
     g_GamePtr->displayFPS = !g_GamePtr->displayFPS;
+    dynamic_cast<MenuState*>(g_GamePtr->GetState())->UpdateInfo(SHOWFPS);
 }
 void SwitchMusic(){
-    g_GamePtr->musicOn = !g_GamePtr->musicOn ;
+    g_GamePtr->musicOn = !g_GamePtr->musicOn;
+    dynamic_cast<MenuState*>(g_GamePtr->GetState())->UpdateInfo(MUSICON);
 }
 void SwitchSfx(){
     g_GamePtr->sfxOn = !g_GamePtr->sfxOn;
+    dynamic_cast<MenuState*>(g_GamePtr->GetState())->UpdateInfo(SOUNDON);
 }
 
 
