@@ -10,7 +10,6 @@
 #define __Arkanoid__GameObject__
 
 #include <iostream>
-#include <SDL/SDL.h>
 #include "Animation.h"
 
 enum OBJECT_TYPE{PLAYER, BALL, BLOCK, EFFECT, PROJECTILE};                          // enum for defining an object, used during collisions

@@ -39,6 +39,12 @@ class State;
 class PlayingState;
 class MenuState;
 
+void SwitchFPSVisibility();
+void SwitchMusic();
+void SwitchSfx();
+void ChangeState();
+void ShutDown();
+
 class Game : public Singleton<Game> {
     
 private:
@@ -47,11 +53,13 @@ private:
     
     bool running;
     bool paused;
+    
     bool displayFPS;
     bool musicOn;
     bool sfxOn;
     
     int control_type;
+    
     int current_state;
     
     int screen_w;
@@ -67,16 +75,12 @@ private:
     Mix_Music *music;
     TTF_Font *font;
     
-    
-    
 public:
     Game(int argc, char** argv);
     ~Game();
     int Loop();
     void HandleEvents();
-    
-    void ShutDown(){running = false;}
-    
+        
     void SetScreen_W(int screen_w) { Game::screen_w = screen_w; }
     int GetScreen_W() {return screen_w; }
     
@@ -87,10 +91,16 @@ public:
     bool isMusicOn() { return musicOn;}
     bool isSfxOn() {return sfxOn;}
     
-    void switchMusic() { musicOn = !musicOn; }
-    void switchSfx() { sfxOn = !sfxOn; }
+    bool isFPSVisible() {return displayFPS;}
+    void setFPSVisile() { displayFPS = true;}
     
     SDL_Surface* GetScreen() {return screen;}
     State* GetState() {return game_state;}
+    
+    friend void ChangeState();
+    friend void ShutDown();
+    friend void SwitchFPSVisibility();
+    friend void SwitchMusic();
+    friend void SwitchSfx();
 };
 #endif /* defined(__Arkanoid__Game__) */

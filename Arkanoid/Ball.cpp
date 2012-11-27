@@ -29,8 +29,7 @@ void Ball::Init(){
     
     int t_dirX = (rand() % 2 +1)*2 -3 ; //  picking random direction either left or right
     GameObject::Init(posX, posY - animation->GetFrameHeight()/2, rand()%7 + 3,  rand()%7 +  3, t_dirX, -1, animation->GetFrameWidth()/2, animation->GetFrameHeight()/2);
-    
-    cout << x << endl;
+
 }
 
 void Ball::Render(){

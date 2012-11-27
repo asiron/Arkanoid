@@ -13,6 +13,7 @@
 #include <SDL/SDL.h>
 #include "scaler.h"
 
+
 class Animation {
     
 private:

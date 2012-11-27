@@ -19,4 +19,6 @@ Uint32 getpixel(SDL_Surface *surface, int x, int y);                            
 void putpixel(SDL_Surface *surface, int x, int y, Uint32 pixel);                        // Helper function for placing pixel on SDL_Surface
 SDL_Surface *ScaleSurface(SDL_Surface *Surface, Uint16 Width, Uint16 Height);           // scale bitmap function
 
+
+
 #endif

@@ -8,7 +8,7 @@
 
 #include "Animation.h"
 #include "Game.h"
-#include <SDL/SDL.h>
+
 
 
 Animation::Animation(const char* filename, int maxFrame, int frameDelay, int frameWidth, int frameHeight, int animationColumns, int animationDirection ){

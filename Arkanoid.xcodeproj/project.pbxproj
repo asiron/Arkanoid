@@ -28,6 +28,7 @@
 		108637361663C28000B02805 /* PlayingState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 108637341663C27F00B02805 /* PlayingState.cpp */; };
 		1086373B1663D8A300B02805 /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1086373A1663D8A300B02805 /* State.cpp */; };
 		10C870F21663F5EF00563104 /* MenuState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10C870F01663F5EF00563104 /* MenuState.cpp */; };
+		10C870F61664163F00563104 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10C870F41664163F00563104 /* Background.cpp */; };
 		10D4503F165EB639001A13FA /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10D4503D165EB639001A13FA /* Animation.cpp */; };
 		10DE61E0165D068200D9A1D4 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DE61DE165D068100D9A1D4 /* Ball.cpp */; };
 		10F8D47216619BAB005FEE53 /* MapLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10F8D47016619BAB005FEE53 /* MapLoader.cpp */; };
@@ -86,6 +87,8 @@
 		1086373A1663D8A300B02805 /* State.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = State.cpp; sourceTree = "<group>"; };
 		10C870F01663F5EF00563104 /* MenuState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuState.cpp; sourceTree = "<group>"; };
 		10C870F11663F5EF00563104 /* MenuState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuState.h; sourceTree = "<group>"; };
+		10C870F41664163F00563104 /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Background.cpp; sourceTree = "<group>"; };
+		10C870F51664163F00563104 /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
 		10D4503D165EB639001A13FA /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		10D4503E165EB639001A13FA /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		10DE61DE165D068100D9A1D4 /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				1011DC4B165ACDDF00D93346 /* main.cpp */,
+				10C870F41664163F00563104 /* Background.cpp */,
+				10C870F51664163F00563104 /* Background.h */,
 				104ED8EA16614BFB008085EC /* scaler.cpp */,
 				104ED8EC16614C22008085EC /* scaler.h */,
 				10D4503D165EB639001A13FA /* Animation.cpp */,
@@ -277,6 +282,7 @@
 				108637361663C28000B02805 /* PlayingState.cpp in Sources */,
 				1086373B1663D8A300B02805 /* State.cpp in Sources */,
 				10C870F21663F5EF00563104 /* MenuState.cpp in Sources */,
+				10C870F61664163F00563104 /* Background.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
