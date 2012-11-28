@@ -42,7 +42,10 @@ class MenuState;
 
 
 //helper function for conversion
-const char* IntToStr(int n);
+string IntToStr(int n);
+//helper function for Displaying Finish Text
+void DisplayFinishText(int ms, const char* text);
+
 //forward declaration for use as callback functions
 void SwitchFPSVisibility();
 void SwitchMusic();
@@ -98,6 +101,7 @@ public:
     bool isFPSVisible() {return displayFPS;}
     void setFPSVisile() { displayFPS = true;}
     
+    Mix_Chunk* GetSfx() {return sound;}
     SDL_Surface* GetScreen() {return screen;}
     State* GetState() {return game_state;}
     TTF_Font* GetMainFont() {return font;}
@@ -109,6 +113,7 @@ public:
     friend void SwitchSfx();
     
     static void Draw(SDL_Surface* screen, SDL_Surface* source, int x, int y)  ;  // helper function for drawing
+
 
 };
 #endif /* defined(__Arkanoid__Game__) */

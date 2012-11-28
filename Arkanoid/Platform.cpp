@@ -11,7 +11,7 @@
 
 Platform::Platform(const char* filename, int maxFrame, int frameDelay, int frameWidth,
            int frameHeight, int animationColumns, int animationDirection )
-            : GameObject(filename, maxFrame, frameDelay, frameWidth, frameHeight, animationColumns, animationDirection)
+            : GameObject(filename, maxFrame, frameDelay, frameWidth, frameHeight, animationColumns, animationDirection), has_effect(-1)
 {
     //setting ID to PLAYER and calling superclass constructor
     SetID(PLAYER);
@@ -29,12 +29,12 @@ void Platform::Init() {
     
     SetAlive(true);
     
-    lives = 3;
+    lives = 5;
     score = 0;
     
 }
 
-void Platform::Update(){
+int Platform::Update(){
     if(isAlive()){
         GameObject::Update();
         //Performing boundry checking
@@ -45,6 +45,13 @@ void Platform::Update(){
         //Updating of animation exists
         if(animation) animation->Animate();
     }
+    
+    if(!GetLives()){
+        PlayingState* playing_state = dynamic_cast<PlayingState*>(g_GamePtr->GetState());
+        playing_state->SetChangingStateFlag(true);
+        playing_state->PushScore(getenv("USER"), GetScore());
+    }
+    return 0;
 }
 void Platform::Render(){
     if(isAlive()){
@@ -66,4 +73,29 @@ void Platform::StopMoving(){
 }
 
 
-void Platform::Collided( int objectID, col_dir dir){}
+void Platform::Collided( int objectID, col_dir dir){
+    if(dir == NO_COLLISION)
+        return;
+    
+    if(objectID == BALL){
+        if(!(has_effect == MAGNET))                       // if platform is under effect of Magnet then we dont want to add points constantly
+            AddPoint();
+
+    }
+}
+
+void Platform::Shoot(){
+    if(has_effect == GUN){
+        Projectile** projectiles_temp = dynamic_cast<PlayingState*>(g_GamePtr->GetState())->GetProjectiles();
+        for(int i=0; i<3; i++)
+            if(!projectiles_temp[i]->isAlive()){
+                projectiles_temp[i]->Init(x, y, 3);
+                return;
+            }
+    }
+}
+
+void Platform::MorphPlatform(int effect_type) {
+    has_effect = effect_type;
+    animation->SetFrame(effect_type+1);
+}

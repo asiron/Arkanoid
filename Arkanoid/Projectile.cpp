@@ -23,25 +23,30 @@ void Projectile::Destroy(){
 void Projectile::Init(int x, int y, int velY){
     GameObject::Init(x, y, 0, velY, 0, -1, animation->GetFrameWidth()/2.0, animation->GetFrameHeight()/2.0);
     SetAlive(true);
-    
 }
 
-void Projectile::Update(){
+int Projectile::Update(){
     if(isAlive()){
         GameObject::Update();
         if(animation) animation->Animate();
     }
+    return 0;
 }
 
 void Projectile::Render() {
     if(isAlive()){
         GameObject::Render();
         if(animation) animation->Draw(x-boundX, y-boundY);
+        
     }
 }
 
 void Projectile::Collided(int ObjectID, col_dir dir){
+    if(dir == NO_COLLISION)
+        return;
+    
     if(ObjectID == BLOCK){
-        //do something
+        SetAlive(false);
+        dynamic_cast<PlayingState*>(g_GamePtr->GetState())->GetPlatform()->AddPoint();
     }
 }

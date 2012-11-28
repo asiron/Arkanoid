@@ -15,7 +15,7 @@
                             TTF_RenderText_Solid(font, _text, shade),\
                                 TTF_RenderText_Solid(font, _text, highlight)
 
-MenuState::MenuState(){
+MenuState::MenuState() : State(){
     
     bgs.push_back(new Background("../../Arkanoid/data/graphics/background2.jpg", 1366, 768));
     //bgs.push_back(new Background("../../Arkanoid/data/graphics/starsback.png", 1700, 900));
@@ -36,7 +36,7 @@ MenuState::MenuState(){
     quit = ShutDown;                            // pointer to function in Game.h that performs an application shutdown
     options = GotoOptions;                      // pointer in to function that changes curMenu to OPTIONS
     highscores = GotoHighscores;                // pointer in to function that changes curMenu to HIGHSCORES
-    mainmenu  = GotoMainMenu;                  // pointer in to function that changes curMenu to MAINMENU
+    mainmenu  = GotoMainMenu;                   // pointer in to function that changes curMenu to MAINMENU
     showfps = SwitchFPSVisibility;              // pointer to function in Game.h that switches displayFPS flag on or off
     musicon = SwitchMusic;                      // pointer to function in Game.h that switches musicON flag on or off
     soundon = SwitchSfx;                        // pointer to function in Game.h that switches sfxON flag on or off
@@ -49,7 +49,6 @@ MenuState::MenuState(){
     
     offsetX = g_GamePtr->GetScreen_W()/2.0;
     offsetY = g_GamePtr->GetScreen_H()/2.0 - 50;
-
     
     distance_between_msg = 50;
     distance_between_opt = 300;
@@ -61,8 +60,8 @@ MenuState::MenuState(){
     menu_main.push_back(MainMenuText(make_tuple(RenderText("Quit")), false, quit));
     
     //creating highscore objects
-    for(list<int>::iterator iter = highsco_list.begin(); iter != highsco_list.end(); iter++)
-        menu_highscores.push_back(Highscore_Text(make_tuple(RenderText(IntToStr(*iter))), false));
+    for(list<pair<string, int>>::iterator iter = highsco_list.begin(); iter != highsco_list.end(); iter++)
+        menu_highscores.push_back(Highscore_Text(make_tuple(RenderText((iter->first).c_str())), false, make_tuple(RenderText(IntToStr(iter->second).c_str()))));
     
     //creating menu option objects
     menu_options.push_back(OptionsText(make_tuple(RenderText("Show FPS")), false, showfps, make_tuple(RenderText("ON")), make_tuple(RenderText("OFF")), g_GamePtr->isFPSVisible(), SHOWFPS));
@@ -102,6 +101,7 @@ void MenuState::Destroy(){
         SDL_FreeSurface(get<2>(get<4>(*iter)));
     }
     
+    TTF_CloseFont(font);
 }
 
 void MenuState::UpdateInfo(int ID){
@@ -153,13 +153,22 @@ void MenuState::RenderState(){
             }
             break;
         case HIGHSCORES:
-            for(list<Highscore_Text>::iterator iter = menu_highscores.begin(); iter != menu_highscores.end(); iter++){
+            int counter = 0 ; // we have to allow only print 5 highscores
+            for(list<Highscore_Text>::iterator iter = menu_highscores.begin(); iter != menu_highscores.end() && counter<5; iter++){
                 this->Draw(get<1>(get<0>(*iter)), x+1, y+1);
                 if(get<1>(*iter))
                     this->Draw(get<2>(get<0>(*iter)), x, y);
                 else
                     this->Draw(get<0>(get<0>(*iter)), x, y);
+                
+                this->Draw(get<1>(get<2>(*iter)), x+distance_between_opt+1, y+1);
+                if(get<1>(*iter))
+                    this->Draw(get<2>(get<2>(*iter)), x+distance_between_opt, y);
+                else
+                    this->Draw(get<0>(get<2>(*iter)), x+distance_between_opt, y);
+                
                 y += distance_between_msg;
+                counter++;
             }
             break;
     }

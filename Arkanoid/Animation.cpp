@@ -13,6 +13,7 @@
 
 Animation::Animation(const char* filename, int maxFrame, int frameDelay, int frameWidth, int frameHeight, int animationColumns, int animationDirection ){
     
+    //Animation's properties initialization
     Animation::curFrame = 0;
     Animation::frameCount = 0;
     Animation::maxFrame = maxFrame;
@@ -20,10 +21,20 @@ Animation::Animation(const char* filename, int maxFrame, int frameDelay, int fra
     Animation::animationColumns = animationColumns;
     Animation::animationDirection = animationDirection;
  
+    // Forumula for calculating new frame sizes according to current window size
     Animation::frameWidth = g_Game.GetScreen_W() / (float)BASE_SCREEN_X * frameWidth;
     Animation::frameHeight = g_Game.GetScreen_H() / (float)BASE_SCREEN_Y * frameHeight;
    
-    image = LoadScaledBitmap(filename, Animation::frameWidth*animationColumns, Animation::frameHeight*(maxFrame+1)/animationColumns);
+    // formjula for checking if the last row is full in spritesheet if so then we have to adjust height of a loading image
+    int loading_image_w = Animation::frameWidth*animationColumns;
+    int loading_image_h;
+    if( (maxFrame+1)%animationColumns )
+        loading_image_h = Animation::frameHeight*((maxFrame+1)/animationColumns+1);
+    else
+        loading_image_h = Animation::frameHeight*(((maxFrame+1)/animationColumns));
+    
+    //loading image to SDL_Surface* with new width and height
+    image = LoadScaledBitmap(filename, loading_image_w, loading_image_h);
    
     if(image){
         clip = new SDL_Rect();

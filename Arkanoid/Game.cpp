@@ -1,4 +1,4 @@
-//
+ //
 //  Game.cpp
 //  Arkanoid
 //
@@ -20,6 +20,8 @@ Game::~Game(){
 
 Game::Game(int argc, char** argv){
     
+    music = Mix_LoadMUS("../../Arkanoid/data/sounds/music.mp3");
+    sound = Mix_LoadWAV("../../Arkanoid/data/sounds/sfx.wav");
     SDL_WM_SetCaption("ARKANOID", NULL);
     
     screen_w = atoi(argv[1]);
@@ -29,18 +31,24 @@ Game::Game(int argc, char** argv){
         cerr << "Problem occured while initializing SDL systems" << endl;
     
     font = TTF_OpenFont("../../Arkanoid/data/mainfont.ttf", 35);
+    if(!font) {
+        cerr << "Could not load font " << TTF_GetError << endl;
+        exit(1);
+    }
     
     running = true ;
     
     //just for now
     gameFPS = 60;
+    musicOn = false;
+    sfxOn = false;
     control_type = KEYBOARD;
     current_state = MENU ;
     
     
+    
     fps_counter = new FpsCounter(gameFPS);
-    
-    
+
     game_state = new MenuState();
     game_state->InitState();
     
@@ -51,7 +59,7 @@ int Game::initSystems(){
 		cerr << "Problem while initializing SDL" << endl;
 		return -1;
 	}
-	screen = SDL_SetVideoMode(screen_w, screen_h, 32, SDL_HWSURFACE);
+	screen = SDL_SetVideoMode(screen_w, screen_h, 32, SDL_SWSURFACE);
 	if (TTF_Init() < 0) {
 		cerr << "Problem initializing SDL_ttf" << endl;
 		return -1;
@@ -60,6 +68,7 @@ int Game::initSystems(){
 		cerr << "Problem initializing SDL_mixer" << endl;
 		return -1;
 	}
+    Mix_Init(MIX_INIT_MP3);
 	return 0;
 }
 
@@ -89,7 +98,6 @@ int Game::Loop(){
                 SDL_WM_SetCaption(buffer, NULL);
             }else
                 SDL_WM_SetCaption("Arkanoid", NULL);
-            
             
             SDL_Flip(screen);
         }
@@ -142,6 +150,14 @@ void SwitchFPSVisibility(){
 void SwitchMusic(){
     g_GamePtr->musicOn = !g_GamePtr->musicOn;
     dynamic_cast<MenuState*>(g_GamePtr->GetState())->UpdateInfo(MUSICON);
+    
+    if(g_GamePtr->musicOn){
+        Mix_PlayingMusic();
+        Mix_PlayMusic(g_GamePtr->music, -1);
+    } else {
+        Mix_HaltMusic();
+    }
+        
 }
 void SwitchSfx(){
     g_GamePtr->sfxOn = !g_GamePtr->sfxOn;
@@ -154,12 +170,38 @@ void Game::Draw(SDL_Surface* screen, SDL_Surface* source,int x, int y) {
     SDL_BlitSurface(source, &clip, screen, &offset);
 }
 
-const char*  IntToStr(int n){
+string IntToStr(int n){
     stringstream ss;
     ss << n;
-    return ss.str().c_str();
+    return ss.str();
 }
 
+void DisplayFinishText(int ms, const char* text){
+    
+    TTF_Font* font = TTF_OpenFont("../../Arkanoid/data/font.ttf", 70);
+    
+    int posX = g_GamePtr->GetScreen_W()/2;
+    int posY = g_GamePtr->GetScreen_H()/2;
+    
+    
+    SDL_Color color = {0x2b, 0xd7, 0xb7, 0};
+    SDL_Color shade = {0xff, 0xff, 0xff, 0};
+    
+    SDL_Surface* text_image = TTF_RenderText_Solid(font, text, color);
+    SDL_Surface* text_shade = TTF_RenderText_Solid(font, text, shade);
+    
+    Game::Draw(g_GamePtr->GetScreen(), text_shade, posX - text_shade->w/2 +2, posY - text_shade->h/2 +2);
+    Game::Draw(g_GamePtr->GetScreen(), text_image, posX - text_image->w/2, posY - text_image->h/2);
+    
+    SDL_Flip(g_GamePtr->GetScreen());
+    
+    int firstMeasure = SDL_GetTicks();
+    while(SDL_GetTicks() - firstMeasure <= ms);
+    
+    SDL_FreeSurface(text_shade);
+    SDL_FreeSurface(text_image);
+    TTF_CloseFont(font);
+}
 
 
 

@@ -46,10 +46,11 @@ void GameObject::Init(float x, float y, float velX, float velY, int dirX, int di
 
 }
 // Assuming no gravity, every object is updated the same way based on its velocity
-void GameObject::Update(){
+int GameObject::Update(){
     //Simple updating for every GameObject
     x += velX * dirX;
     y += velY * dirY;
+    return 0;
 }
 
 // Every object is rendered in different way, 
@@ -58,7 +59,7 @@ void GameObject::Render() {}
 // Collision detection function for every object
 col_dir GameObject::detectCollision(GameObject* otherObject){
     
-    if (!collidable || !otherObject->Collidable()) {
+    if (!(this->Collidable() && otherObject->Collidable())) {
         return NO_COLLISION;
     }
     
@@ -73,14 +74,14 @@ col_dir GameObject::detectCollision(GameObject* otherObject){
        ( y + boundY > otherObjectY - otherObjectBoundY) &&
        ( y - boundY < otherObjectY + otherObjectBoundY) )
     {
-        if(abs(x - otherObjectX) < otherObjectBoundX) //Vertical collision
+        if(abs(x - otherObjectX) < otherObjectBoundX - 5) //Vertical collision
         {
             if(y < otherObjectY)
                 return TOP;
             else
                 return BOTTOM;
         }
-        else if(abs(y - otherObjectY) < otherObjectBoundY) //Horizontal collision
+        else if(abs(y - otherObjectY) < 15) //Horizontal collision
         {
             if(x < otherObjectX)
                 return LEFT;
@@ -103,5 +104,3 @@ col_dir GameObject::detectCollision(GameObject* otherObject){
 
 //Handle collisions differently for every object
 void GameObject::Collided(int objectID, col_dir dir){}
-
-bool GameObject::Collidable(){ return alive && collidable ;}

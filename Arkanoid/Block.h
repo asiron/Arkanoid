@@ -29,7 +29,7 @@ public:
     void Destroy();
     void Init(float x, float y, int speed, int dirX, int health);
     void Render();
-    void Update();
+    int Update();
     
     //respond to collision function
     void Collided(int ObjectID, col_dir dir);

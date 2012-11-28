@@ -11,17 +11,29 @@
 
 #include <iostream>
 #include <SDL/SDL.h>
+#include <list>
+
+using namespace std;
+
+bool Compare(pair<string, int> a, pair<string, int> b);
+int StrToInt(string s);
 
 class State {
+    
+protected:
+    list<pair<string, int>> highsco_list;               // list of all highscores and their names
+    
 public:
     
-    State() {};
+    State();
     virtual ~State() {};
     
     void virtual HandleEvents(Uint8* keystates, SDL_Event event, int control_type) {};
     void virtual RenderState() {};
     void virtual UpdateState() {};
     void virtual InitState() {};
+    
+    void PushScore(string name, int highscore);
     
 };
 

@@ -43,7 +43,7 @@ void Block::Init(float x, float y, int speed, int dirX, int health){
 
 }
 
-void Block::Update(){
+int Block::Update(){
     if(isAlive()){
         GameObject::Update();
         //Performing boundry checking
@@ -52,6 +52,7 @@ void Block::Update(){
         //Updating of animation exists
         if(animation) animation->Animate();
     }
+    return 0;
 }
 void Block::Render(){
     if(isAlive()){
@@ -67,11 +68,18 @@ void Block::Collided( int objectID, col_dir dir)
     if(dir == NO_COLLISION)
         return;
     
-    if(objectID == BALL){
-        if(!--health)
+    if(objectID == BALL || objectID == PROJECTILE){
+        if(!--health){
+            Effect** effs = dynamic_cast<PlayingState*>(g_GamePtr->GetState())->GetEffects();
+            if(rand()%2){
+                int index = rand()%3;
+                if (!effs[index]->isAlive())
+                    effs[index]->Init(x, y);
+            }
             SetAlive(false);
-        else if (animation->IsAutoAnimation())
+        }else if (animation->IsAutoAnimation())
             animation->SetFrame(maxhealth - health);
+        
         
     } else if (objectID == BLOCK ){
         if(dir == LEFT)

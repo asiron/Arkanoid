@@ -22,10 +22,8 @@ public:
     void Destroy();
     void Init(int x, int y, int velY);
     void Render();
-    void Update();
-    
-    void Shoot();
-    
+    int Update();
+        
     //respond to collision function
     void Collided(int ObjectID, enum col_dir );
     

@@ -14,6 +14,8 @@
 
 enum OBJECT_TYPE{PLAYER, BALL, BLOCK, EFFECT, PROJECTILE};                          // enum for defining an object, used during collisions
 enum col_dir {NO_COLLISION, LEFT, RIGHT, TOP, BOTTOM, TLCOR, TRCOR, BLCOR, BRCOR};  // enum for indicating how objects collided, COR stands for corner
+enum EFFECT_TYPE{GUN, MAGNET, SECONDBALL};
+
 
 class Animation;
 
@@ -52,7 +54,7 @@ public:
     
     void Init(float x, float y, float velX, float velY, int dirX, int dirY, float boundX, float boundY);
     void virtual Render();
-    void virtual Update();
+    int virtual Update();
     
     float GetX() { return x; }
     float GetY() { return y; }
@@ -74,7 +76,8 @@ public:
     
     enum col_dir detectCollision(GameObject* otherObject);
     void virtual Collided(int objectID, col_dir dir);
-    bool Collidable();
+    bool Collidable(){ return alive && collidable ;}
+
 
     
 };

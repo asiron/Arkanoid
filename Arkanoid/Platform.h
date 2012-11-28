@@ -10,14 +10,17 @@
 #define __Arkanoid__Platform__
 
 #include <iostream>
+#include <cstdlib>
 #include "GameObject.h"
 #include "Game.h"
+
 
 class Platform : public GameObject {
     
 private:
     int lives;
     int score;
+    int has_effect;
     
 public:
     Platform(const char* filename = NULL, int maxFrame = 0, int frameDelay = 0, int frameWidth = 0,
@@ -25,13 +28,16 @@ public:
     void Destroy();
     
     void Init();
-    void Update();
+    int Update();
     void Render();
     
     void MoveLeft();
     void MoveRight();
     void StopMoving();
     
+    void Shoot();
+    
+    void MorphPlatform(int effect_type);
     
     int GetScore() {return score;}
     int GetLives() {return lives;}

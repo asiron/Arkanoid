@@ -12,7 +12,7 @@
 #include <iostream>
 #include <sstream>
 #include <tuple>
-#include "Game.h"
+//#include "Game.h"
 #include "State.h"
 #include "Background.h" 
 
@@ -30,7 +30,7 @@ typedef void (*Clicked)(void);
 // typdefs for cleaner implementation of menu objects
 typedef tuple<SDL_Surface*, SDL_Surface*, SDL_Surface*> Text;
 
-typedef tuple<Text, bool> Highscore_Text;
+typedef tuple<Text, bool, Text> Highscore_Text;
 typedef tuple<Text, bool, Clicked> MainMenuText;
 typedef tuple<Text, bool, Clicked, Text, Text, bool, int> OptionsText;
 
@@ -41,19 +41,17 @@ void GotoMainMenu();
 
 class Background;
 
+
 class MenuState : public State {
     
     
 private:
     list<Background*> bgs;
     
-    list<tuple<Text, bool, Clicked>> menu_main;
-    list<tuple<Text, bool>> menu_highscores;
-    list<tuple<Text, bool, Clicked, Text, Text, bool, int>> menu_options;
+    list<MainMenuText> menu_main;
+    list<Highscore_Text> menu_highscores;
+    list<OptionsText> menu_options;
 
-    
-    list<int> highsco_list;
-    
     int mouse_pos_x;
     int mouse_pos_y;
     

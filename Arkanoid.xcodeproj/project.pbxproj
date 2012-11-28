@@ -29,6 +29,7 @@
 		1086373B1663D8A300B02805 /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1086373A1663D8A300B02805 /* State.cpp */; };
 		10C870F21663F5EF00563104 /* MenuState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10C870F01663F5EF00563104 /* MenuState.cpp */; };
 		10C870F61664163F00563104 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10C870F41664163F00563104 /* Background.cpp */; };
+		10C871021664B2E300563104 /* Gui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10C871001664B2E200563104 /* Gui.cpp */; };
 		10D4503F165EB639001A13FA /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10D4503D165EB639001A13FA /* Animation.cpp */; };
 		10DE61E0165D068200D9A1D4 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DE61DE165D068100D9A1D4 /* Ball.cpp */; };
 		10F8D47216619BAB005FEE53 /* MapLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10F8D47016619BAB005FEE53 /* MapLoader.cpp */; };
@@ -73,10 +74,17 @@
 		104ED8EA16614BFB008085EC /* scaler.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = scaler.cpp; sourceTree = "<group>"; };
 		104ED8EC16614C22008085EC /* scaler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scaler.h; sourceTree = "<group>"; };
 		104ED8ED1661648B008085EC /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
-		104ED8EE1661648B008085EC /* platform.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platform.png; sourceTree = "<group>"; };
 		104ED8EF166167A4008085EC /* Block.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Block.cpp; sourceTree = "<group>"; };
 		104ED8F0166167A4008085EC /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
-		104ED8F216616A24008085EC /* block.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = block.png; sourceTree = "<group>"; };
+		106A899F1665D872000D6F0C /* config.cfg */ = {isa = PBXFileReference; lastKnownFileType = text; name = config.cfg; path = Arkanoid/data/config.cfg; sourceTree = "<group>"; };
+		106A89A01665D872000D6F0C /* font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = font.ttf; path = Arkanoid/data/font.ttf; sourceTree = "<group>"; };
+		106A89A11665D872000D6F0C /* highscores */ = {isa = PBXFileReference; lastKnownFileType = text; name = highscores; path = Arkanoid/data/highscores; sourceTree = "<group>"; };
+		106A89A21665D872000D6F0C /* mainfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mainfont.ttf; path = Arkanoid/data/mainfont.ttf; sourceTree = "<group>"; };
+		106A89A31665D872000D6F0C /* map.cfg */ = {isa = PBXFileReference; lastKnownFileType = text; name = map.cfg; path = Arkanoid/data/map.cfg; sourceTree = "<group>"; };
+		106A89A51665D884000D6F0C /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music.mp3; path = ../graphics/music.mp3; sourceTree = "<group>"; };
+		106A89A61665D884000D6F0C /* sfx.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx.wav; path = ../graphics/sfx.wav; sourceTree = "<group>"; };
+		106A89A71665D8A2000D6F0C /* platformw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platformw.png; sourceTree = "<group>"; };
+		106A89A81665D8BE000D6F0C /* block3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = block3.png; sourceTree = "<group>"; };
 		1086372D1662AD1A00B02805 /* Effect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Effect.cpp; sourceTree = "<group>"; };
 		1086372E1662AD1A00B02805 /* Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Effect.h; sourceTree = "<group>"; };
 		108637311662CA3300B02805 /* Projectile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Projectile.cpp; sourceTree = "<group>"; };
@@ -89,6 +97,17 @@
 		10C870F11663F5EF00563104 /* MenuState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuState.h; sourceTree = "<group>"; };
 		10C870F41664163F00563104 /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Background.cpp; sourceTree = "<group>"; };
 		10C870F51664163F00563104 /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
+		10C871001664B2E200563104 /* Gui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gui.cpp; sourceTree = "<group>"; };
+		10C871011664B2E300563104 /* Gui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gui.h; sourceTree = "<group>"; };
+		10C871031665718000563104 /* background2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background2.jpg; sourceTree = "<group>"; };
+		10C871041665718100563104 /* block2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = block2.png; sourceTree = "<group>"; };
+		10C871051665718100563104 /* block4health.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = block4health.png; sourceTree = "<group>"; };
+		10C871061665718100563104 /* effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = effect.png; sourceTree = "<group>"; };
+		10C871071665718100563104 /* effect2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = effect2.png; sourceTree = "<group>"; };
+		10C871081665718200563104 /* effect3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = effect3.png; sourceTree = "<group>"; };
+		10C871091665718200563104 /* starsback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starsback.png; sourceTree = "<group>"; };
+		10C8710A1665718200563104 /* starsforeforeground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starsforeforeground.png; sourceTree = "<group>"; };
+		10C8710B1665718200563104 /* starsforeground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starsforeground.png; sourceTree = "<group>"; };
 		10D4503D165EB639001A13FA /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		10D4503E165EB639001A13FA /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		10DE61DE165D068100D9A1D4 /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
@@ -144,42 +163,44 @@
 		1011DC4A165ACDDF00D93346 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				1011DC4B165ACDDF00D93346 /* main.cpp */,
-				10C870F41664163F00563104 /* Background.cpp */,
-				10C870F51664163F00563104 /* Background.h */,
-				104ED8EA16614BFB008085EC /* scaler.cpp */,
-				104ED8EC16614C22008085EC /* scaler.h */,
 				10D4503D165EB639001A13FA /* Animation.cpp */,
 				10D4503E165EB639001A13FA /* Animation.h */,
+				1011DC4D165ACDDF00D93346 /* Arkanoid.1 */,
+				10C870F41664163F00563104 /* Background.cpp */,
+				10C870F51664163F00563104 /* Background.h */,
 				10DE61DE165D068100D9A1D4 /* Ball.cpp */,
 				10DE61DF165D068200D9A1D4 /* Ball.h */,
-				1011DC4D165ACDDF00D93346 /* Arkanoid.1 */,
-				1011DC63165AD14B00D93346 /* Game.cpp */,
-				1011DC64165AD14B00D93346 /* Game.h */,
-				1011DC6A165AD18D00D93346 /* GameObject.cpp */,
-				1011DC6B165AD18D00D93346 /* GameObject.h */,
-				1011DC6D165AD1DE00D93346 /* Platform.cpp */,
-				1011DC6E165AD1DF00D93346 /* Platform.h */,
-				1011DC70165AD20D00D93346 /* FpsCounter.cpp */,
-				1011DC71165AD20D00D93346 /* FpsCounter.h */,
-				1011DC73165AD23300D93346 /* Singleton.cpp */,
-				1011DC74165AD23300D93346 /* Singleton.h */,
 				104ED8EF166167A4008085EC /* Block.cpp */,
 				104ED8F0166167A4008085EC /* Block.h */,
-				10F8D47016619BAB005FEE53 /* MapLoader.cpp */,
-				10F8D47116619BAB005FEE53 /* MapLoader.h */,
 				10F8D4741661A0DA005FEE53 /* ConfigFile.cpp */,
 				10F8D4751661A0DA005FEE53 /* ConfigFile.h */,
 				1086372D1662AD1A00B02805 /* Effect.cpp */,
 				1086372E1662AD1A00B02805 /* Effect.h */,
-				108637311662CA3300B02805 /* Projectile.cpp */,
-				108637321662CA3300B02805 /* Projectile.h */,
-				108637341663C27F00B02805 /* PlayingState.cpp */,
-				108637351663C28000B02805 /* PlayingState.h */,
-				108637381663C47800B02805 /* State.h */,
-				1086373A1663D8A300B02805 /* State.cpp */,
+				1011DC70165AD20D00D93346 /* FpsCounter.cpp */,
+				1011DC71165AD20D00D93346 /* FpsCounter.h */,
+				1011DC63165AD14B00D93346 /* Game.cpp */,
+				1011DC64165AD14B00D93346 /* Game.h */,
+				1011DC6A165AD18D00D93346 /* GameObject.cpp */,
+				1011DC6B165AD18D00D93346 /* GameObject.h */,
+				10C871001664B2E200563104 /* Gui.cpp */,
+				10C871011664B2E300563104 /* Gui.h */,
+				1011DC4B165ACDDF00D93346 /* main.cpp */,
+				10F8D47016619BAB005FEE53 /* MapLoader.cpp */,
+				10F8D47116619BAB005FEE53 /* MapLoader.h */,
 				10C870F01663F5EF00563104 /* MenuState.cpp */,
 				10C870F11663F5EF00563104 /* MenuState.h */,
+				1011DC6D165AD1DE00D93346 /* Platform.cpp */,
+				1011DC6E165AD1DF00D93346 /* Platform.h */,
+				108637341663C27F00B02805 /* PlayingState.cpp */,
+				108637351663C28000B02805 /* PlayingState.h */,
+				108637311662CA3300B02805 /* Projectile.cpp */,
+				108637321662CA3300B02805 /* Projectile.h */,
+				104ED8EA16614BFB008085EC /* scaler.cpp */,
+				104ED8EC16614C22008085EC /* scaler.h */,
+				1011DC73165AD23300D93346 /* Singleton.cpp */,
+				1011DC74165AD23300D93346 /* Singleton.h */,
+				1086373A1663D8A300B02805 /* State.cpp */,
+				108637381663C47800B02805 /* State.h */,
 			);
 			name = src;
 			path = Arkanoid;
@@ -188,8 +209,13 @@
 		103C502B166007170042BEBD /* data */ = {
 			isa = PBXGroup;
 			children = (
-				103C502E1660072D0042BEBD /* sounds */,
 				103C502D166007200042BEBD /* graphics */,
+				106A89A11665D872000D6F0C /* highscores */,
+				106A899F1665D872000D6F0C /* config.cfg */,
+				106A89A01665D872000D6F0C /* font.ttf */,
+				106A89A21665D872000D6F0C /* mainfont.ttf */,
+				106A89A31665D872000D6F0C /* map.cfg */,
+				103C502E1660072D0042BEBD /* sounds */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -197,9 +223,18 @@
 		103C502D166007200042BEBD /* graphics */ = {
 			isa = PBXGroup;
 			children = (
-				104ED8F216616A24008085EC /* block.png */,
+				10C871031665718000563104 /* background2.jpg */,
 				104ED8ED1661648B008085EC /* ball.png */,
-				104ED8EE1661648B008085EC /* platform.png */,
+				10C871041665718100563104 /* block2.png */,
+				106A89A81665D8BE000D6F0C /* block3.png */,
+				10C871051665718100563104 /* block4health.png */,
+				10C871061665718100563104 /* effect.png */,
+				10C871071665718100563104 /* effect2.png */,
+				10C871081665718200563104 /* effect3.png */,
+				106A89A71665D8A2000D6F0C /* platformw.png */,
+				10C871091665718200563104 /* starsback.png */,
+				10C8710A1665718200563104 /* starsforeforeground.png */,
+				10C8710B1665718200563104 /* starsforeground.png */,
 			);
 			name = graphics;
 			path = Arkanoid/data/graphics;
@@ -208,6 +243,8 @@
 		103C502E1660072D0042BEBD /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				106A89A51665D884000D6F0C /* music.mp3 */,
+				106A89A61665D884000D6F0C /* sfx.wav */,
 			);
 			name = sounds;
 			path = Arkanoid/data/sounds;
@@ -283,6 +320,7 @@
 				1086373B1663D8A300B02805 /* State.cpp in Sources */,
 				10C870F21663F5EF00563104 /* MenuState.cpp in Sources */,
 				10C870F61664163F00563104 /* Background.cpp in Sources */,
+				10C871021664B2E300563104 /* Gui.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

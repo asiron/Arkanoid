@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375686292.701824"
+         timestampString = "375772420.160428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
          landmarkName = "Game::closeSystems()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,61 +34,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375686292.701824"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "76"
-         endingLineNumber = "76">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/Game.cpp"
-         timestampString = "375686292.701824"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "81"
-         endingLineNumber = "81"
-         landmarkName = "Game::Loop()"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/Game.cpp"
-         timestampString = "375686292.701824"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "80"
-         endingLineNumber = "80"
-         landmarkName = "Game::Loop()"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/Game.cpp"
-         timestampString = "375686292.701824"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "84"
-         endingLineNumber = "84"
-         landmarkName = "Game::Loop()"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/Game.cpp"
-         timestampString = "375686292.701824"
+         timestampString = "375772420.160428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "85"
-         endingLineNumber = "85"
+         endingLineNumber = "85">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Game.cpp"
+         timestampString = "375772420.160428"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
          landmarkName = "Game::Loop()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -97,11 +58,50 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375686292.701824"
+         timestampString = "375772420.160428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "36"
-         endingLineNumber = "36"
+         startingLineNumber = "89"
+         endingLineNumber = "89"
+         landmarkName = "Game::Loop()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Game.cpp"
+         timestampString = "375772420.160428"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "93"
+         endingLineNumber = "93"
+         landmarkName = "Game::Loop()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Game.cpp"
+         timestampString = "375772420.160428"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "94"
+         endingLineNumber = "94"
+         landmarkName = "Game::Loop()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Game.cpp"
+         timestampString = "375772420.160428"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "42"
+         endingLineNumber = "42"
          landmarkName = "Game::Game(int argc, char** argv)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -110,11 +110,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375687204.09278"
+         timestampString = "375772420.160428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "105"
-         endingLineNumber = "105"
+         startingLineNumber = "113"
+         endingLineNumber = "113"
          landmarkName = "Game::HandleEvents()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -123,11 +123,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375686292.701824"
+         timestampString = "375772420.160428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "82"
-         endingLineNumber = "82"
+         startingLineNumber = "91"
+         endingLineNumber = "91"
          landmarkName = "Game::Loop()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -136,33 +136,33 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375687472.67183"
+         timestampString = "375772420.160428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "164"
-         endingLineNumber = "164">
+         startingLineNumber = "206"
+         endingLineNumber = "206">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375687472.67183"
+         timestampString = "375772420.160428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "165"
-         endingLineNumber = "165">
+         startingLineNumber = "207"
+         endingLineNumber = "207">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Platform.h"
-         timestampString = "375197351.600642"
+         timestampString = "375755812.502895"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "16"
-         endingLineNumber = "16"
+         startingLineNumber = "18"
+         endingLineNumber = "18"
          landmarkName = "class Platform"
          landmarkType = "3">
       </FileBreakpoint>
@@ -171,24 +171,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375686292.701824"
+         timestampString = "375772420.160428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "44"
-         endingLineNumber = "44"
+         startingLineNumber = "52"
+         endingLineNumber = "52"
          landmarkName = "Game::Game(int argc, char** argv)"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/GameObject.h"
-         timestampString = "375653494.459746"
+         timestampString = "375755812.502895"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "73"
-         endingLineNumber = "73"
+         startingLineNumber = "75"
+         endingLineNumber = "75"
          landmarkName = "class GameObject"
          landmarkType = "3">
       </FileBreakpoint>
@@ -492,11 +492,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375686292.701824"
+         timestampString = "375772420.160428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "68"
-         endingLineNumber = "68"
+         startingLineNumber = "77"
+         endingLineNumber = "77"
          landmarkName = "Game::closeSystems()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -750,24 +750,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Block.cpp"
-         timestampString = "375562691.282157"
+         timestampString = "375770628.293027"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
-         landmarkName = "Block::Collided( int objectID, col_dir dir)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/Block.cpp"
-         timestampString = "375562691.282157"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "73"
-         endingLineNumber = "73"
+         startingLineNumber = "80"
+         endingLineNumber = "80"
          landmarkName = "Block::Collided( int objectID, col_dir dir)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -815,11 +802,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/PlayingState.h"
-         timestampString = "375651433.030351"
+         timestampString = "375770498.760296"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "53"
-         endingLineNumber = "53"
+         startingLineNumber = "60"
+         endingLineNumber = "60"
          landmarkName = "class PlayingState"
          landmarkType = "3">
       </FileBreakpoint>
@@ -828,11 +815,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/PlayingState.h"
-         timestampString = "375651433.030351"
+         timestampString = "375770498.760296"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
+         startingLineNumber = "61"
+         endingLineNumber = "61"
          landmarkName = "class PlayingState"
          landmarkType = "3">
       </FileBreakpoint>
@@ -841,11 +828,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/PlayingState.cpp"
-         timestampString = "375644874.339468"
+         timestampString = "375770498.760296"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "29"
-         endingLineNumber = "29"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
          landmarkName = "PlayingState::PlayingState()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -854,24 +841,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/PlayingState.cpp"
-         timestampString = "375644874.979378"
+         timestampString = "375767136.056689"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "28"
-         endingLineNumber = "28"
-         landmarkName = "PlayingState::PlayingState()"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Arkanoid/PlayingState.cpp"
-         timestampString = "375645052.515416"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "16"
-         endingLineNumber = "16"
+         startingLineNumber = "27"
+         endingLineNumber = "27"
          landmarkName = "PlayingState::PlayingState()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -880,11 +854,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375686292.701824"
+         timestampString = "375772420.160428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "45"
-         endingLineNumber = "45"
+         startingLineNumber = "53"
+         endingLineNumber = "53"
          landmarkName = "Game::Game(int argc, char** argv)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -893,22 +867,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/PlayingState.cpp"
-         timestampString = "375687371.419561"
+         timestampString = "375770498.760296"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "83"
-         endingLineNumber = "83">
+         startingLineNumber = "129"
+         endingLineNumber = "129">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/PlayingState.cpp"
-         timestampString = "375687371.419561"
+         timestampString = "375770498.760296"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "84"
-         endingLineNumber = "84"
+         startingLineNumber = "130"
+         endingLineNumber = "130"
          landmarkName = "PlayingState::InitState()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -917,11 +891,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/State.h"
-         timestampString = "375651433.030351"
+         timestampString = "375742830.166354"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "19"
-         endingLineNumber = "19"
+         startingLineNumber = "29"
+         endingLineNumber = "29"
          landmarkName = "class State"
          landmarkType = "3">
       </FileBreakpoint>
@@ -930,11 +904,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684341.241666"
+         timestampString = "375754143.979128"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "222"
-         endingLineNumber = "222"
+         startingLineNumber = "231"
+         endingLineNumber = "231"
          landmarkName = "MenuState::HandleEvents(Uint8* keystates, SDL_Event event, int control_type)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -943,7 +917,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684043.417965"
+         timestampString = "375744243.718978"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "115"
@@ -956,7 +930,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684043.417965"
+         timestampString = "375744243.718978"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "117"
@@ -969,7 +943,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684043.417965"
+         timestampString = "375744243.718978"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "118"
@@ -982,11 +956,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684341.241666"
+         timestampString = "375754143.979128"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "220"
-         endingLineNumber = "220"
+         startingLineNumber = "229"
+         endingLineNumber = "229"
          landmarkName = "MenuState::HandleEvents(Uint8* keystates, SDL_Event event, int control_type)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -995,11 +969,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375687204.09278"
+         timestampString = "375772420.160428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "119"
-         endingLineNumber = "119"
+         startingLineNumber = "127"
+         endingLineNumber = "127"
          landmarkName = "ChangeState()"
          landmarkType = "7">
       </FileBreakpoint>
@@ -1008,11 +982,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375687472.67183"
+         timestampString = "375772420.160428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "120"
-         endingLineNumber = "120"
+         startingLineNumber = "128"
+         endingLineNumber = "128"
          landmarkName = "ChangeState()"
          landmarkType = "7">
       </FileBreakpoint>
@@ -1021,11 +995,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684043.417965"
+         timestampString = "375744243.718978"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "80"
-         endingLineNumber = "80"
+         startingLineNumber = "79"
+         endingLineNumber = "79"
          landmarkName = "MenuState::Destroy()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1034,11 +1008,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684043.417965"
+         timestampString = "375744243.718978"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "62"
-         endingLineNumber = "62"
+         startingLineNumber = "61"
+         endingLineNumber = "61"
          landmarkName = "MenuState::MenuState()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1047,7 +1021,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684043.417965"
+         timestampString = "375744243.718978"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "135"
@@ -1060,11 +1034,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684043.417965"
+         timestampString = "375754143.979128"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "176"
-         endingLineNumber = "176"
+         startingLineNumber = "185"
+         endingLineNumber = "185"
          landmarkName = "MenuState::UpdateState()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1073,11 +1047,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684341.241666"
+         timestampString = "375754143.979128"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "236"
-         endingLineNumber = "236"
+         startingLineNumber = "245"
+         endingLineNumber = "245"
          landmarkName = "MenuState::UpdateList(list&lt;T&gt; &amp;menu_list)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1086,11 +1060,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684341.241666"
+         timestampString = "375754143.979128"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "242"
-         endingLineNumber = "242"
+         startingLineNumber = "251"
+         endingLineNumber = "251"
          landmarkName = "MenuState::UpdateList(list&lt;T&gt; &amp;menu_list)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1099,11 +1073,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684341.241666"
+         timestampString = "375754143.979128"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "243"
-         endingLineNumber = "243"
+         startingLineNumber = "252"
+         endingLineNumber = "252"
          landmarkName = "MenuState::UpdateList(list&lt;T&gt; &amp;menu_list)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1112,7 +1086,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684043.417965"
+         timestampString = "375744243.718978"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "134"
@@ -1125,7 +1099,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684043.417965"
+         timestampString = "375744243.718978"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "125"
@@ -1138,7 +1112,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/MenuState.cpp"
-         timestampString = "375684043.417965"
+         timestampString = "375744243.718978"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "127"
@@ -1151,35 +1125,496 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.h"
-         timestampString = "375686292.701824"
+         timestampString = "375742830.166354"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "96"
-         endingLineNumber = "96">
+         startingLineNumber = "99"
+         endingLineNumber = "99">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375687472.67183"
+         timestampString = "375772420.160428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "151"
-         endingLineNumber = "151">
+         startingLineNumber = "167"
+         endingLineNumber = "167">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Arkanoid/Game.cpp"
-         timestampString = "375687472.67183"
+         timestampString = "375772420.160428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "153"
-         endingLineNumber = "153"
+         startingLineNumber = "169"
+         endingLineNumber = "169"
          landmarkName = "Game::Draw(SDL_Surface* screen, SDL_Surface* source,int x, int y)"
          landmarkType = "5">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Platform.cpp"
+         timestampString = "375755812.502895"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
+         landmarkName = "Platform::Collided( int objectID, col_dir dir)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Platform.cpp"
+         timestampString = "375755812.502895"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
+         landmarkName = "Platform::Collided( int objectID, col_dir dir)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Gui.cpp"
+         timestampString = "375701589.814772"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "40"
+         endingLineNumber = "40"
+         landmarkName = "Gui::Render()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Gui.cpp"
+         timestampString = "375701589.814772"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "41"
+         endingLineNumber = "41"
+         landmarkName = "Gui::Render()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Gui.h"
+         timestampString = "375701589.814772"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "34"
+         endingLineNumber = "34"
+         landmarkName = "class Gui"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/GameObject.h"
+         timestampString = "375755812.502895"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "60"
+         endingLineNumber = "60"
+         landmarkName = "class GameObject"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/GameObject.h"
+         timestampString = "375755812.502895"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "59"
+         endingLineNumber = "59"
+         landmarkName = "class GameObject"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Game.cpp"
+         timestampString = "375772420.160428"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "133"
+         endingLineNumber = "133"
+         landmarkName = "ChangeState()"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Game.cpp"
+         timestampString = "375772420.160428"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "132"
+         endingLineNumber = "132"
+         landmarkName = "ChangeState()"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/PlayingState.cpp"
+         timestampString = "375770498.760296"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
+         landmarkName = "PlayingState::UpdateState()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/PlayingState.cpp"
+         timestampString = "375770498.760296"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "89"
+         endingLineNumber = "89"
+         landmarkName = "PlayingState::UpdateState()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/PlayingState.cpp"
+         timestampString = "375770498.760296"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "139"
+         endingLineNumber = "139"
+         landmarkName = "PlayingState::SaveHighscores()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Platform.h"
+         timestampString = "375758498.868141"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "46"
+         endingLineNumber = "46"
+         landmarkName = "class Platform"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Block.h"
+         timestampString = "375766633.728568"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "33"
+         endingLineNumber = "33"
+         landmarkName = "class Block"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/GameObject.cpp"
+         timestampString = "375749282.343784"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
+         landmarkName = "GameObject::detectCollision(GameObject* otherObject)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/GameObject.cpp"
+         timestampString = "375751683.282828"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "63"
+         endingLineNumber = "63"
+         landmarkName = "GameObject::detectCollision(GameObject* otherObject)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/GameObject.cpp"
+         timestampString = "375748291.131701"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "61"
+         endingLineNumber = "61"
+         landmarkName = "GameObject::detectCollision(GameObject* otherObject)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Ball.cpp"
+         timestampString = "375765839.100874"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "93"
+         endingLineNumber = "93"
+         landmarkName = "Ball::Collided(int ObjectID, col_dir dir)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Ball.cpp"
+         timestampString = "375765839.100874"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "92"
+         endingLineNumber = "92"
+         landmarkName = "Ball::Collided(int ObjectID, col_dir dir)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Ball.cpp"
+         timestampString = "375765839.100874"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "97"
+         endingLineNumber = "97"
+         landmarkName = "Ball::Collided(int ObjectID, col_dir dir)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Ball.cpp"
+         timestampString = "375765839.100874"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "98"
+         endingLineNumber = "98"
+         landmarkName = "Ball::Collided(int ObjectID, col_dir dir)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Ball.cpp"
+         timestampString = "375765839.100874"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "99"
+         endingLineNumber = "99"
+         landmarkName = "Ball::Collided(int ObjectID, col_dir dir)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Ball.cpp"
+         timestampString = "375756210.941327"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "51"
+         endingLineNumber = "51"
+         landmarkName = "Ball::Update()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Platform.cpp"
+         timestampString = "375759555.918742"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "89"
+         endingLineNumber = "89"
+         landmarkName = "Platform::Shoot()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Platform.cpp"
+         timestampString = "375759592.342167"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
+         landmarkName = "Platform::Shoot()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Platform.cpp"
+         timestampString = "375759622.5772"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "91"
+         endingLineNumber = "91"
+         landmarkName = "Platform::Shoot()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Platform.cpp"
+         timestampString = "375759671.992056"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "93"
+         endingLineNumber = "93"
+         landmarkName = "Platform::Shoot()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Platform.cpp"
+         timestampString = "375759706.175374"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "92"
+         endingLineNumber = "92"
+         landmarkName = "Platform::Shoot()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Projectile.cpp"
+         timestampString = "375759742.534365"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "24"
+         endingLineNumber = "24"
+         landmarkName = "Projectile::Init(int x, int y, int velY)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Projectile.cpp"
+         timestampString = "375759760.203861"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "25"
+         endingLineNumber = "25"
+         landmarkName = "Projectile::Init(int x, int y, int velY)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Projectile.cpp"
+         timestampString = "375761411.245409"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "37"
+         endingLineNumber = "37"
+         landmarkName = "Projectile::Render()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Projectile.cpp"
+         timestampString = "375759918.589455"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "23"
+         endingLineNumber = "23">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Platform.cpp"
+         timestampString = "375760232.800012"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "94"
+         endingLineNumber = "94"
+         landmarkName = "Platform::Shoot()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Projectile.cpp"
+         timestampString = "375761713.580231"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "49"
+         endingLineNumber = "49"
+         landmarkName = "Projectile::Collided(int ObjectID, col_dir dir)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Arkanoid/Platform.cpp"
+         timestampString = "375768464.396927"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "99"
+         endingLineNumber = "99"
+         landmarkName = "Platform::MorphPlatform(int effect_type)"
+         landmarkType = "5">
+      </FileBreakpoint>
    </FileBreakpoints>
+   <SymbolicBreakpoints>
+      <AddressBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         symbolName = "*0x7fff86ade27d">
+      </AddressBreakpoint>
+   </SymbolicBreakpoints>
 </Bucket>

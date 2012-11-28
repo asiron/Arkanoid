@@ -19,9 +19,9 @@
 #include "Effect.h"
 #include "Projectile.h"
 #include "MapLoader.h"
+#include "Gui.h"
 
-
-
+class Gui;
 class Platform;
 class Ball;
 class Block;
@@ -35,14 +35,21 @@ using namespace std;
 class PlayingState : public State {
 
 private:
+    bool changingstate;
+    
     list<GameObject*> gobjects;
     MapLoader* map_loader;
     
     Ball* ball;
+    Ball* second_ball;
     Platform* platform;
-    Effect* effect;
-    Effect* effect2;
-    Projectile* projectile;
+    Effect** effects;
+    Projectile** projectiles;
+    Gui* gui;
+    
+    int second_ball_flag;
+    
+    void SaveHighscores();
     
 public:
     PlayingState();
@@ -53,6 +60,14 @@ public:
     void UpdateState();
     void HandleEvents(Uint8* keystates, SDL_Event event, int control_type);
     
+    void SetChangingStateFlag(bool flag) { changingstate = flag; }
+    bool GetChangingStateFlag() { return changingstate; }
+    
+    Effect** GetEffects(){return effects;}
+    Projectile** GetProjectiles(){return projectiles;}
     Platform* GetPlatform() {return platform;}
+    Ball* GetBall() {return ball;}
+    
+    void LaunchSecondBall();
 };
 #endif /* defined(__Arkanoid__PlayingState__) */
