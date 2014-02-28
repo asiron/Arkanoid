@@ -44,7 +44,6 @@ class Background;
 
 class MenuState : public State {
     
-    
 private:
     list<Background*> bgs;
     
@@ -58,8 +57,8 @@ private:
     int offsetX;    // offset from top to first menu message
     int offsetY;    // offset from left to menu messages
     
-    int distance_between_msg;       //vertical distance between consecutive MSGs
-    int distance_between_opt;       //horizontal distance between Option and value
+    int distance_between_msg;       // vertical distance between consecutive MSGs
+    int distance_between_opt;       // horizontal distance between Option and value
     
     int curMenu;
     
@@ -70,7 +69,7 @@ private:
     TTF_Font* font;
     inline void Draw(SDL_Surface* image, int x, int y) const;
     
-    //function pointers to menu event listener
+    // function pointers to menu event listener
     Clicked startgame;
     Clicked options;
     Clicked highscores;
@@ -80,9 +79,8 @@ private:
     Clicked musicon;
     Clicked soundon;
     
-    template <typename T> void UpdateList(list<T> &menu_list);
-    template <typename T> void RunCommand(list<T> menu_list);
-    
+    template <typename T> void UpdateList(list<T>& menu_list);
+    template <typename T> void RunCommand(list<T>& menu_list);
     
 public:
     MenuState();

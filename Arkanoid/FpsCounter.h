@@ -11,7 +11,11 @@
 
 #include <iostream>
 #include <SDL/SDL.h>
+#ifdef __GNUC__
+#include <SDL/SDL_ttf.h>
+#else
 #include <SDL_ttf/SDL_ttf.h>
+#endif
 #include "Game.h"
 
 class Game;

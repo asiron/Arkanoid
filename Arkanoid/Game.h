@@ -13,9 +13,15 @@
 #include <list>
 #include <string>
 #include <SDL/SDL.h>
+#ifdef __GNUC__
+#include <SDL/SDL_ttf.h>
+#include <SDL/SDL_mixer.h>
+#include <SDL/SDL_image.h>
+#else
 #include <SDL_ttf/SDL_ttf.h>
 #include <SDL_mixer/SDL_mixer.h>
 #include <SDL_image/SDL_image.h>
+#endif
 #include "State.h"
 #include "GameObject.h"
 #include "Singleton.h"

@@ -7,6 +7,9 @@
 //
 
 #include "MapLoader.h"
+
+#include "defines.h"
+
 // offsets for placing blocks properly on screen such that its edges are aligned with screen edges
 #define offsetX g_Game.GetScreen_W()/(float)BASE_SCREEN_X*value.frameWidth/2.0
 #define offsetY g_Game.GetScreen_H()/(float)BASE_SCREEN_Y*value.frameHeight/2.0
@@ -100,7 +103,7 @@ void MapLoader::LoadBitmaps() {
         int scaled_width = scalerX * val.frameWidth * val.animationColumns ;
         int scaled_height = scalerY * val.frameHeight * (val.maxFrame+1) / val.animationColumns;
         
-        SDL_Surface* image = LoadScaledBitmap(val.filename.c_str(),scaled_width, scaled_height);
+        SDL_Surface* image = LoadScaledBitmap((std::string(RESOURCE_DIRECTORY) + val.filename).c_str(),scaled_width, scaled_height);
         bitmaps.insert(pair<char, SDL_Surface*>(iter->first, image));
     }
         

@@ -8,9 +8,11 @@
 
 #include "Gui.h"
 
+#include "defines.h"
+
 Gui::Gui() : x(0), y(0), score(0),  lives(0), score_msg(NULL), lives_msg(NULL) {
     color = {0x0c, 0xac, 0xd0, 0};
-    font = TTF_OpenFont("../../Arkanoid/data/font.ttf", 14);
+    font = TTF_OpenFont((std::string(RESOURCE_DIRECTORY) + "font.ttf").c_str(), 14);
     if(!font) {
         cerr << "Could not load font " << TTF_GetError << endl;
         exit(1);

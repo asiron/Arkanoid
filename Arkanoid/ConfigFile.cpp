@@ -8,6 +8,8 @@
 
 #include "ConfigFile.h"
 
+#include <typeinfo>
+#include <algorithm>
 
 ConfigFile::ConfigFile(string filename){
     ConfigFile::filename = filename;
@@ -49,25 +51,18 @@ bool ConfigFile::HasOnlyWhiteSpace(string &line) const{
 
 bool ConfigFile::IsValidLine(string &line) const{
     
-    line.erase(0,line.find_first_not_of("\t "));
-    if(line[0] == '=')
-        return false;
-    //whitespaces counter
-    int ws_counter = 0;
-    
-    //removing spaces
-    line.erase( remove( line.begin(), line.end(), ' ' ), line.end() );
-    
-    //counting comma's
-    for(size_t i=0; i<line.length(); i++)
-        if(line[i] == ',')
-            ws_counter++;
-    
-    if(ws_counter == 9)
-        return true;
-
+    // find first '='
+  char target[] = {'='};
+  std::string::iterator start_position = line.end();
+  start_position = std::find_first_of(line.begin(), line.end(), target, target + 1);
+  if (start_position == line.end())
     return false;
-    
+
+    //count commas
+    std::string::iterator::difference_type count = 0;
+    count = std::count(start_position + 1, line.end(), ',');
+
+    return (count == 9);
 }
 
 bool ConfigFile::KeyExists(char key) const{
@@ -110,7 +105,25 @@ void ConfigFile::ExtractValue(Value &value, string &line) const{
     
 }
 
+struct is_whitespace_t
+ : public std::unary_function<char, bool>
+{
+    bool operator() (char character_in)
+    {
+      char target[] = {' ', '\t', 0};
+
+      return (std::find(target, target + 2, character_in) != 0);
+    }
+};
+
 void ConfigFile::ExtractContents(string &line, size_t line_number){
+
+  // remove any whitespace
+//  // *TODO*: find a solution using function binding...
+//  is_whitespace_t predicate;
+//  std::remove_if(line.begin(), line.end(), predicate);
+  line.erase(std::remove(line.begin(), line.end(), ' '), line.end());
+  std::cerr << line;
 
     char key;
     Value value;
@@ -136,12 +149,17 @@ void ConfigFile::Parse(){
     size_t line_number = 0;
     while(getline(file, line)){
         ++line_number;
-        
+
+      // support comments
         RemoveComment(line);
         if(HasOnlyWhiteSpace(line)) // empty line so we continue
             continue;
+
+        // validate schema
         if(!IsValidLine(line))
             ExitWithError("ConfigFile: Found invalid line at " + line_number);
+
+        // parse line
         ExtractContents(line, line_number);
     }
 

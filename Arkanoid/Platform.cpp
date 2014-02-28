@@ -8,6 +8,7 @@
 
 #include "Platform.h"
 
+#include "Projectile.h"
 
 Platform::Platform(const char* filename, int maxFrame, int frameDelay, int frameWidth,
            int frameHeight, int animationColumns, int animationDirection )

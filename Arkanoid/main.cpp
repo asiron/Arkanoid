@@ -7,11 +7,18 @@
 //
 
 #include <iostream>
-#include "SDLMain.h"
 #include <SDL/SDL.h>
+#ifdef __GNUC__
+#include <SDL/SDL_main.h>
+#include <SDL/SDL_ttf.h>
+#include <SDL/SDL_mixer.h>
+#include <SDL/SDL_image.h>
+#else
+#include "SDLMain.h"
 #include <SDL_ttf/SDL_ttf.h>
 #include <SDL_mixer/SDL_mixer.h>
 #include <SDL_image/SDL_image.h>
+#endif
 #include "Game.h"
 
 int main(int argc, char** argv)

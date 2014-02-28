@@ -10,7 +10,11 @@
 #define Arkanoid_scaler_h
 
 #include <SDL/SDL.h>
+#ifdef __GNUC__
+#include <SDL/SDL_image.h>
+#else
 #include <SDL_image/SDL_image.h>
+#endif
 #include <iostream>
 
 

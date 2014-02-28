@@ -8,6 +8,8 @@
 
 #include "MenuState.h"
 
+#include "defines.h"
+
 #define RenderTextColor(_text, _color) TTF_RenderText_Solid(font, _text, _color)   // helpful macro for rendering text with color
 
 // macro for placing 3 SDL_Surfaces in different colours defined as below
@@ -16,16 +18,16 @@
                                 TTF_RenderText_Solid(font, _text, highlight)
 
 MenuState::MenuState() : State(){
-    
-    bgs.push_back(new Background("../../Arkanoid/data/graphics/background2.jpg", 1366, 768));
-    //bgs.push_back(new Background("../../Arkanoid/data/graphics/starsback.png", 1700, 900));
-    //bgs.push_back(new Background("../../Arkanoid/data/graphics/starsmidground.png", 1800, 1050));
-    bgs.push_back(new Background("../../Arkanoid/data/graphics/starsforeground.png", 1550, 950));
-    bgs.push_back(new Background("../../Arkanoid/data/graphics/starsforeforeground.png", 1800, 1050));
+
+    bgs.push_back(new Background((std::string(RESOURCE_DIRECTORY) + "graphics/background2.jpg").c_str(), 1366, 768));
+    //bgs.push_back(new Background("../Arkanoid/data/graphics/starsback.png", 1700, 900));
+    //bgs.push_back(new Background("../Arkanoid/data/graphics/starsmidground.png", 1800, 1050));
+    bgs.push_back(new Background((std::string(RESOURCE_DIRECTORY) + "graphics/starsforeground.png").c_str(), 1550, 950));
+    bgs.push_back(new Background((std::string(RESOURCE_DIRECTORY) + "graphics/starsforeforeground.png").c_str(), 1800, 1050));
     
     curMenu = MAIN_MENU;        // setting first visible menu as MAIN MENU
-    
-    font = TTF_OpenFont("../../Arkanoid/data/font.ttf", 28);        // loading menu font
+
+    font = TTF_OpenFont((std::string(RESOURCE_DIRECTORY) + "font.ttf").c_str(), 28);        // loading menu font
     if(!font) {
         cerr << "Could not load font " << TTF_GetError << endl;
         exit(1);
@@ -195,7 +197,6 @@ void MenuState::HandleEvents(Uint8* keystates, SDL_Event event, int control_type
     
     SDL_GetMouseState(&mouse_pos_x, &mouse_pos_y);
     
-    
     switch (curMenu) {
         case OPTIONS:
             if(keystates[SDLK_ESCAPE]){
@@ -212,7 +213,6 @@ void MenuState::HandleEvents(Uint8* keystates, SDL_Event event, int control_type
         default:
             break;
     }
-    
     
     if(event.type == SDL_MOUSEBUTTONUP){
         if(event.button.button == SDL_BUTTON_LEFT){
@@ -237,7 +237,7 @@ inline void MenuState::Draw(SDL_Surface* image, int x, int y) const {
 }
 
 template <class T>
-void MenuState::UpdateList(list<T> &menu_list){
+void MenuState::UpdateList(list<T>& menu_list){
     
     int counter = 0;
     
@@ -254,18 +254,20 @@ void MenuState::UpdateList(list<T> &menu_list){
     }
 }
 
-
-
 template <class T>
-void MenuState::RunCommand(list<T> menu_list){
-    for(typename list<T>::iterator iter = menu_list.begin(); iter != menu_list.end(); iter++){
-        if(get<1>(*iter)){
-            get<2>(*iter)();
-            break;  // we destroyed the whole object propably, we better get the **** out
-        }
-    }
-}
+void MenuState::RunCommand(list<T>& menu_list){
 
+  for(typename list<T>::iterator iter = menu_list.begin();
+      iter != menu_list.end();
+      iter++)
+  {
+    if (get<1>(*iter))
+    {
+      get<2>(*iter)();
+      break;  // we destroyed the whole object propably, we better get the **** out
+    }
+  }
+}
 
 void GotoOptions(){
     dynamic_cast<MenuState*>(g_GamePtr->GetState())->curMenu = OPTIONS;

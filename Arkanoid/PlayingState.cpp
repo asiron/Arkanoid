@@ -8,40 +8,39 @@
 
 #include "PlayingState.h"
 
+#include "defines.h"
+
 PlayingState::PlayingState() : State(){
     
     changingstate = false;
     
-    platform = new Platform("../../Arkanoid/data/graphics/platformw.png", 3, 0, 66, 18, 4, 0);
+    platform = new Platform((std::string(RESOURCE_DIRECTORY) + "graphics/platformw.png").c_str(), 3, 0, 66, 18, 4, 0);
   
-    ball = new Ball("../../Arkanoid/data/graphics/ball.png", 0, 1, 16, 16, 1, 1);
-    second_ball = new Ball("../../Arkanoid/data/graphics/ball.png", 0, 1, 16, 16, 1, 1);
+    ball = new Ball((std::string(RESOURCE_DIRECTORY) + "graphics/ball.png").c_str(), 0, 1, 16, 16, 1, 1);
+    second_ball = new Ball((std::string(RESOURCE_DIRECTORY) + "graphics/ball.png").c_str(), 0, 1, 16, 16, 1, 1);
     
     //pushing ball and platform on the list
     gobjects.push_back(platform);
     gobjects.push_back(ball);
     
-    
     //loading blocks
-    map_loader = new MapLoader("../../Arkanoid/data/config");
-    gobjects.splice(gobjects.end(), map_loader->LoadMap("../../Arkanoid/data/map.cfg"));
-    
+    map_loader = new MapLoader((std::string(RESOURCE_DIRECTORY) + "config").c_str());
+    gobjects.splice(gobjects.end(), map_loader->LoadMap((std::string(RESOURCE_DIRECTORY) + "map.cfg").c_str()));
     
     //loading projectiles
     projectiles = new Projectile*[10];     // Creating 10 projectile pointers as arbitrary value
     for(int i=0; i<3; i++){
-        projectiles[i] = new Projectile("../../Arkanoid/data/graphics/effect.png", 23, 4, 16, 14, 24, 1);
+        projectiles[i] = new Projectile((std::string(RESOURCE_DIRECTORY) + "graphics/effect.png").c_str(), 23, 4, 16, 14, 24, 1);
         gobjects.push_back(projectiles[i]);
     }
     
     effects = new Effect*[3];
-    effects[0] = new Effect("../../Arkanoid/data/graphics/effect.png", 23, 4, 16, 14, 24, 1);
+    effects[0] = new Effect((std::string(RESOURCE_DIRECTORY) + "graphics/effect.png").c_str(), 23, 4, 16, 14, 24, 1);
     effects[0]->SetEffectType(GUN);
-    effects[1] = new Effect("../../Arkanoid/data/graphics/effect2.png", 10, 7, 34, 29, 11, 1);
+    effects[1] = new Effect((std::string(RESOURCE_DIRECTORY) + "graphics/effect2.png").c_str(), 10, 7, 34, 29, 11, 1);
     effects[1]->SetEffectType(MAGNET);
-    effects[2] = new Effect("../../Arkanoid/data/graphics/effect3.png", 59, 1, 60, 60, 8, 1);
+    effects[2] = new Effect((std::string(RESOURCE_DIRECTORY) + "graphics/effect3.png").c_str(), 59, 1, 60, 60, 8, 1);
     effects[2]->SetEffectType(SECONDBALL);
-    
     
     // we push effects as last elem. beacause they have to be rendered as last objs
     for(int i=0; i<3; i++)
@@ -133,8 +132,8 @@ void PlayingState::InitState(){
 
 void PlayingState::SaveHighscores(){
     ofstream file;
-    file.open("../../Arkanoid/data/highscores");
-    
+    file.open((std::string(RESOURCE_DIRECTORY) + "highscores").c_str());
+
     for(list<pair<string, int>>::iterator iter=highsco_list.begin(); iter != highsco_list.end(); iter++)
         file << iter->first << ", " << iter->second << endl;
     

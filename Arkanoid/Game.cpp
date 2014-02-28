@@ -8,7 +8,7 @@
 
 #include "Game.h"
 
-
+#include "defines.h"
 
 Game::~Game(){
     
@@ -19,18 +19,30 @@ Game::~Game(){
 }
 
 Game::Game(int argc, char** argv){
-    
-    music = Mix_LoadMUS("../../Arkanoid/data/sounds/music.mp3");
-    sound = Mix_LoadWAV("../../Arkanoid/data/sounds/sfx.wav");
-    SDL_WM_SetCaption("ARKANOID", NULL);
-    
-    screen_w = atoi(argv[1]);
-    screen_h = atoi(argv[2]);
-    
-    if(initSystems() == -1)
-        cerr << "Problem occured while initializing SDL systems" << endl;
-    
-    font = TTF_OpenFont("../../Arkanoid/data/mainfont.ttf", 35);
+
+  screen_w = atoi(argv[1]);
+  screen_h = atoi(argv[2]);
+  if(initSystems() == -1) {
+      cerr << "Problem occured while initializing SDL systems" << endl;
+      exit(1);
+  }
+
+  music = NULL;
+  music = Mix_LoadMUS((std::string(RESOURCE_DIRECTORY) + "sounds/music.mp3").c_str());
+  if(!music) {
+      cerr << "WARNING: failed to Mix_LoadMUS(): \"" << Mix_GetError() << "\"" << endl;
+  }
+
+  sound = NULL;
+  sound = Mix_LoadWAV((std::string(RESOURCE_DIRECTORY) + "sounds/sfx.wav").c_str());
+  if(!sound) {
+      cerr << "failed to Mix_LoadWAV(): \"" << Mix_GetError() << "\"" << endl;
+      exit(1);
+  }
+
+  SDL_WM_SetCaption("ARKANOID", NULL);
+
+    font = TTF_OpenFont((std::string(RESOURCE_DIRECTORY) + "mainfont.ttf").c_str(), 35);
     if(!font) {
         cerr << "Could not load font " << TTF_GetError << endl;
         exit(1);
@@ -45,13 +57,10 @@ Game::Game(int argc, char** argv){
     control_type = KEYBOARD;
     current_state = MENU ;
     
-    
-    
     fps_counter = new FpsCounter(gameFPS);
 
     game_state = new MenuState();
     game_state->InitState();
-    
 }
 
 int Game::initSystems(){
@@ -64,11 +73,18 @@ int Game::initSystems(){
 		cerr << "Problem initializing SDL_ttf" << endl;
 		return -1;
 	}
-	if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) < 0) {
+	if (Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 4096) < 0) {
 		cerr << "Problem initializing SDL_mixer" << endl;
 		return -1;
 	}
-    Mix_Init(MIX_INIT_MP3);
+	if (Mix_Init(MIX_INIT_MP3) == 0) {
+		cerr << "WARNING: Problem initializing SDL_mixer: \"" << Mix_GetError() << "\"" << endl;
+	}
+//	// debug info
+//	const int total = Mix_GetNumChunkDecoders();
+//	for (int i = 0; i < total; i++)
+//		cerr << "Supported chunk decoder: " <<  Mix_GetChunkDecoder(i) << endl;
+
 	return 0;
 }
 
@@ -147,6 +163,7 @@ void SwitchFPSVisibility(){
     g_GamePtr->displayFPS = !g_GamePtr->displayFPS;
     dynamic_cast<MenuState*>(g_GamePtr->GetState())->UpdateInfo(SHOWFPS);
 }
+
 void SwitchMusic(){
     g_GamePtr->musicOn = !g_GamePtr->musicOn;
     dynamic_cast<MenuState*>(g_GamePtr->GetState())->UpdateInfo(MUSICON);
@@ -178,8 +195,7 @@ string IntToStr(int n){
 
 void DisplayFinishText(int ms, const char* text){
     
-    TTF_Font* font = TTF_OpenFont("../../Arkanoid/data/font.ttf", 70);
-    
+  TTF_Font* font = TTF_OpenFont((std::string(RESOURCE_DIRECTORY) + "font.ttf").c_str(), 70);
     int posX = g_GamePtr->GetScreen_W()/2;
     int posY = g_GamePtr->GetScreen_H()/2;
     
@@ -202,13 +218,3 @@ void DisplayFinishText(int ms, const char* text){
     SDL_FreeSurface(text_image);
     TTF_CloseFont(font);
 }
-
-
-
-
-
-
-
-
-
-

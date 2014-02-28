@@ -7,19 +7,27 @@
 //
 
 #include "State.h"
+
+#include "defines.h"
+
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
 State::State(){
     ifstream file;
-    file.open("../../Arkanoid/data/highscores");
+
+    file.open(std::string(RESOURCE_DIRECTORY) + "/highscores");
     string line;
     while(getline(file, line)){
         
         size_t it = 0; // character pointer
-        
+
+#ifdef __GNUC__
+        line.erase( std::find( line.begin(), line.end(), ' ' ), line.end() );                          //removing whitespaces
+#else
         line.erase( remove( line.begin(), line.end(), ' ' ), line.end() );                          //removing whitespaces
-       
+#endif
         string name = line.substr(0, it=line.find_first_of(","));                                   //getting players name
         line.erase(0, it+1);
         
