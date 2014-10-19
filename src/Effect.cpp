@@ -1,3 +1,5 @@
+#include "stdafx.h"
+
 #include "Effect.h"
 
 #include "Game.h"
@@ -36,7 +38,10 @@ Effect::Init ()
 void
 Effect::Init (int x, int y)
 {
-  GameObject::Init (x, y, 0, rand ()%2+1, 0, 1, animation->GetFrameWidth ()/2.0, animation->GetFrameHeight ()/2.0);
+  GameObject::Init (static_cast<float>(x), static_cast<float>(y),
+                    0.0, static_cast<float>(rand () % 2 + 1),
+                    0, 1,
+                    static_cast<float>(animation->GetFrameWidth () / 2.0), static_cast<float>(animation->GetFrameHeight () / 2.0));
   SetAlive (true);
 }
 

@@ -1,3 +1,5 @@
+#include "stdafx.h"
+
 #include "FpsCounter.h"
 
 #include "SDL.h"

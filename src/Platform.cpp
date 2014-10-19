@@ -1,3 +1,5 @@
+#include "stdafx.h"
+
 #include "Platform.h"
 
 #include "Projectile.h"
@@ -67,7 +69,8 @@ Platform::Update ()
   {
     PlayingState* playing_state = dynamic_cast<PlayingState*> (g_GamePtr->GetState ());
     playing_state->SetChangingStateFlag (true);
-    playing_state->PushScore (::getenv ("USER"), GetScore ());
+    char* username = ::getenv ("USER");
+    playing_state->PushScore (username, GetScore ());
   }
   return 0;
 }

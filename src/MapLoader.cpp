@@ -1,3 +1,5 @@
+#include "stdafx.h"
+
 #include "MapLoader.h"
 
 #include "defines.h"
@@ -99,10 +101,13 @@ MapLoader::LoadBitmaps ()
   {
     Value val = iter->second;
 
-    int scaled_width  = static_cast<int>(scalerX) * val.frameWidth  * val.animationColumns;
-    int scaled_height = static_cast<int>(scalerY) * val.frameHeight * (val.maxFrame + 1) / val.animationColumns;
+    int scaled_width  = static_cast<int>(scalerX * val.frameWidth  * val.animationColumns);
+    int scaled_height = static_cast<int>(scalerY * val.frameHeight * (val.maxFrame + 1) / val.animationColumns);
 
-    SDL_Surface* image = LoadScaledBitmap ((std::string (RESOURCE_DIRECTORY) + val.filename).c_str (), scaled_width, scaled_height);
+    std::string file = RESOURCE_DIRECTORY;
+    file += "graphics\\";
+    file += val.filename;
+    SDL_Surface* image = LoadScaledBitmap (file.c_str (), scaled_width, scaled_height);
     bitmaps.insert (std::pair<char, SDL_Surface*> (iter->first, image));
   }
 }

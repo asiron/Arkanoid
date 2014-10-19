@@ -7,3 +7,4 @@ m4/lt~obsolete.m4
 Debug
 *.sdf
 *.suo
+ipch

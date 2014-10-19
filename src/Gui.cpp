@@ -1,3 +1,5 @@
+#include "stdafx.h"
+
 #include "Gui.h"
 
 #include "defines.h"

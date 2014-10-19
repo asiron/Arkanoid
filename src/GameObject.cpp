@@ -1,3 +1,5 @@
+#include "stdafx.h"
+
 #include "GameObject.h"
 
 GameObject::GameObject (const char* filename,
@@ -15,6 +17,7 @@ GameObject::GameObject (const char* filename,
  , dirY (0)
  , boundX (0.0)
  , boundY (0.0)
+ , animation (NULL)
  , alive (false)
  , collidable (true)
 {

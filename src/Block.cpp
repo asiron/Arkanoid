@@ -1,3 +1,5 @@
+#include "stdafx.h"
+
 #include "Block.h"
 
 #include "Game.h"
@@ -61,7 +63,7 @@ Block::Init (float x,
              int health)
 {
   // Initializing block
-  GameObject::Init (x, y ,
+  GameObject::Init (x, y,
                     static_cast<float>(speed), 0.0F,
                     dirX, 0,
                     static_cast<float>(animation->GetFrameWidth ())/2.0F, static_cast<float>(animation->GetFrameHeight ())/2.0F);

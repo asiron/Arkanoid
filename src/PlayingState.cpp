@@ -1,3 +1,5 @@
+#include "stdafx.h"
+
 #include "PlayingState.h"
 
 #include "defines.h"

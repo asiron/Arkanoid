@@ -1,5 +1,8 @@
+#include "stdafx.h"
+
 #include "Game.h"
 
+#include <direct.h>
 #include <sstream>
 
 #include "defines.h"
@@ -25,14 +28,21 @@ Game::Game (int argc, char** argv)
     exit (1);
   }
 
+  char buffer[MAX_PATH];
+  _getcwd (buffer, sizeof (buffer));
+  std::string path_base = buffer;
+  path_base += "\\";
+  path_base += RESOURCE_DIRECTORY;
+  std::string file = path_base + "sounds/music.mp3";
   music = NULL;
-  music = Mix_LoadMUS ((std::string (RESOURCE_DIRECTORY) + "sounds/music.mp3").c_str ());
+  music = Mix_LoadMUS (file.c_str ());
   if (!music)
   {
     std::cerr << "WARNING: failed to Mix_LoadMUS(): \"" << Mix_GetError () << "\"" << std::endl;
   }
+  file = path_base + "sounds/sfx.wav";
   sound = NULL;
-  sound = Mix_LoadWAV ((std::string (RESOURCE_DIRECTORY) + "sounds/sfx.wav").c_str ());
+  sound = Mix_LoadWAV (file.c_str ());
   if (!sound)
   {
     std::cerr << "failed to Mix_LoadWAV(): \"" << Mix_GetError () << "\"" << std::endl;
@@ -41,7 +51,7 @@ Game::Game (int argc, char** argv)
 
   SDL_WM_SetCaption ("ARKANOID", NULL);
 
-  font = TTF_OpenFont ((std::string (RESOURCE_DIRECTORY) + "mainfont.ttf").c_str (), 35);
+  font = TTF_OpenFont ((path_base + "mainfont.ttf").c_str (), 35);
   if (!font)
   {
     std::cerr << "Could not load font " << TTF_GetError () << std::endl;
@@ -79,7 +89,9 @@ Game::initSystems ()
     return -1;
   }
 
+#define ARKANOID_DEF_FREQUENCY 48000
   if (Mix_OpenAudio (MIX_DEFAULT_FREQUENCY,
+                     //ARKANOID_DEF_FREQUENCY,
                      MIX_DEFAULT_FORMAT,
                      MIX_DEFAULT_CHANNELS,
                      4096) < 0)

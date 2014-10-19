@@ -345,7 +345,7 @@ necessary.  Here is a sample; alter the names:
   #ifdef __GNUC__
   #define RESOURCE_DIRECTORY "../Arkanoid/data/"
   #else
-  #define RESOURCE_DIRECTORY "../../Arkanoid/data/"
+  #define RESOURCE_DIRECTORY ".\\data\\"
   #endif
 
   #endif // DEFINES_H

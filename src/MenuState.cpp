@@ -1,5 +1,8 @@
+#include "stdafx.h"
+
 #include "MenuState.h"
 
+#include <direct.h>
 #include <sstream>
 
 #include "defines.h"
@@ -14,15 +17,20 @@
 MenuState::MenuState ()
  : State ()
 {
-  bgs.push_back (new Background ((std::string (RESOURCE_DIRECTORY) + "graphics/background2.jpg").c_str (), 1366, 768));
-  //bgs.push_back (new Background ("../Arkanoid/data/graphics/starsback.png", 1700, 900));
-  //bgs.push_back (new Background ("../Arkanoid/data/graphics/starsmidground.png", 1800, 1050));
-  bgs.push_back (new Background ((std::string (RESOURCE_DIRECTORY) + "graphics/starsforeground.png").c_str (), 1550, 950));
-  bgs.push_back (new Background ((std::string (RESOURCE_DIRECTORY) + "graphics/starsforeforeground.png").c_str (), 1800, 1050));
+  char buffer[MAX_PATH];
+  _getcwd (buffer, sizeof (buffer));
+  std::string path_base = buffer;
+  path_base += "\\";
+  path_base += RESOURCE_DIRECTORY;
+  bgs.push_back (new Background ((path_base + "graphics/background2.jpg").c_str (), 1366, 768));
+  //bgs.push_back (new Background (path_base + "graphics/starsback.png", 1700, 900));
+  //bgs.push_back (new Background (path_base + "graphics/starsmidground.png", 1800, 1050));
+  bgs.push_back (new Background ((path_base + "graphics/starsforeground.png").c_str (), 1550, 950));
+  bgs.push_back (new Background ((path_base + "graphics/starsforeforeground.png").c_str (), 1800, 1050));
 
   curMenu = MAIN_MENU;        // setting first visible menu as MAIN MENU
 
-  font = TTF_OpenFont ((std::string (RESOURCE_DIRECTORY) + "font.ttf").c_str (), 28);        // loading menu font
+  font = TTF_OpenFont ((path_base + "font.ttf").c_str (), 28);        // loading menu font
   if (!font)
   {
     std::cerr << "Could not load font " << TTF_GetError << std::endl;

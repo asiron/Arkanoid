@@ -1,3 +1,5 @@
+#include "stdafx.h"
+
 #include "scaler.h"
 
 SDL_Surface*
