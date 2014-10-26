@@ -1,16 +1,10 @@
-//
-//  PlayingState.h
-//  Arkanoid
-//
-//  Created by Maciej Żurad on 11/26/12.
-//  Copyright (c) 2012 Maciej Żurad. All rights reserved.
-//
-
 #ifndef __Arkanoid__PlayingState__
 #define __Arkanoid__PlayingState__
 
-#include <iostream>
-#include "Game.h"
+#include <list>
+
+#include "SDL.h"
+
 #include "State.h"
 #include "GameObject.h"
 #include "Platform.h"
@@ -21,53 +15,46 @@
 #include "MapLoader.h"
 #include "Gui.h"
 
-class Gui;
-class Platform;
-class Ball;
-class Block;
-class Effect;
-class Projectile;
+class PlayingState
+ : public State
+{
+ public:
+  PlayingState ();
+  ~PlayingState ();
 
-class MapLoader;
+  virtual void InitState ();
+  virtual void RenderState ();
+  virtual void UpdateState ();
+  virtual void HandleEvents (Uint8*, const SDL_Event&, int);
 
-using namespace std;
+  void SetChangingStateFlag (bool flag) { changingstate = flag; }
+  bool GetChangingStateFlag () { return changingstate; }
 
-class PlayingState : public State {
+  Effect** GetEffects () { return effects; }
+  Projectile** GetProjectiles () { return projectiles; }
+  Platform* GetPlatform () { return platform; }
+  Ball* GetBall () { return ball; }
 
-private:
-    bool changingstate;
+  void LaunchSecondBall ();
+
+ private:
+  typedef State inherited;
+
+  bool changingstate;
+
+  std::list<GameObject*> gobjects;
+  MapLoader* map_loader;
     
-    list<GameObject*> gobjects;
-    MapLoader* map_loader;
-    
-    Ball* ball;
-    Ball* second_ball;
-    Platform* platform;
-    Effect** effects;
-    Projectile** projectiles;
-    Gui* gui;
-    
-    int second_ball_flag;
-    
-    void SaveHighscores();
-    
-public:
-    PlayingState();
-    ~PlayingState();
-    
-    void InitState();
-    void RenderState();
-    void UpdateState();
-    void HandleEvents(Uint8* keystates, SDL_Event event, int control_type);
-    
-    void SetChangingStateFlag(bool flag) { changingstate = flag; }
-    bool GetChangingStateFlag() { return changingstate; }
-    
-    Effect** GetEffects(){return effects;}
-    Projectile** GetProjectiles(){return projectiles;}
-    Platform* GetPlatform() {return platform;}
-    Ball* GetBall() {return ball;}
-    
-    void LaunchSecondBall();
+  Ball* ball;
+  Ball* second_ball;
+  Platform* platform;
+  Effect** effects;
+  Projectile** projectiles;
+  Gui* gui;
+
+  int second_ball_flag;
+
+  void SaveHighscores ();
 };
+
 #endif /* defined(__Arkanoid__PlayingState__) */

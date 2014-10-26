@@ -12,11 +12,11 @@
 #include "Background.h" 
 
 //ID enums for current menu state and option ID
-enum MENU_STATE{MAIN_MENU, OPTIONS, HIGHSCORES};
-enum MENU_OPTION_IDS{SHOWFPS, MUSICON, SOUNDON};
+enum MENU_STATE {MAIN_MENU, OPTIONS, HIGHSCORES};
+enum MENU_OPTION_IDS {SHOWFPS, MUSICON, SOUNDON};
 
 // Function pointer to function that is run when object is clicked
-typedef void (*Clicked)(void);
+typedef void (*Clicked) (void);
 
 // typdefs for cleaner implementation of menu objects
 typedef std::tuple<SDL_Surface*, SDL_Surface*, SDL_Surface*> Text;
@@ -35,18 +35,23 @@ class MenuState
 {
  public:
   MenuState ();
+
   void Destroy ();
 
-  void UpdateInfo (int ID);
-  void RenderState ();
-  void UpdateState ();
-  void HandleEvents (Uint8* keystates, SDL_Event event, int control_type);
+  void UpdateInfo (int);
+
+  virtual void HandleEvents (Uint8*, const SDL_Event&, int);
+  virtual void RenderState ();
+  virtual void UpdateState ();
+  virtual void InitState () {};
 
   friend void GotoOptions ();
   friend void GotoHighscores ();
   friend void GotoMainMenu ();
 
  private:
+  typedef State inherited;
+
   std::list<Background*> bgs;
 
   std::list<MainMenuText> menu_main;
@@ -69,7 +74,7 @@ class MenuState
   SDL_Color highlight;
 
   TTF_Font* font;
-  inline void Draw (SDL_Surface* image, int x, int y) const;
+  inline void Draw (SDL_Surface*, int, int) const;
 
   // function pointers to menu event listener
   Clicked startgame;
@@ -81,8 +86,8 @@ class MenuState
   Clicked musicon;
   Clicked soundon;
 
-  template <typename T> void UpdateList (std::list<T>& menu_list);
-  template <typename T> void RunCommand (std::list<T>& menu_list);
+  template <typename T> void UpdateList (std::list<T>&);
+  template <typename T> void RunCommand (std::list<T>&);
 };
 
 #endif /* defined(__Arkanoid__MenuState__) */

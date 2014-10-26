@@ -17,7 +17,22 @@
                           TTF_RenderText_Solid(font, _text, highlight)
 
 MenuState::MenuState ()
- : State ()
+ : inherited ()
+ //, bgs ()
+ //, menu_main ()
+ //, menu_highscores ()
+ //, menu_options ()
+ , mouse_pos_x (-1)
+ , mouse_pos_y (-1)
+ , offsetX (g_GamePtr->GetScreen_W () / 2)
+ , offsetY ((g_GamePtr->GetScreen_H () / 2) - 50)
+ , distance_between_msg (50)
+ , distance_between_opt (300)
+ , curMenu (MAIN_MENU)
+ //, text ()
+ //, shade ()
+ //, highlight ()
+ , font (NULL)
 {
   char buffer[MAX_PATH];
   ACE_OS::getcwd (buffer, sizeof (buffer));
@@ -55,8 +70,6 @@ MenuState::MenuState ()
   file += ACE_TEXT_ALWAYS_CHAR ("starsforeforeground.png");
   bgs.push_back (new Background (file.c_str (), 1800, 1050));
 
-  curMenu = MAIN_MENU; // setting first visible menu as MAIN MENU
-
   file = path_base;
   file += ACE_DIRECTORY_SEPARATOR_STR;
   file += ACE_TEXT_ALWAYS_CHAR ("font.ttf");
@@ -70,25 +83,19 @@ MenuState::MenuState ()
   }
 
   //Function pointers
-  startgame = ChangeState;                    // pointer to function in Game.h to changes between states
-  quit = ShutDown;                            // pointer to function in Game.h that performs an application shutdown
-  options = GotoOptions;                      // pointer in to function that changes curMenu to OPTIONS
-  highscores = GotoHighscores;                // pointer in to function that changes curMenu to HIGHSCORES
-  mainmenu  = GotoMainMenu;                   // pointer in to function that changes curMenu to MAINMENU
-  showfps = SwitchFPSVisibility;              // pointer to function in Game.h that switches displayFPS flag on or off
-  musicon = SwitchMusic;                      // pointer to function in Game.h that switches musicON flag on or off
-  soundon = SwitchSfx;                        // pointer to function in Game.h that switches sfxON flag on or off
+  startgame = ChangeState;       // pointer to function in Game.h to changes between states
+  quit = ShutDown;               // pointer to function in Game.h that performs an application shutdown
+  options = GotoOptions;         // pointer in to function that changes curMenu to OPTIONS
+  highscores = GotoHighscores;   // pointer in to function that changes curMenu to HIGHSCORES
+  mainmenu  = GotoMainMenu;      // pointer in to function that changes curMenu to MAINMENU
+  showfps = SwitchFPSVisibility; // pointer to function in Game.h that switches displayFPS flag on or off
+  musicon = SwitchMusic;         // pointer to function in Game.h that switches musicON flag on or off
+  soundon = SwitchSfx;           // pointer to function in Game.h that switches sfxON flag on or off
 
   // message colors
   text = {0xFF, 0, 0, 0};
   shade = {0xc8, 0xc8, 0xc8, 0} ;
   highlight = {0, 0xFF, 0, 0};
-
-  offsetX = g_GamePtr->GetScreen_W()/2;
-  offsetY = g_GamePtr->GetScreen_H()/2 - 50;
-
-  distance_between_msg = 50;
-  distance_between_opt = 300;
 
   // creating main_menu objects
   menu_main.push_back (MainMenuText (std::make_tuple (RenderText("Start Game")), false, startgame));
@@ -249,7 +256,7 @@ MenuState::UpdateState ()
 }
 
 void
-MenuState::HandleEvents (Uint8* keystates, SDL_Event event, int control_type)
+MenuState::HandleEvents (Uint8* keystates, const SDL_Event& event, int control_type)
 {
   SDL_GetMouseState (&mouse_pos_x, &mouse_pos_y);
 

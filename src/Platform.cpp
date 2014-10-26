@@ -2,6 +2,9 @@
 
 #include "Platform.h"
 
+#include "ace/OS.h"
+#include "ace/Log_Msg.h"
+
 #include "Projectile.h"
 #include "PlayingState.h"
 
@@ -69,7 +72,18 @@ Platform::Update ()
   {
     PlayingState* playing_state = dynamic_cast<PlayingState*> (g_GamePtr->GetState ());
     playing_state->SetChangingStateFlag (true);
-    char* username = ::getenv ("USER");
+    char buffer[BUFSIZ];
+    ACE_OS::memset (&buffer, 0, sizeof (buffer));
+    char* username = buffer;
+#ifdef _MSC_VER
+    DWORD buffer_size = sizeof (buffer);
+    if (!GetUserName (buffer, &buffer_size))
+      ACE_DEBUG ((LM_ERROR,
+                  ACE_TEXT ("failed to GetUserName: %d, continuing\n"),
+                  GetLastError ()));
+#else
+    username = ACE_OS::getenv ("USER");
+#endif
     playing_state->PushScore (username, GetScore ());
   }
   return 0;

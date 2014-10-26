@@ -10,10 +10,17 @@
 #include "defines.h"
 
 PlayingState::PlayingState ()
- : State ()
+ : inherited ()
+ , changingstate (false)
+ //, gobjects ()
+ , map_loader (NULL)
+ , ball (NULL)
+ , second_ball (NULL)
+ , platform (NULL)
+ , effects (NULL)
+ , projectiles (NULL)
+ , gui (NULL)
 {
-  changingstate = false;
-
   char buffer[MAX_PATH];
   ACE_OS::getcwd (buffer, sizeof (buffer));
   std::string path_base = buffer;
@@ -48,7 +55,7 @@ PlayingState::PlayingState ()
   //loading projectiles
   file = graphics_base;
   file += ACE_TEXT_ALWAYS_CHAR ("effect.png");
-  projectiles = new Projectile*[10];     // Creating 10 projectile pointers as arbitrary value
+  projectiles = new Projectile*[10]; // Creating 10 projectile pointers as arbitrary value
   for (int i=0; i<3; i++)
   {
     projectiles[i] = new Projectile (file.c_str (), 23, 4, 16, 14, 24, 1);
@@ -74,7 +81,7 @@ PlayingState::PlayingState ()
   gui = new Gui ();
   gui->Init (g_GamePtr->GetScreen_W () - 135, g_GamePtr->GetScreen_H () - 35);
 
-  second_ball_flag = false;       // setting up flag , second wasnt intialized yet ( pushed on the list )
+  second_ball_flag = false; // setting up flag , second wasnt intialized yet ( pushed on the list )
 }
 
 PlayingState::~PlayingState ()
@@ -97,7 +104,7 @@ PlayingState::RenderState ()
 
   if (changingstate)
   {
-    DisplayFinishText (3000, "Game over");
+    DisplayFinishText (3000, ACE_TEXT_ALWAYS_CHAR ("Game over"));
     changingstate = false;
     ChangeState ();
   }
@@ -118,12 +125,12 @@ PlayingState::UpdateState ()
 }
 
 void
-PlayingState::HandleEvents (Uint8* keystates, SDL_Event event, int control_type)
+PlayingState::HandleEvents (Uint8* keystates, const SDL_Event& event, int control_type)
 {
   if (keystates[SDLK_ESCAPE])
   {
     ChangeState ();
-    return;             // we get the hell out of here
+    return; // we get the hell out of here
   }
 
   if (keystates[SDLK_SPACE])
@@ -177,7 +184,7 @@ PlayingState::SaveHighscores ()
   file.open (filename.c_str ());
 
   for (std::list<std::pair<std::string, int> >::iterator iter = highsco_list.begin (); iter != highsco_list.end (); iter++)
-    file << iter->first << ", " << iter->second << std::endl;
+    file << iter->first << ACE_TEXT_ALWAYS_CHAR (", ") << iter->second << std::endl;
 
   file.close ();
 }
@@ -185,11 +192,11 @@ PlayingState::SaveHighscores ()
 void
 PlayingState::LaunchSecondBall ()
 {
-  int t_dirX = (rand () % 2 + 1)*2 -3;
-  int t_dirY = (rand () % 2 + 1)*2 -3;
+  int t_dirX = (ACE_OS::rand () % 2 + 1)*2 -3;
+  int t_dirY = (ACE_OS::rand () % 2 + 1) * 2 - 3;
 
   second_ball->GameObject::Init (ball->GetX (), ball->GetY (),
-                                 static_cast<float>(rand () % 2 + 3), static_cast<float>(rand () % 2 + 3),
+                                 static_cast<float>(ACE_OS::rand () % 2 + 3), static_cast<float>(ACE_OS::rand () % 2 + 3),
                                  t_dirX, t_dirY,
                                  ball->GetBoundX (), ball->GetBoundY ());
   second_ball->SetAlive (true);

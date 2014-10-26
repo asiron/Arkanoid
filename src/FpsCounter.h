@@ -4,10 +4,8 @@
 class FpsCounter
 {
  public:
-  FpsCounter (int FPS_rate) : fps (0), lastTime (0), lastFrame (0), FPS (0)
-  {
-    frameDelay = static_cast<int>(1000.0/static_cast<double>(FPS_rate));
-  };
+  FpsCounter (int);
+
   int measureFPS ();
   int getFPS ();
 

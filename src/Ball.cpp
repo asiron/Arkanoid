@@ -12,14 +12,14 @@ Ball::Ball (const char* filename,
             int frameWidth,
             int frameHeight,
             int animationColumns,
-            int animationDirection )
- : GameObject (filename,
-               maxFrame,
-               frameDelay,
-               frameWidth,
-               frameHeight,
-               animationColumns,
-               animationDirection)
+            int animationDirection)
+ : inherited (filename,
+              maxFrame,
+              frameDelay,
+              frameWidth,
+              frameHeight,
+              animationColumns,
+              animationDirection)
  , has_effect (-1)
  , stand_on_platform (false)
 {
@@ -27,11 +27,16 @@ Ball::Ball (const char* filename,
   SetID (BALL);
 }
 
+Ball::~Ball ()
+{
+
+}
+
 void
 Ball::Destroy ()
 {
   // object destructor calling superclass destructor
-  GameObject::Destroy ();
+  inherited::Destroy ();
 }
 
 void
@@ -40,10 +45,10 @@ Ball::Init ()
   float posX = dynamic_cast<PlayingState*> (g_GamePtr->GetState ())->GetPlatform ()->GetX ();
   float posY = dynamic_cast<PlayingState*> (g_GamePtr->GetState ())->GetPlatform ()->GetY ();
   int t_dirX = (rand () % 2 +1)*2 -3 ; //  picking random direction either left or right
-  GameObject::Init (posX, posY - static_cast<float>(animation->GetFrameHeight ()/2),
-                    static_cast<float>(rand () % 1 + 3), static_cast<float>(rand () % 1 + 3),
-                    t_dirX, -1,
-                    static_cast<float>(animation->GetFrameWidth ()/2), static_cast<float>(animation->GetFrameHeight ()/2));
+  inherited::Init (posX, posY - static_cast<float>(animation->GetFrameHeight ()/2),
+                   static_cast<float>(rand () % 1 + 3), static_cast<float>(rand () % 1 + 3),
+                   t_dirX, -1,
+                   static_cast<float>(animation->GetFrameWidth ()/2), static_cast<float>(animation->GetFrameHeight ()/2));
 }
 
 void
@@ -52,7 +57,7 @@ Ball::Render ()
   //if object is alive we draw it 
   if (isAlive ())
   {
-    GameObject::Render ();
+    inherited::Render ();
     //If there is an animation, we draw it so that the centre of it is at (x,y)
     if (animation) animation->Draw (x-boundX,y-boundY);
   }
@@ -61,35 +66,35 @@ Ball::Render ()
 int
 Ball::Update ()
 {
-  //if object is alive we update it 
-  if (isAlive ())
-  {
-    if (stand_on_platform)
-    {
-      x = dynamic_cast<PlayingState*>(g_GamePtr->GetState ())->GetPlatform ()->GetX ();
-      y = dynamic_cast<PlayingState*>(g_GamePtr->GetState ())->GetPlatform ()->GetY ()-15;
-    }
-    else
-    {
-      GameObject::Update ();
+  //if object is alive we update it
+  if (!isAlive ())
+    return 0;
 
-      // we do a boundry checking
-      if (x >= g_Game.GetScreen_W () -boundX || x<= boundX)
-        dirX *= -1;
-      else if( y <= boundY)
-        dirY *= -1;
-      else if (y >= g_Game.GetScreen_H ())
-      {
-        SetAlive (false);
-        LoseEffect ();
-        Platform* platform = dynamic_cast<PlayingState*> (g_GamePtr->GetState ())->GetPlatform ();
-        platform->LoseLife ();
-        platform->MorphPlatform (-1);            // calling platform to lose it's effect because ball has just died
-      }
-    }
-    // we also update its animation if it exists
-    if (animation) animation->Animate ();
+  if (stand_on_platform)
+  {
+    x = dynamic_cast<PlayingState*>(g_GamePtr->GetState ())->GetPlatform ()->GetX ();
+    y = dynamic_cast<PlayingState*>(g_GamePtr->GetState ())->GetPlatform ()->GetY ()-15;
   }
+  else
+  {
+    inherited::Update ();
+
+    // we do a boundry checking
+    if ((x >= (g_Game.GetScreen_W () - boundX)) || (x <= boundX))
+      dirX *= -1;
+    else if (y <= boundY)
+      dirY *= -1;
+    else if (y >= g_Game.GetScreen_H ())
+    {
+      SetAlive (false);
+      LoseEffect ();
+      Platform* platform = dynamic_cast<PlayingState*> (g_GamePtr->GetState ())->GetPlatform ();
+      platform->LoseLife ();
+      platform->MorphPlatform (-1); // calling platform to lose it's effect because ball has just died
+    }
+  }
+  // we also update its animation if it exists
+  if (animation) animation->Animate ();
 
   return 0;
 }
@@ -143,8 +148,8 @@ Ball::Collided (int ObjectID, col_dir dir)
           dirY = -1;
           break;
       }
-      if (velX <0) velX -= 0.2F; else velX += 0.2F;
-      if (velY <0) velY -= 0.2F; else velY += 0.2F;
+      if (velX < 0) velX -= 0.2F; else velX += 0.2F;
+      if (velY < 0) velY -= 0.2F; else velY += 0.2F;
 
       dynamic_cast<PlayingState*> (g_GamePtr->GetState ())->GetPlatform ()->AddPoint ();
 

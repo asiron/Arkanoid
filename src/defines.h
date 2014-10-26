@@ -357,6 +357,7 @@ Public License instead of this License.*/
 #define SMALL_FONT_SIZE          14  // point size
 #define MEDIUM_FONT_SIZE         28  // point size
 #define LARGE_FONT_SIZE          35  // point size
+#define HUGE_FONT_SIZE           70  // point size
 
 #define BASE_SCREEN_X            960
 #define BASE_SCREEN_Y            540

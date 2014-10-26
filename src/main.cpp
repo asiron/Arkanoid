@@ -2,6 +2,8 @@
 
 #include <cstdlib>
 
+#include "ace/OS.h"
+
 #include "SDL.h"
 
 #include "Game.h"
@@ -20,7 +22,7 @@ SDL_main (int argc_in,
 //           ACE_TCHAR* argv_in[])
 //#endif
 {
-  ::srand (SDL_GetTicks ()); // Initializing random seed
+  ACE_OS::srand (SDL_GetTicks ()); // Initializing random seed
   Game game (argc_in, argv_in);  // Creating game
   return game.Loop ();     // Starting game
 }

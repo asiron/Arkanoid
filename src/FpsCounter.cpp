@@ -3,13 +3,16 @@
 #include "FpsCounter.h"
 
 #include "SDL.h"
-//#ifdef __GNUC__
-//#include "SDL_ttf.h"
-//#else
-//#include "SDL_ttf.h"
-//#endif
 
-//#include "Game.h"
+FpsCounter::FpsCounter (int FPS_rate)
+ : fps (0)
+ , lastTime (0)
+ , lastFrame (0)
+ , FPS (0)
+ , frameDelay (static_cast<int>(1000.0 / static_cast<double>(FPS_rate)))
+{
+
+};
 
 int
 FpsCounter::measureFPS ()
@@ -22,17 +25,18 @@ FpsCounter::measureFPS ()
   {
     FPS = fps;
     fps = 0;
-    lastTime = currentTime ;
+    lastTime = currentTime;
   }
 
   if (currentTime - lastFrame >= frameDelay)
   {
-    lastFrame = currentTime ;
+    lastFrame = currentTime;
     fps++;
-        
+
     //next frame thus we return 1 for Renderer
     return 1;
   }
+
   //no frame in this measure, we dont return 1 for Renderer
   return 0;
 }
