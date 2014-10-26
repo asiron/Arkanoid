@@ -8,19 +8,19 @@
 class Animation
 {
  public:
-  Animation (const char* filename, int maxFrame, int frameDelay, int frameWidth,     /* Requires a valid path to an existing image */
-             int frameHeight, int animationColumns, int animationDirection);
-  Animation (SDL_Surface *image, int maxFrame, int frameDelay, int frameWidth,       /* Requires an already scaled bitmap, used in MapLoader */
-             int frameHeight, int animationColumns, int animationDirection);
+  Animation (const char*, int, int, int,                       /* Requires a valid path to an existing image */
+             int, int, int);
+  Animation (SDL_Surface*, int, int, int,                      /* Requires an already scaled bitmap, used in MapLoader */
+             int, int, int);
   virtual ~Animation ();
 
-  bool IsAutoAnimation ();                                                           // helper for blocks that have animation based on health
-  void SetFrame (int curFrame) { Animation::curFrame = curFrame; }                   // curFrame setter for special cases
+  bool IsAutoAnimation ();                                    // helper for blocks that have animation based on health
+  void SetFrame (int curFrame_in) { curFrame = curFrame_in; } // curFrame setter for special cases
 
   int GetFrameWidth () const { return frameWidth; }
   int GetFrameHeight () const { return frameHeight; }
-  void Animate ();                                                                   // Updating sprite
-  void Draw (float x, float y) const;                                               // Drawing animation at (x,y)
+  void Animate ();                                            // Updating sprite
+  void Draw (float, float) const;                             // Drawing animation at (x,y)
 
  private:
   int maxFrame;
@@ -33,6 +33,7 @@ class Animation
   int animationDirection;
   SDL_Rect* clip;
   SDL_Surface* image;
+  bool freeImage;
 };
 
 #endif /* defined(__Arkanoid__Animation__) */

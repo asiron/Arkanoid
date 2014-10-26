@@ -2,18 +2,20 @@
 
 #include "ConfigFile.h"
 
+#include <sstream>
+#include <fstream>
 #include <typeinfo>
 #include <algorithm>
 
-ConfigFile::ConfigFile (std::string filename)
+ConfigFile::ConfigFile (const std::string& filename_in)
+ : filename (filename_in)
 {
-  ConfigFile::filename = filename;
   Parse ();
 }
 
 template <typename T>
 T
-ConfigFile::String_to_T (string const &val)
+ConfigFile::String_to_T (std::string const &val)
 {
   std::istringstream istr (val);
   T returnVal;
@@ -25,7 +27,7 @@ ConfigFile::String_to_T (string const &val)
 }
 
 void
-ConfigFile::ExitWithError (const string& error)
+ConfigFile::ExitWithError (const std::string& error)
 {
   std::cerr << error;
   std::cin.ignore ();
@@ -70,21 +72,21 @@ ConfigFile::KeyExists (char key) const
   return content.find (key) != content.end ();
 }
 
-Value
+value_t
 ConfigFile::GetValue_at_Key (char key)
 {
   return content.find (key)->second;
 }
 
 void
-ConfigFile::ExtractKey (char& key, string& line) const
+ConfigFile::ExtractKey (char& key, std::string& line) const
 {
   key = line[0];
   line.erase (0,2);
 }
 
 void
-ConfigFile::ExtractValue (Value& value,
+ConfigFile::ExtractValue (value_t& value,
                           std::string& line) const
 {
   size_t it = 0;
@@ -132,13 +134,13 @@ ConfigFile::ExtractContents (std::string& line, size_t line_number)
   std::cerr << line;
 
   char key;
-  Value value;
+  value_t value;
 
   ExtractKey (key, line);
   ExtractValue (value, line);
 
   if (!KeyExists (key))
-    content.insert (pair<char, Value> (key, value));
+    content.insert (std::pair<char, value_t> (key, value));
   else
     ExitWithError ("ConfigFile: Only unique keys are allowed at " + line_number);
 }
@@ -153,7 +155,7 @@ ConfigFile::Parse ()
 
   std::string line;
   size_t line_number = 0;
-  while (::getline (file, line))
+  while (std::getline (file, line))
   {
     ++line_number;
 

@@ -2,83 +2,86 @@
 
 #include "Animation.h"
 
+#include "defines.h"
 #include "Game.h"
 
-Animation::Animation (const char* filename,
-                      int maxFrame,
-                      int frameDelay,
-                      int frameWidth,
-                      int frameHeight,
-                      int animationColumns,
-                      int animationDirection)
+Animation::Animation (const char* filename_in,
+                      int maxFrame_in,
+                      int frameDelay_in,
+                      int frameWidth_in,
+                      int frameHeight_in,
+                      int animationColumns_in,
+                      int animationDirection_in)
+ : curFrame (0)
+ , frameCount (0)
+ , maxFrame (maxFrame_in)
+ , frameDelay (frameDelay_in)
+ , animationColumns (animationColumns_in)
+ , animationDirection (animationDirection_in)
+ , image (NULL)
+ , clip (NULL)
+ , freeImage (true)
 {
-  //Animation's properties initialization
-  Animation::curFrame = 0;
-  Animation::frameCount = 0;
-  Animation::maxFrame = maxFrame;
-  Animation::frameDelay = frameDelay;
-  Animation::animationColumns = animationColumns;
-  Animation::animationDirection = animationDirection;
-
-  // Forumula for calculating new frame sizes according to current window size
-  Animation::frameWidth  = static_cast<int>(g_Game.GetScreen_W () / (float)BASE_SCREEN_X * frameWidth);
-  Animation::frameHeight = static_cast<int>(g_Game.GetScreen_H () / (float)BASE_SCREEN_Y * frameHeight);
+  frameWidth = static_cast<int>  (g_Game.GetScreen_W () / static_cast<float> (BASE_SCREEN_X) * frameWidth_in);
+  frameHeight = static_cast<int> (g_Game.GetScreen_H () / static_cast<float> (BASE_SCREEN_Y) * frameHeight_in);
 
   // formjula for checking if the last row is full in spritesheet if so then we have to adjust height of a loading image
-  int loading_image_w = Animation::frameWidth*animationColumns;
+  int loading_image_w = frameWidth * animationColumns;
   int loading_image_h;
   if ((maxFrame+1)%animationColumns)
-    loading_image_h = Animation::frameHeight*((maxFrame+1)/animationColumns+1);
+    loading_image_h = frameHeight*((maxFrame+1)/animationColumns+1);
   else
-    loading_image_h = Animation::frameHeight*(((maxFrame+1)/animationColumns));
+    loading_image_h = frameHeight*(((maxFrame+1)/animationColumns));
 
   //loading image to SDL_Surface* with new width and height
-  image = LoadScaledBitmap (filename, loading_image_w, loading_image_h);
+  image = LoadScaledBitmap (filename_in, loading_image_w, loading_image_h);
   if (image)
   {
     clip = new SDL_Rect ();
     clip->x = 0;
     clip->y = 0;
-    clip->w = Animation::frameWidth;
-    clip->h = Animation::frameHeight;
+    clip->w = frameWidth;
+    clip->h = frameHeight;
   }
 }
 
-Animation::Animation (SDL_Surface* image,
-                      int maxFrame,
-                      int frameDelay,
-                      int frameWidth,
-                      int frameHeight,
-                      int animationColumns,
-                      int animationDirection)
+Animation::Animation (SDL_Surface* image_in,
+                      int maxFrame_in,
+                      int frameDelay_in,
+                      int frameWidth_in,
+                      int frameHeight_in,
+                      int animationColumns_in,
+                      int animationDirection_in)
+ : curFrame (0)
+ , frameCount (0)
+ , maxFrame (maxFrame_in)
+ , frameDelay (frameDelay_in)
+ , animationColumns (animationColumns_in)
+ , animationDirection (animationDirection_in)
+ , image (NULL)
+ , clip (NULL)
+ , freeImage (false)
 {
-  Animation::curFrame = 0;
-  Animation::frameCount = 0;
-  Animation::maxFrame = maxFrame;
-  Animation::frameDelay = frameDelay;
-  Animation::animationColumns = animationColumns;
-  Animation::animationDirection = animationDirection;
+  frameWidth  = static_cast<int> (g_Game.GetScreen_W () / static_cast<float> (BASE_SCREEN_X) * frameWidth_in);
+  frameHeight = static_cast<int> (g_Game.GetScreen_H () / static_cast<float> (BASE_SCREEN_Y) * frameHeight_in);
 
-  Animation::frameWidth  = static_cast<int>(g_Game.GetScreen_W () / (float)BASE_SCREEN_X * frameWidth);
-  Animation::frameHeight = static_cast<int>(g_Game.GetScreen_H () / (float)BASE_SCREEN_Y * frameHeight);
-
-  Animation::image = image;
+  image = image_in;
   if (image)
   {
     clip = new SDL_Rect ();
     clip->x = 0;
     clip->y = 0;
-    clip->w = Animation::frameWidth;
-    clip->h = Animation::frameHeight;
+    clip->w = frameWidth;
+    clip->h = frameHeight;
   }
 }
 
 Animation::~Animation ()
 {
-  if (image)
-  {
+  if (image && freeImage)
+    SDL_FreeSurface (image);
+  if (clip)
     delete clip;
-  }
 }
 
 void
@@ -111,9 +114,6 @@ Animation::Draw (float x, float y) const
 
 bool
 Animation::IsAutoAnimation ()
-{                             // helper for blocks that have animation based on health
-  if (!animationDirection)
-    return true;
-
-  return false;
+{
+  return !animationDirection;
 };

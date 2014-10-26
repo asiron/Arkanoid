@@ -2,7 +2,13 @@
 
 #include "MapLoader.h"
 
+#include <fstream>
+
+#include "ace/OS.h"
+
 #include "defines.h"
+#include "Game.h"
+#include "Block.h"
 
 // offsets for placing blocks properly on screen such that its edges are aligned with screen edges
 #define offsetX g_Game.GetScreen_W ()/(float)BASE_SCREEN_X*value.frameWidth/2.0
@@ -12,26 +18,28 @@
 #define scaleX g_Game.GetScreen_W ()/(float)BASE_SCREEN_X
 #define scaleY g_Game.GetScreen_H ()/(float)BASE_SCREEN_Y
 
-MapLoader::MapLoader (std::string filename)
+MapLoader::MapLoader (const std::string& filename_in)
+ : configfile (NULL)
 {
-  configfile = new ConfigFile (filename + ".cfg");
+  configfile = new ConfigFile (filename_in);
 }
 
 MapLoader::~MapLoader ()
 {
-  delete configfile;
+  if (configfile)
+    delete configfile;
   UnloadBitmaps ();
 }
 
-std::list<GameObject*>
-MapLoader::LoadMap (std::string filename)
+map_t
+MapLoader::LoadMap (const std::string& filename_in)
 {
   // creating list which will contain block objects
-  std::list<GameObject*> return_val;
+  map_t return_val;
 
   // opening map file
   std::ifstream file;
-  file.open (filename.c_str ());
+  file.open (filename_in.c_str ());
 
   // buffer
   std::string line;
@@ -43,7 +51,7 @@ MapLoader::LoadMap (std::string filename)
   LoadBitmaps ();
 
   // iterating through lines of map file
-  while (::getline (file, line))
+  while (std::getline (file, line))
   {
     // if line is empty then we continue
     if (!line.length ())
@@ -66,7 +74,7 @@ MapLoader::LoadMap (std::string filename)
       }
 
       //Receiving value from config file map
-      Value value = configfile->GetValue_at_Key (line[i]);
+      value_t value = configfile->GetValue_at_Key (line[i]);
       Block* g_object = new Block (bitmaps.find(line[i])->second,
                                    value.maxFrame,
                                    value.frameDelay,
@@ -95,17 +103,25 @@ MapLoader::LoadBitmaps ()
   float scalerX = g_Game.GetScreen_W ()/(float)BASE_SCREEN_X;
   float scalerY = g_Game.GetScreen_H ()/(float)BASE_SCREEN_Y;
 
-  for (std::map<char, Value>::iterator iter = configfile->map_begin ();
+  char buffer[MAX_PATH];
+  ACE_OS::getcwd (buffer, sizeof (buffer));
+  std::string path_base = buffer;
+  path_base += ACE_DIRECTORY_SEPARATOR_STR;
+  path_base += RESOURCE_DIRECTORY;
+  path_base += ACE_DIRECTORY_SEPARATOR_STR;
+  path_base += ACE_TEXT_ALWAYS_CHAR (GRAPHICS_DIRECTORY);
+  path_base += ACE_DIRECTORY_SEPARATOR_STR;
+  std::string file;
+  for (std::map<char, value_t>::iterator iter = configfile->map_begin ();
        iter != configfile->map_end ();
        iter++)
   {
-    Value val = iter->second;
+    value_t val = iter->second;
 
     int scaled_width  = static_cast<int>(scalerX * val.frameWidth  * val.animationColumns);
     int scaled_height = static_cast<int>(scalerY * val.frameHeight * (val.maxFrame + 1) / val.animationColumns);
 
-    std::string file = RESOURCE_DIRECTORY;
-    file += "graphics\\";
+    file = path_base;
     file += val.filename;
     SDL_Surface* image = LoadScaledBitmap (file.c_str (), scaled_width, scaled_height);
     bitmaps.insert (std::pair<char, SDL_Surface*> (iter->first, image));

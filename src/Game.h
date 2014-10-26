@@ -2,32 +2,19 @@
 #define __Arkanoid__Game__
 
 #include "SDL.h"
-#ifdef __GNUC__
 #include "SDL_ttf.h"
 #include "SDL_mixer.h"
-#include "SDL_image.h"
-#else
-#include "SDL_ttf.h"
-#include "SDL_mixer.h"
-#include "SDL_image.h"
-#endif
 
 #include "State.h"
 #include "Singleton.h"
 #include "FpsCounter.h"
+#include "Music.h"
 
 #define g_Game        Game::GetSingleton ()
 #define g_GamePtr     Game::GetSingletonPtr ()
-#define BASE_SCREEN_X 960
-#define BASE_SCREEN_Y 540
-
-#define KEYBOARD      0
-#define MOUSE         1
 
 enum GAME_STATE {MENU, PLAYING};
 
-class FpsCounter;
-class State;
 class PlayingState;
 class MenuState;
 
@@ -38,7 +25,6 @@ void DisplayFinishText (unsigned int ms, const char* text);
 
 //forward declaration for use as callback functions
 void SwitchFPSVisibility ();
-void SwitchMusic ();
 void SwitchSfx ();
 void ChangeState ();
 void ShutDown ();
@@ -52,18 +38,18 @@ class Game
   int Loop ();
   void HandleEvents ();
 
-  void SetScreen_W (int screen_w) { Game::screen_w = screen_w; }
+  void SetScreen_W (int screen_w_in) { screen_w = screen_w_in; }
   int GetScreen_W () { return screen_w; }
 
-  void SetScreen_H (int screen_h) { Game::screen_h = screen_h; }
+  void SetScreen_H (int screen_h_in) { screen_h = screen_h_in; }
   int GetScreen_H () { return screen_h; }
 
-  bool isMusicOn () { return musicOn; }
   bool isSfxOn () { return sfxOn; }
 
   bool isFPSVisible () { return displayFPS; }
   void setFPSVisile () { displayFPS = true; }
 
+  Music* GetMusic () { return music; }
   Mix_Chunk* GetSfx () { return sound; }
   SDL_Surface* GetScreen () { return screen; }
   State* GetState () { return game_state; }
@@ -72,7 +58,6 @@ class Game
   friend void ChangeState ();
   friend void ShutDown ();
   friend void SwitchFPSVisibility ();
-  friend void SwitchMusic ();
   friend void SwitchSfx ();
 
   static void Draw (SDL_Surface* screen, SDL_Surface* source, int x, int y);  // helper function for drawing
@@ -85,7 +70,6 @@ class Game
   bool paused;
 
   bool displayFPS;
-  bool musicOn;
   bool sfxOn;
 
   int control_type;
@@ -101,8 +85,8 @@ class Game
   FpsCounter* fps_counter;
 
   SDL_Surface* screen;
+  Music* music;
   Mix_Chunk* sound;
-  Mix_Music* music;
   TTF_Font* font;
 };
 

@@ -327,25 +327,43 @@ You should also get your employer (if you work as a programmer) or your
 school, if any, to sign a "copyright disclaimer" for the program, if
 necessary.  Here is a sample; alter the names:
 
-  Yoyodyne, Inc., hereby disclaims all copyright interest in the program
-  `Gnomovision' (which makes passes at compilers) written by James Hacker.
+Yoyodyne, Inc., hereby disclaims all copyright interest in the program
+`Gnomovision' (which makes passes at compilers) written by James Hacker.
 
-  <signature of Ty Coon>, 1 April 1989
-  Ty Coon, President of Vice
+<signature of Ty Coon>, 1 April 1989
+Ty Coon, President of Vice
 
-  This General Public License does not permit incorporating your program into
-  proprietary programs.  If your program is a subroutine library, you may
-  consider it more useful to permit linking proprietary applications with the
-  library.  If this is what you want to do, use the GNU Library General
-  Public License instead of this License.*/
+This General Public License does not permit incorporating your program into
+proprietary programs.  If your program is a subroutine library, you may
+consider it more useful to permit linking proprietary applications with the
+library.  If this is what you want to do, use the GNU Library General
+Public License instead of this License.*/
 
-  #ifndef DEFINES_H
-  #define DEFINES_H
+#ifndef DEFINES_H
+#define DEFINES_H
 
-  #ifdef __GNUC__
-  #define RESOURCE_DIRECTORY "../Arkanoid/data/"
-  #else
-  #define RESOURCE_DIRECTORY ".\\data\\"
-  #endif
+#ifdef __GNUC__
+#define RESOURCE_DIRECTORY       "../Arkanoid/data"
+#else
+#define RESOURCE_DIRECTORY       "data"
+#endif
+#define GRAPHICS_DIRECTORY       "graphics"
+#define SOUNDS_DIRECTORY         "sounds"
 
-  #endif // DEFINES_H
+#define SOUNDS_MIDI_EXT          "mid"
+#define SOUNDS_MP3_EXT           "mp3"
+#define SOUNDS_MUSIC_FADE_PERIOD 1000 // ms
+
+#define SMALL_FONT_SIZE          14  // point size
+#define MEDIUM_FONT_SIZE         28  // point size
+#define LARGE_FONT_SIZE          35  // point size
+
+#define BASE_SCREEN_X            960
+#define BASE_SCREEN_Y            540
+
+#define KEYBOARD                 0
+#define MOUSE                    1
+
+#define WINDOW_CAPTION           "ARKANOID"
+
+#endif // DEFINES_H

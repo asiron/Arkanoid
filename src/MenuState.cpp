@@ -2,8 +2,10 @@
 
 #include "MenuState.h"
 
-#include <direct.h>
 #include <sstream>
+
+#include "ace/OS.h"
+#include "ace/Log_Msg.h"
 
 #include "defines.h"
 #include "Game.h"
@@ -18,22 +20,52 @@ MenuState::MenuState ()
  : State ()
 {
   char buffer[MAX_PATH];
-  _getcwd (buffer, sizeof (buffer));
+  ACE_OS::getcwd (buffer, sizeof (buffer));
   std::string path_base = buffer;
-  path_base += "\\";
+  path_base += ACE_DIRECTORY_SEPARATOR_STR;
   path_base += RESOURCE_DIRECTORY;
-  bgs.push_back (new Background ((path_base + "graphics/background2.jpg").c_str (), 1366, 768));
-  //bgs.push_back (new Background (path_base + "graphics/starsback.png", 1700, 900));
-  //bgs.push_back (new Background (path_base + "graphics/starsmidground.png", 1800, 1050));
-  bgs.push_back (new Background ((path_base + "graphics/starsforeground.png").c_str (), 1550, 950));
-  bgs.push_back (new Background ((path_base + "graphics/starsforeforeground.png").c_str (), 1800, 1050));
+  std::string file = path_base;
+  file += ACE_DIRECTORY_SEPARATOR_STR;
+  file += ACE_TEXT_ALWAYS_CHAR (GRAPHICS_DIRECTORY);
+  file += ACE_DIRECTORY_SEPARATOR_STR;
+  file += ACE_TEXT_ALWAYS_CHAR ("background2.jpg");
+  bgs.push_back (new Background (file.c_str (), 1366, 768));
+  //file = path_base;
+  //file += ACE_DIRECTORY_SEPARATOR_STR;
+  //file += ACE_TEXT_ALWAYS_CHAR (GRAPHICS_DIRECTORY);
+  //file += ACE_DIRECTORY_SEPARATOR_STR;
+  //file += ACE_TEXT_ALWAYS_CHAR ("starsback.png");
+  //bgs.push_back (new Background (file.c_str (), 1700, 900));
+  //file = path_base;
+  //file += ACE_DIRECTORY_SEPARATOR_STR;
+  //file += ACE_TEXT_ALWAYS_CHAR (GRAPHICS_DIRECTORY);
+  //file += ACE_DIRECTORY_SEPARATOR_STR;
+  //file += ACE_TEXT_ALWAYS_CHAR ("starsmidground.png");
+  //bgs.push_back (new Background (file.c_str (), 1800, 1050));
+  file = path_base;
+  file += ACE_DIRECTORY_SEPARATOR_STR;
+  file += ACE_TEXT_ALWAYS_CHAR (GRAPHICS_DIRECTORY);
+  file += ACE_DIRECTORY_SEPARATOR_STR;
+  file += ACE_TEXT_ALWAYS_CHAR ("starsforeground.png");
+  bgs.push_back (new Background (file.c_str (), 1550, 950));
+  file = path_base;
+  file += ACE_DIRECTORY_SEPARATOR_STR;
+  file += ACE_TEXT_ALWAYS_CHAR (GRAPHICS_DIRECTORY);
+  file += ACE_DIRECTORY_SEPARATOR_STR;
+  file += ACE_TEXT_ALWAYS_CHAR ("starsforeforeground.png");
+  bgs.push_back (new Background (file.c_str (), 1800, 1050));
 
-  curMenu = MAIN_MENU;        // setting first visible menu as MAIN MENU
+  curMenu = MAIN_MENU; // setting first visible menu as MAIN MENU
 
-  font = TTF_OpenFont ((path_base + "font.ttf").c_str (), 28);        // loading menu font
+  file = path_base;
+  file += ACE_DIRECTORY_SEPARATOR_STR;
+  file += ACE_TEXT_ALWAYS_CHAR ("font.ttf");
+  font = TTF_OpenFont (file.c_str (), MEDIUM_FONT_SIZE); // loading menu font
   if (!font)
   {
-    std::cerr << "Could not load font " << TTF_GetError << std::endl;
+    ACE_DEBUG ((LM_ERROR,
+                ACE_TEXT ("failed to TTF_OpenFont: \"%s\", aborting\n"),
+                ACE_TEXT (TTF_GetError ())));
     exit (1);
   }
 
@@ -70,7 +102,7 @@ MenuState::MenuState ()
 
   //creating menu option objects
   menu_options.push_back (OptionsText (std::make_tuple (RenderText("Show FPS")), false, showfps, std::make_tuple (RenderText("ON")), std::make_tuple (RenderText("OFF")), g_GamePtr->isFPSVisible (), SHOWFPS));
-  menu_options.push_back (OptionsText (std::make_tuple (RenderText("Music")), false, musicon, std::make_tuple (RenderText("ON")), std::make_tuple (RenderText("OFF")), g_GamePtr->isMusicOn (), MUSICON));
+  menu_options.push_back (OptionsText (std::make_tuple (RenderText("Music")), false, musicon, std::make_tuple (RenderText("ON")), std::make_tuple (RenderText("OFF")), g_GamePtr->GetMusic ()->isMusicOn (), MUSICON));
   menu_options.push_back (OptionsText (std::make_tuple (RenderText("Sounds")), false, soundon, std::make_tuple (RenderText("ON")), std::make_tuple (RenderText("OFF")), g_GamePtr->isSfxOn (), SOUNDON));
 }
 
@@ -128,46 +160,44 @@ MenuState::RenderState ()
   for (std::list<Background*>::iterator iter = bgs.begin (); iter != bgs.end (); iter++)
     (*iter)->RenderBackground ();
 
-  int x = offsetX;
   int y = offsetY;
-
   switch (curMenu)
   {
     case MAIN_MENU:
       for (std::list<MainMenuText>::iterator iter = menu_main.begin (); iter != menu_main.end (); iter++)
       {
-        Draw (std::get<1> (std::get<0> (*iter)), x + 1, y + 1);
+        Draw (std::get<1> (std::get<0> (*iter)), offsetX + 1, y + 1);
         if (std::get<1> (*iter))
-          Draw (std::get<2> (std::get<0> (*iter)), x, y);
+          Draw (std::get<2> (std::get<0> (*iter)), offsetX, y);
         else
-          Draw (std::get<0> (std::get<0> (*iter)), x, y);
+          Draw (std::get<0> (std::get<0> (*iter)), offsetX, y);
         y += distance_between_msg;
       }
       break;
     case OPTIONS:
       for (std::list<OptionsText>::iterator iter = menu_options.begin (); iter != menu_options.end (); iter++)
       {
-        Draw (std::get<1> (std::get<0> (*iter)), x + 1, y + 1);
+        Draw (std::get<1> (std::get<0> (*iter)), offsetX + 1, y + 1);
         if (std::get<1> (*iter))
-          Draw (std::get<2> (std::get<0> (*iter)), x, y);
+          Draw (std::get<2> (std::get<0> (*iter)), offsetX, y);
         else
-          Draw (std::get<0> (std::get<0> (*iter)), x, y);
+          Draw (std::get<0> (std::get<0> (*iter)), offsetX, y);
 
         if (std::get<5> (*iter))
         {
-          Draw (std::get<1> (std::get<3> (*iter)), x + distance_between_opt + 1, y + 1);
+          Draw (std::get<1> (std::get<3> (*iter)), offsetX + distance_between_opt + 1, y + 1);
           if (std::get<1> (*iter))
-            Draw (std::get<2> (std::get<3> (*iter)), x + distance_between_opt, y);
+            Draw (std::get<2> (std::get<3> (*iter)), offsetX + distance_between_opt, y);
             else
-              Draw (std::get<0> (std::get<3> (*iter)), x + distance_between_opt, y);
+              Draw (std::get<0> (std::get<3> (*iter)), offsetX + distance_between_opt, y);
         }
         else
         {
-          Draw (std::get<1> (std::get<4> (*iter)), x + distance_between_opt + 1, y + 1);
+          Draw (std::get<1> (std::get<4> (*iter)), offsetX + distance_between_opt + 1, y + 1);
           if (std::get<1> (*iter))
-            Draw (std::get<2> (std::get<4> (*iter)), x + distance_between_opt, y);
+            Draw (std::get<2> (std::get<4> (*iter)), offsetX + distance_between_opt, y);
           else
-            Draw (std::get<0> (std::get<4> (*iter)), x + distance_between_opt, y);
+            Draw (std::get<0> (std::get<4> (*iter)), offsetX + distance_between_opt, y);
         }
         y += distance_between_msg;
       }
@@ -176,17 +206,17 @@ MenuState::RenderState ()
       int counter = 0 ; // we have to allow only print 5 highscores
       for (std::list<Highscore_Text>::iterator iter = menu_highscores.begin (); iter != menu_highscores.end () && counter<5; iter++)
       {
-        Draw (std::get<1> (std::get<0> (*iter)), x + 1, y + 1);
+        Draw (std::get<1> (std::get<0> (*iter)), offsetX + 1, y + 1);
         if (std::get<1> (*iter))
-          Draw (std::get<2> (std::get<0> (*iter)), x, y);
+          Draw (std::get<2> (std::get<0> (*iter)), offsetX, y);
           else
-            Draw (std::get<0> (std::get<0> (*iter)), x, y);
+            Draw (std::get<0> (std::get<0> (*iter)), offsetX, y);
 
-        Draw (std::get<1> (std::get<2> (*iter)), x + distance_between_opt + 1, y + 1);
+        Draw (std::get<1> (std::get<2> (*iter)), offsetX + distance_between_opt + 1, y + 1);
         if (std::get<1> (*iter))
-          Draw (std::get<2> (std::get<2> (*iter)), x + distance_between_opt, y);
+          Draw (std::get<2> (std::get<2> (*iter)), offsetX + distance_between_opt, y);
         else
-          Draw (std::get<0> (std::get<2> (*iter)), x + distance_between_opt, y);
+          Draw (std::get<0> (std::get<2> (*iter)), offsetX + distance_between_opt, y);
 
         y += distance_between_msg;
         counter++;
@@ -199,8 +229,8 @@ void
 MenuState::UpdateState ()
 {
   for (std::list<Background*>::iterator iter = bgs.begin (); iter != bgs.end (); iter++)
-    (*iter)->UpdateBackground (static_cast<float>(g_GamePtr->GetScreen_W ())-static_cast<float>(mouse_pos_x),
-                               static_cast<float>(g_GamePtr->GetScreen_H ())-static_cast<float>(mouse_pos_y));
+    (*iter)->UpdateBackground (static_cast<float> (g_GamePtr->GetScreen_W ())-mouse_pos_x,
+                               static_cast<float> (g_GamePtr->GetScreen_H ())-mouse_pos_y);
 
   switch (curMenu)
   {

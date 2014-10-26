@@ -2,8 +2,12 @@
 
 #include "Game.h"
 
-#include <direct.h>
 #include <sstream>
+
+#include "ace/OS.h"
+#include "ace/Log_Msg.h"
+
+#include "SDL_image.h"
 
 #include "defines.h"
 #include "MenuState.h"
@@ -11,6 +15,7 @@
 
 Game::~Game ()
 {
+  delete music;
   delete fps_counter;
   delete game_state;
 
@@ -24,37 +29,42 @@ Game::Game (int argc, char** argv)
 
   if (initSystems () == -1)
   {
-    std::cerr << "Problem occured while initializing SDL systems" << std::endl;
+    ACE_DEBUG ((LM_ERROR,
+                ACE_TEXT ("failed to initSystems, aborting\n")));
     exit (1);
   }
 
   char buffer[MAX_PATH];
-  _getcwd (buffer, sizeof (buffer));
+  ACE_OS::getcwd (buffer, sizeof (buffer));
   std::string path_base = buffer;
-  path_base += "\\";
+  path_base += ACE_DIRECTORY_SEPARATOR_STR;
   path_base += RESOURCE_DIRECTORY;
-  std::string file = path_base + "sounds/music.mp3";
-  music = NULL;
-  music = Mix_LoadMUS (file.c_str ());
-  if (!music)
-  {
-    std::cerr << "WARNING: failed to Mix_LoadMUS(): \"" << Mix_GetError () << "\"" << std::endl;
-  }
-  file = path_base + "sounds/sfx.wav";
+  std::string file = path_base;
+  file += ACE_DIRECTORY_SEPARATOR_STR;
+  file += SOUNDS_DIRECTORY;
+  file += ACE_DIRECTORY_SEPARATOR_STR;
+  file += ACE_TEXT_ALWAYS_CHAR ("sfx.wav");
   sound = NULL;
   sound = Mix_LoadWAV (file.c_str ());
   if (!sound)
   {
-    std::cerr << "failed to Mix_LoadWAV(): \"" << Mix_GetError () << "\"" << std::endl;
+    ACE_DEBUG ((LM_ERROR,
+                ACE_TEXT ("failed to Mix_LoadWAV: \"%s\", aborting\n"),
+                ACE_TEXT (Mix_GetError ())));
     exit (1);
   }
 
-  SDL_WM_SetCaption ("ARKANOID", NULL);
+  SDL_WM_SetCaption (ACE_TEXT_ALWAYS_CHAR (WINDOW_CAPTION), NULL);
 
-  font = TTF_OpenFont ((path_base + "mainfont.ttf").c_str (), 35);
+  file = path_base;
+  file += ACE_DIRECTORY_SEPARATOR_STR;
+  file += ACE_TEXT_ALWAYS_CHAR ("mainfont.ttf");
+  font = TTF_OpenFont (file.c_str (), LARGE_FONT_SIZE);
   if (!font)
   {
-    std::cerr << "Could not load font " << TTF_GetError () << std::endl;
+    ACE_DEBUG ((LM_ERROR,
+                ACE_TEXT ("failed to TTF_OpenFont: \"%s\", aborting\n"),
+                ACE_TEXT (TTF_GetError ())));
     exit (1);
   }
 
@@ -62,11 +72,12 @@ Game::Game (int argc, char** argv)
 
   //just for now
   gameFPS = 60;
-  musicOn = false;
   sfxOn = false;
   control_type = KEYBOARD;
   current_state = MENU ;
-    
+
+  music = new Music (path_base);
+
   fps_counter = new FpsCounter (gameFPS);
 
   game_state = new MenuState ();
@@ -114,10 +125,9 @@ Game::initSystems ()
 void
 Game::closeSystems ()
 {
-  if (!screen) SDL_FreeSurface (screen);
-  if (!font) TTF_CloseFont (font);
-  if (!sound) Mix_FreeChunk (sound);
-  if (!music) Mix_FreeMusic (music);
+  if (screen) SDL_FreeSurface (screen);
+  if (font) TTF_CloseFont (font);
+  if (sound) Mix_FreeChunk (sound);
   Mix_CloseAudio ();
   TTF_Quit ();
   SDL_Quit ();
@@ -196,23 +206,6 @@ SwitchFPSVisibility ()
 {
   g_GamePtr->displayFPS = !g_GamePtr->displayFPS;
   dynamic_cast<MenuState*> (g_GamePtr->GetState ())->UpdateInfo (SHOWFPS);
-}
-
-void
-SwitchMusic ()
-{
-  g_GamePtr->musicOn = !g_GamePtr->musicOn;
-  dynamic_cast<MenuState*> (g_GamePtr->GetState ())->UpdateInfo (MUSICON);
-
-  if (g_GamePtr->musicOn)
-  {
-    Mix_PlayingMusic ();
-    Mix_PlayMusic (g_GamePtr->music, -1);
-  }
-  else
-  {
-    Mix_HaltMusic ();
-  }
 }
 
 void

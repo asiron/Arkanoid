@@ -1,41 +1,31 @@
-//
-//  MapLoader.h
-//  Arkanoid
-//
-//  Created by Maciej Żurad on 11/25/12.
-//  Copyright (c) 2012 Maciej Żurad. All rights reserved.
-//
-
 #ifndef __Arkanoid__MapLoader__
 #define __Arkanoid__MapLoader__
 
-#include <iostream>
 #include <list>
-#include <istream>
-#include <sstream>
+#include <string>
 #include <map>
-#include "scaler.h"
-#include "Block.h"
+
+#include "SDL.h"
+
+#include "GameObject.h"
 #include "ConfigFile.h"
-#include "Game.h"
 
-using namespace std;
+typedef std::list<GameObject*> map_t;
 
-class MapLoader {
+class MapLoader
+{
+ public:
+  MapLoader (const std::string&);
+  ~MapLoader ();
 
-private:
-    ConfigFile *configfile;
-    map<char, SDL_Surface*> bitmaps;
-    
-    void LoadBitmaps();
-    void UnloadBitmaps();
-    
-public:
-    MapLoader(string filename);
-    ~MapLoader();
+  map_t LoadMap (const std::string&);
 
-    list<GameObject*> LoadMap(string filename);
+ private:
+  ConfigFile* configfile;
+  std::map<char, SDL_Surface*> bitmaps;
 
+  void LoadBitmaps();
+  void UnloadBitmaps();
 };
 
 #endif /* defined(__Arkanoid__MapLoader__) */
