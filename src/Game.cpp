@@ -39,6 +39,9 @@ Game::Game (int argc, char** argv)
  , sound (NULL)
  , font (NULL)
 {
+  char buffer[MAX_PATH];
+  ACE_OS::getcwd (buffer, sizeof (char[MAX_PATH]));
+
   if (initSystems () == -1)
   {
     ACE_DEBUG ((LM_ERROR,
@@ -46,8 +49,6 @@ Game::Game (int argc, char** argv)
     exit (1);
   }
 
-  char buffer[MAX_PATH];
-  ACE_OS::getcwd (buffer, sizeof (buffer));
   std::string path_base = buffer;
   path_base += ACE_DIRECTORY_SEPARATOR_STR;
   path_base += RESOURCE_DIRECTORY;

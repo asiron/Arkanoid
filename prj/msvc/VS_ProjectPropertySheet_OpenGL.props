@@ -5,11 +5,9 @@
   <PropertyGroup />
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\projects\SDL-1.2.15\include;D:\projects\SDL_image-1.2.12\include;D:\projects\SDL_mixer-1.2.12\include;D:\projects\SDL_ttf-2.0.11\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>D:\projects\SDL-1.2.15\VisualC\Debug;D:\projects\SDL-1.2.15\VisualC\SDLmain\Debug;D:\projects\SDL_image-1.2.12\lib\x86;#D:\projects\SDL_mixer-1.2.12\lib\x86;D:\projects\SDL_ttf-2.0.11\lib\x86;D:\projects\SDL_mixer-1.2.12\VisualC\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>OpenGL32.Lib;GlU32.Lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

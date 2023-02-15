@@ -2,13 +2,15 @@
 
 #include <cstdlib>
 
-#include "ace/OS.h"
+//#include "ace/OS.h"
 
 #include "SDL.h"
 
 #include "Game.h"
 
-//#if defined(ACE_WIN32) || defined(ACE_WIN64)
+extern "C" { FILE __iob_func[3] = { *stdin,*stdout,*stderr }; }
+
+//#if defined (ACE_WIN32) || defined(ACE_WIN64)
 #ifdef __cplusplus
 extern "C"
 {
@@ -22,7 +24,7 @@ SDL_main (int argc_in,
 //           ACE_TCHAR* argv_in[])
 //#endif
 {
-  ACE_OS::srand (SDL_GetTicks ()); // Initializing random seed
+  srand (SDL_GetTicks ()); // Initializing random seed
   Game game (argc_in, argv_in);  // Creating game
   return game.Loop ();     // Starting game
 }

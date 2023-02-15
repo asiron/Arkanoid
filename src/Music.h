@@ -4,11 +4,13 @@
 #include <vector>
 #include <string>
 
-#include "ace/Dirent.h"
+//#include "ace/Dirent.h"
 
 #include "SDL_mixer.h"
 
 //forward declaration for use as callback functions
+struct dirent;
+
 void SwitchMusic ();
 int dirent_selector_mp3_files (const dirent*);
 int dirent_selector_MIDI_files (const dirent*);
