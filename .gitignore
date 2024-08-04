@@ -1,1 +1,65 @@
-.DS_Store
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+#*.exe
+#*.out
+#*.app
+
+# Backup files
+*.bak
+
+# Patches
+*.patch
+
+# build
+build/
+
+# Automake
+Makefile.in
+aclocal.m4
+autom4te.cache/
+aux_config/
+config.h.in
+*~
+configure
+m4/libtool.m4
+m4/ltoptions.m4
+m4/ltsugar.m4
+m4/ltversion.m4
+m4/lt~obsolete.m4
+
+# Kdevelop
+.kdev4/
+*.kdev4
+
+# QtCreator
+Makefile.am.user
+CMakeLists.txt.user*
+
+# MSVC
+.vs/
+
+# CLion
+.idea/
